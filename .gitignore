@@ -166,3 +166,10 @@ $RECYCLE.BIN/
 # Crashes
 mono_crash.*
 
+
+.idea/.idea.vpm-package-maker/.idea
+Assets/PackageMakerWindowData.asset*
+.idea
+.vscode
+Assets/SerializedUdonPrograms/*
+
