@@ -1,4 +1,4 @@
-# STARDENBURDENHARDENBART
+# FanCam
 
 # Ask questions on my [Discord Server](https://discord.gg/S5sDC4PnFp)
 
