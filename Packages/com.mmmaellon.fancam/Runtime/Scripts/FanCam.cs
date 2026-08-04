@@ -6,8 +6,10 @@ using VRC.SDK3.Components;
 using VRC.SDK3.Data;
 using VRC.SDKBase;
 using VRC.Udon;
+
 #if !COMPILER_UDONSHARP && UNITY_EDITOR
 using UnityEditor;
+using UnityEditor.SceneManagement;
 #endif
 
 namespace MMMaellon.FanCam
@@ -15,6 +17,7 @@ namespace MMMaellon.FanCam
     [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
     public class FanCam : UdonSharpBehaviour
     {
+        [SerializeField]
         bool _isPlayerObject = false;
         public bool IsPlayerObject
         {
@@ -23,7 +26,7 @@ namespace MMMaellon.FanCam
         public FanCamManager manager;
         public CinemachineVirtualCamera virtualCam;
 
-        [UdonSynced]
+        // [UdonSynced]
         [SerializeField]
         [FieldChangeCallback(nameof(Id))]
         int _id = 0;//0 is a null value
@@ -77,6 +80,7 @@ namespace MMMaellon.FanCam
         }
         void OnDestroy()
         {
+            Debug.LogWarning("ASDF");
             manager.RemoveFanCam(this);
 #if !COMPILER_UDONSHARP && UNITY_EDITOR
             _dirty = true;
@@ -110,9 +114,14 @@ namespace MMMaellon.FanCam
         }
 
 #if !COMPILER_UDONSHARP && UNITY_EDITOR
-        public void CheckPlayerObject()
+        public bool CheckForPlayerObj()
         {
-            _isPlayerObject = Utilities.IsValid(GetComponent<VRCPlayerObject>());
+            var playerObj = GetComponent<VRCPlayerObject>();
+            if (!Utilities.IsValid(playerObj))
+            {
+                playerObj = GetComponentInParent<VRCPlayerObject>();
+            }
+            return Utilities.IsValid(playerObj);
         }
 
         public static bool Dirty
@@ -124,14 +133,22 @@ namespace MMMaellon.FanCam
         {
             _dirty = true;
         }
+        public static void MarkDirty()
+        {
+            _dirty = true;
+        }
         static FanCam[] allFanCams = { };
         public static FanCam[] All
         {
             get
             {
+                if (Application.isPlaying || PrefabStageUtility.GetCurrentPrefabStage() != null)
+                {
+                    return new FanCam[0];
+                }
                 if (_dirty)
                 {
-                    Debug.LogWarning("Updating Fan Cam List");
+                    // Debug.LogWarning("Updating Fan Cam List");
                     allFanCams = FindObjectsOfType<FanCam>(true);
                     _dirty = false;
                 }
@@ -141,10 +158,6 @@ namespace MMMaellon.FanCam
         void OnValidate()
         {
             _dirty = true;
-        }
-        public void Setup()
-        {
-            Debug.LogWarning("Setup");
         }
 #endif 
     }

@@ -1,15 +1,10 @@
-using VRC.SDKBase.Editor.BuildPipeline;
+#if !COMPILER_UDON && UNITY_EDITOR
 using UnityEditor;
 using UdonSharpEditor;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using VRC.SDKBase;
 using UnityEditor.SceneManagement;
-using UnityEngine.SceneManagement;
-using UdonSharp.Internal;
-using VRC.Udon;
-using System.Collections;
 
 namespace MMMaellon.FanCam
 {
@@ -26,10 +21,23 @@ namespace MMMaellon.FanCam
         public override void OnInspectorGUI()
         {
             UdonSharpGUI.DrawDefaultUdonSharpBehaviourHeader(targets);
+            if (Application.isPlaying || PrefabStageUtility.GetCurrentPrefabStage() != null)
+            {
+                //TODO display fancam dictionary
+                return;
+            }
 
             managedFanCams.Clear();
             nullFanCams.Clear();
             otherFanCams.Clear();
+
+            EditorGUILayout.BeginHorizontal();
+            FanCamSetup.AutoSetup = GUILayout.Toggle(FanCamSetup.AutoSetup, "Automatic Setup", GUILayout.Width(128));
+            if (GUILayout.Button("Perform Manual Setup"))
+            {
+                FanCamSetup.Setup();
+            }
+            EditorGUILayout.EndHorizontal();
 
             foreach (var fancam in FanCam.All)
             {
@@ -47,9 +55,9 @@ namespace MMMaellon.FanCam
                 }
             }
 
-            fanCamFoldout = EditorGUILayout.Foldout(fanCamFoldout, $"Fan Cams ({managedFanCams.Count + nullFanCams.Count + otherFanCams.Count})", true);
+            fanCamFoldout = EditorGUILayout.Foldout(fanCamFoldout, $"FanCams ({managedFanCams.Count + nullFanCams.Count + otherFanCams.Count})", true);
             EditorGUI.indentLevel++;
-            if (fanCamFoldout && !Application.isPlaying && PrefabStageUtility.GetCurrentPrefabStage() == null)
+            if (fanCamFoldout)
             {
                 managedFanCamFoldout = EditorGUILayout.Foldout(managedFanCamFoldout, $"This manager ({managedFanCams.Count})", true);
                 if (managedFanCamFoldout)
@@ -63,9 +71,10 @@ namespace MMMaellon.FanCam
                             EditorGUILayout.LabelField(fancam.Id.ToString(), GUILayout.Width(42));
                             EditorGUILayout.ObjectField(fancam, typeof(FanCam), true);
                             EditorGUI.EndDisabledGroup();
-                            if (GUILayout.Button("Remove manager"))
+                            if (GUILayout.Button("Remove FanCam manager"))
                             {
                                 SerializedObject so = new(fancam);
+                                Undo.SetCurrentGroupName("Remove FanCam");
                                 so.FindProperty("manager").objectReferenceValue = null;
                                 so.ApplyModifiedProperties();
                             }
@@ -96,6 +105,7 @@ namespace MMMaellon.FanCam
                         if (GUILayout.Button("Set manager"))
                         {
                             SerializedObject so = new(fancam);
+                            Undo.SetCurrentGroupName("Set FanCam Manager");
                             so.FindProperty("manager").objectReferenceValue = target;
                             so.ApplyModifiedProperties();
                         }
@@ -105,13 +115,6 @@ namespace MMMaellon.FanCam
             }
             EditorGUI.indentLevel--;
         }
-
-        public void Setup()
-        {
-            foreach (var cam in FanCam.All)
-            {
-                cam.Setup();
-            }
-        }
     }
 }
+#endif
