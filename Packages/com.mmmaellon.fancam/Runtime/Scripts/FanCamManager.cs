@@ -93,5 +93,34 @@ namespace MMMaellon.FanCam
             fancams.Remove(oldCam.Id);
             ActiveCamIndex = ActiveCamIndex;
         }
+
+        DataDictionary playerTargets = new DataDictionary();
+        public DataDictionary PlayerTargets
+        {
+            get => playerTargets;
+        }
+
+        public void AddPlayerTarget(FanCamPlayerTarget target)
+        {
+            playerTargets.Add(target.PlayerId, target);
+        }
+
+        public void RemovePlayerTarget(int playerId)
+        {
+            if (playerId < 0)
+            {
+                return;
+            }
+            playerTargets.Remove(playerId);
+            var fanCamlist = fancams.GetValues();
+            for (int i = 0; i < fanCamlist.Count; i++)
+            {
+                var fanCam = (FanCam)fanCamlist[i].Reference;
+                if (Utilities.IsValid(fanCam) && fanCam.IsOwnerLocal() && fanCam.TargetPlayerId == playerId)
+                {
+                    fanCam.TargetPlayerId = -1001;
+                }
+            }
+        }
     }
 }

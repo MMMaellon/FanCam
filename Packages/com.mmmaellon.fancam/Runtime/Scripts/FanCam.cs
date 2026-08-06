@@ -160,5 +160,35 @@ namespace MMMaellon.FanCam
             _dirty = true;
         }
 #endif 
+
+        FanCamPlayerTarget target;
+        public FanCamPlayerTarget Target
+        {
+            get => target;
+        }
+
+        [UdonSynced]
+        [FieldChangeCallback(nameof(TargetPlayerId))]
+        int targetId = -1001;
+        public int TargetPlayerId
+        {
+            get => targetId;
+            set
+            {
+                targetId = value;
+                if (IsOwnerLocal())
+                {
+                    RequestSerialization();
+                }
+                if (manager.PlayerTargets.TryGetValue(value, TokenType.Reference, out DataToken token))
+                {
+                    target = (FanCamPlayerTarget)token.Reference;
+                }
+                else
+                {
+                    target = null;
+                }
+            }
+        }
     }
 }

@@ -194,7 +194,7 @@ Transform:
   m_GameObject: {fileID: 7652641989358079732}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.0612702, y: -6.7773247, z: 5.748909}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -223,6 +223,10 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 4615746708829479192}
+  _isPlayerObject: 0
+  manager: {fileID: 0}
+  virtualCam: {fileID: 435392366840284396}
+  _id: 0
 --- !u!114 &4615746708829479192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,7 +246,7 @@ MonoBehaviour:
   SynchronizePosition: 0
   AllowCollisionOwnershipTransfer: 0
   Reliable: 0
-  _syncMethod: 2
+  _syncMethod: 3
   serializedProgramAsset: {fileID: 11400000, guid: 6172f54a16e4e56cebb78f3fc9e874b1,
     type: 2}
   programSource: {fileID: 11400000, guid: 07daf40a0d7c0a14b98fdb281adaae56, type: 2}
