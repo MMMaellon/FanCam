@@ -34,12 +34,12 @@ namespace MMMaellon.FanCam
                             //Skip disabling and re-enabling camera.
                             return;
                         }
-                        _activeCam.DisableCam();
+                        _activeCam.OnDisableCam();
                     }
                     _activeCam = newCam;
                     if (Utilities.IsValid(_activeCam))
                     {
-                        _activeCam.EnableCam();
+                        _activeCam.OnEnableCam();
                     }
                 }
                 else
@@ -119,6 +119,38 @@ namespace MMMaellon.FanCam
                 if (Utilities.IsValid(fanCam) && fanCam.IsOwnerLocal() && fanCam.TargetPlayerId == playerId)
                 {
                     fanCam.TargetPlayerId = -1001;
+                }
+            }
+        }
+
+        DataList menus;
+        public void AddMenu(FanCamMenu menu)
+        {
+            menus.Add(menu);
+        }
+        public void RemoveMenu(FanCamMenu menu)
+        {
+            menus.Remove(menu);
+        }
+
+        public override void OnDeserialization(VRC.Udon.Common.DeserializationResult result)
+        {
+            for (int i = 0; i < menus.Count; i++)
+            {
+                if (menus.TryGetValue(i, TokenType.Reference, out DataToken menuToken))
+                {
+                    ((FanCamMenu)menuToken.Reference).OnManagerUpdate();
+                }
+            }
+        }
+
+        public override void OnPreSerialization()
+        {
+            for (int i = 0; i < menus.Count; i++)
+            {
+                if (menus.TryGetValue(i, TokenType.Reference, out DataToken menuToken))
+                {
+                    ((FanCamMenu)menuToken.Reference).OnManagerUpdate();
                 }
             }
         }

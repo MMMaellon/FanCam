@@ -8,6 +8,9 @@
     },
     "befuddledlabs.linuxvrchatsdkpatch-worlds": {
       "version": "0.3.0"
+    },
+    "com.mmmaellon.lightsync": {
+      "version": "1.6.15-beta"
     }
   },
   "locked": {
@@ -36,6 +39,12 @@
       "version": "0.3.0",
       "dependencies": {
         "com.vrchat.base": "^3.9.0"
+      }
+    },
+    "com.mmmaellon.lightsync": {
+      "version": "1.6.15-beta",
+      "dependencies": {
+        "com.vrchat.worlds": "^3.5.2"
       }
     }
   }

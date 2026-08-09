@@ -2,6 +2,7 @@
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using VRC.SDKBase;
 using VRC.SDKBase.Editor.BuildPipeline;
 
 namespace MMMaellon.FanCam
@@ -44,6 +45,14 @@ namespace MMMaellon.FanCam
                 so.FindProperty("_id").intValue = counter;
                 so.FindProperty("_isPlayerObject").boolValue = fancam.CheckForPlayerObj();
                 so.ApplyModifiedProperties();
+            }
+
+            foreach (var menu in FanCamMenu.All)
+            {
+                if (Utilities.IsValid(menu.manager))
+                {
+                    menu.manager.AddMenu(menu);
+                }
             }
         }
 
