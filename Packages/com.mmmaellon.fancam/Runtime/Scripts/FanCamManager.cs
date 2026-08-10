@@ -39,12 +39,14 @@ namespace MMMaellon.FanCam
                     _activeCam = newCam;
                     if (Utilities.IsValid(_activeCam))
                     {
+                        Debug.LogWarning($"Active Cam set to {_activeCam.name}");
                         _activeCam.OnEnableCam();
                     }
                 }
                 else
                 {
                     Debug.LogWarning($"Warning: FanCam failed to set the active camera to {value} from manager. Assuming it's a timing issue, we'll wait for the FanCam's network update");
+                    Debug.LogWarning($"There are {fancams.Count} fan cams.");
                 }
             }
         }

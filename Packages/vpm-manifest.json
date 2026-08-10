@@ -3,14 +3,14 @@
     "com.vrchat.core.vpm-resolver": {
       "version": "0.1.28"
     },
+    "com.mmmaellon.lightsync": {
+      "version": "1.6.15-beta"
+    },
     "com.vrchat.worlds": {
-      "version": "3.5.1"
+      "version": "3.10.4"
     },
     "befuddledlabs.linuxvrchatsdkpatch-worlds": {
       "version": "0.3.0"
-    },
-    "com.mmmaellon.lightsync": {
-      "version": "1.6.15-beta"
     }
   },
   "locked": {
@@ -18,15 +18,21 @@
       "version": "0.1.29",
       "dependencies": {}
     },
+    "com.vrchat.base": {
+      "version": "3.10.4",
+      "dependencies": {}
+    },
+    "com.mmmaellon.lightsync": {
+      "version": "1.6.15-beta",
+      "dependencies": {
+        "com.vrchat.worlds": "^3.5.2"
+      }
+    },
     "com.vrchat.worlds": {
       "version": "3.10.4",
       "dependencies": {
         "com.vrchat.base": "3.10.4"
       }
-    },
-    "com.vrchat.base": {
-      "version": "3.10.4",
-      "dependencies": {}
     },
     "befuddledlabs.linuxvrchatsdkpatch-worlds": {
       "version": "0.3.0",
@@ -39,12 +45,6 @@
       "version": "0.3.0",
       "dependencies": {
         "com.vrchat.base": "^3.9.0"
-      }
-    },
-    "com.mmmaellon.lightsync": {
-      "version": "1.6.15-beta",
-      "dependencies": {
-        "com.vrchat.worlds": "^3.5.2"
       }
     }
   }

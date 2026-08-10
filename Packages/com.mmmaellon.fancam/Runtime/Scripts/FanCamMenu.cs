@@ -40,6 +40,7 @@ namespace MMMaellon.FanCam
         void Start()
         {
             localPlayer = Networking.LocalPlayer;
+            Debug.LogWarning("Start - launching loop");
             SendCustomEventDelayedFrames(nameof(Loop), 0, VRC.Udon.Common.Enums.EventTiming.LateUpdate);
             if (startVisible)
             {
@@ -51,18 +52,22 @@ namespace MMMaellon.FanCam
             }
         }
 
-        void Loop()
+        public void Loop()
         {
             SendCustomEventDelayedFrames(nameof(Loop), 0, VRC.Udon.Common.Enums.EventTiming.LateUpdate);
-
-            if (MenuVisible && Vector3.ProjectOnPlane(transform.position - localPlayer.GetPosition(), Vector3.up).magnitude > despawnDistance)
+            // Debug.LogWarning("asdf");
+            if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.E))
+            {
+                ToggleMenu();
+            }
+            else if (MenuVisible && Vector3.ProjectOnPlane(transform.position - localPlayer.GetPosition(), Vector3.up).magnitude > despawnDistance)
             {
                 ToggleOffMenu();
             }
-            if (!localPlayer.IsUserInVR())
-            {
-
-            }
+            // if (localPlayer.IsUserInVR())
+            // {
+            //
+            // }
         }
 
         float lastSecondNoInput = -1001;
