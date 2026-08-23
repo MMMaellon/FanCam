@@ -8,7 +8,7 @@ using UnityEditor.SceneManagement;
 
 namespace MMMaellon.FanCam
 {
-    // [CanEditMultipleObjects]
+    [CanEditMultipleObjects]
     [CustomEditor(typeof(FanCamManager), true)]
     public class FanCamManagerEditor : Editor
     {
@@ -21,15 +21,15 @@ namespace MMMaellon.FanCam
         public override void OnInspectorGUI()
         {
             UdonSharpGUI.DrawDefaultUdonSharpBehaviourHeader(targets);
-            if (Application.isPlaying || PrefabStageUtility.GetCurrentPrefabStage() != null)
-            {
-                //TODO display fancam dictionary
-                return;
-            }
-
-            managedFanCams.Clear();
-            nullFanCams.Clear();
-            otherFanCams.Clear();
+            // if (Application.isPlaying || PrefabStageUtility.GetCurrentPrefabStage() != null)
+            // {
+            //     //TODO display fancam dictionary
+            //     return;
+            // }
+            //
+            // managedFanCams.Clear();
+            // nullFanCams.Clear();
+            // otherFanCams.Clear();
 
             EditorGUILayout.BeginHorizontal();
             FanCamSetup.AutoSetup = GUILayout.Toggle(FanCamSetup.AutoSetup, "Automatic Setup", GUILayout.Width(128));
@@ -39,81 +39,81 @@ namespace MMMaellon.FanCam
             }
             EditorGUILayout.EndHorizontal();
 
-            foreach (var fancam in FanCam.All)
-            {
-                if (fancam.manager == target)
-                {
-                    managedFanCams.Add(fancam);
-                }
-                else if (fancam.manager == null)
-                {
-                    nullFanCams.Add(fancam);
-                }
-                else
-                {
-                    otherFanCams.Add(fancam);
-                }
-            }
-
-            fanCamFoldout = EditorGUILayout.Foldout(fanCamFoldout, $"FanCams ({managedFanCams.Count + nullFanCams.Count + otherFanCams.Count})", true);
-            EditorGUI.indentLevel++;
-            if (fanCamFoldout)
-            {
-                managedFanCamFoldout = EditorGUILayout.Foldout(managedFanCamFoldout, $"This manager ({managedFanCams.Count})", true);
-                if (managedFanCamFoldout)
-                {
-                    foreach (var fancam in managedFanCams)
-                    {
-                        if (fancam.manager == target)
-                        {
-                            EditorGUILayout.BeginHorizontal();
-                            EditorGUI.BeginDisabledGroup(true);
-                            EditorGUILayout.LabelField(fancam.Id.ToString(), GUILayout.Width(42));
-                            EditorGUILayout.ObjectField(fancam, typeof(FanCam), true);
-                            EditorGUI.EndDisabledGroup();
-                            if (GUILayout.Button("Remove FanCam manager"))
-                            {
-                                SerializedObject so = new(fancam);
-                                Undo.SetCurrentGroupName("Remove FanCam");
-                                so.FindProperty("manager").objectReferenceValue = null;
-                                so.ApplyModifiedProperties();
-                            }
-                            EditorGUILayout.EndHorizontal();
-                        }
-                    }
-                }
-                otherFanCamFoldout = EditorGUILayout.Foldout(otherFanCamFoldout, $"Other ({nullFanCams.Count + otherFanCams.Count})", true);
-                if (otherFanCamFoldout)
-                {
-                    Color ogColor = GUI.backgroundColor;
-                    foreach (var fancam in nullFanCams.Concat(otherFanCams))
-                    {
-                        EditorGUILayout.BeginHorizontal();
-                        EditorGUI.BeginDisabledGroup(true);
-                        EditorGUILayout.LabelField(fancam.Id.ToString(), GUILayout.Width(42));
-                        EditorGUILayout.ObjectField(fancam, typeof(FanCam), true);
-                        if (fancam.manager == null)
-                        {
-                            GUI.backgroundColor = Color.blue;
-                        }
-                        EditorGUILayout.ObjectField(fancam.manager, typeof(FanCamManager), true);
-                        EditorGUI.EndDisabledGroup();
-                        if (fancam.manager == null)
-                        {
-                            GUI.backgroundColor = ogColor;
-                        }
-                        if (GUILayout.Button("Set manager"))
-                        {
-                            SerializedObject so = new(fancam);
-                            Undo.SetCurrentGroupName("Set FanCam Manager");
-                            so.FindProperty("manager").objectReferenceValue = target;
-                            so.ApplyModifiedProperties();
-                        }
-                        EditorGUILayout.EndHorizontal();
-                    }
-                }
-            }
-            EditorGUI.indentLevel--;
+            // foreach (var fancam in FanCam.All)
+            // {
+            //     if (fancam.manager == target)
+            //     {
+            //         managedFanCams.Add(fancam);
+            //     }
+            //     else if (fancam.manager == null)
+            //     {
+            //         nullFanCams.Add(fancam);
+            //     }
+            //     else
+            //     {
+            //         otherFanCams.Add(fancam);
+            //     }
+            // }
+            //
+            // fanCamFoldout = EditorGUILayout.Foldout(fanCamFoldout, $"FanCams ({managedFanCams.Count + nullFanCams.Count + otherFanCams.Count})", true);
+            // EditorGUI.indentLevel++;
+            // if (fanCamFoldout)
+            // {
+            //     managedFanCamFoldout = EditorGUILayout.Foldout(managedFanCamFoldout, $"This manager ({managedFanCams.Count})", true);
+            //     if (managedFanCamFoldout)
+            //     {
+            //         foreach (var fancam in managedFanCams)
+            //         {
+            //             if (fancam.manager == target)
+            //             {
+            //                 EditorGUILayout.BeginHorizontal();
+            //                 EditorGUI.BeginDisabledGroup(true);
+            //                 EditorGUILayout.LabelField(fancam.Id.ToString(), GUILayout.Width(42));
+            //                 EditorGUILayout.ObjectField(fancam, typeof(FanCam), true);
+            //                 EditorGUI.EndDisabledGroup();
+            //                 if (GUILayout.Button("Remove FanCam manager"))
+            //                 {
+            //                     SerializedObject so = new(fancam);
+            //                     Undo.SetCurrentGroupName("Remove FanCam");
+            //                     so.FindProperty("manager").objectReferenceValue = null;
+            //                     so.ApplyModifiedProperties();
+            //                 }
+            //                 EditorGUILayout.EndHorizontal();
+            //             }
+            //         }
+            //     }
+            //     otherFanCamFoldout = EditorGUILayout.Foldout(otherFanCamFoldout, $"Other ({nullFanCams.Count + otherFanCams.Count})", true);
+            //     if (otherFanCamFoldout)
+            //     {
+            //         Color ogColor = GUI.backgroundColor;
+            //         foreach (var fancam in nullFanCams.Concat(otherFanCams))
+            //         {
+            //             EditorGUILayout.BeginHorizontal();
+            //             EditorGUI.BeginDisabledGroup(true);
+            //             EditorGUILayout.LabelField(fancam.Id.ToString(), GUILayout.Width(42));
+            //             EditorGUILayout.ObjectField(fancam, typeof(FanCam), true);
+            //             if (fancam.manager == null)
+            //             {
+            //                 GUI.backgroundColor = Color.blue;
+            //             }
+            //             EditorGUILayout.ObjectField(fancam.manager, typeof(FanCamManager), true);
+            //             EditorGUI.EndDisabledGroup();
+            //             if (fancam.manager == null)
+            //             {
+            //                 GUI.backgroundColor = ogColor;
+            //             }
+            //             if (GUILayout.Button("Set manager"))
+            //             {
+            //                 SerializedObject so = new(fancam);
+            //                 Undo.SetCurrentGroupName("Set FanCam Manager");
+            //                 so.FindProperty("manager").objectReferenceValue = target;
+            //                 so.ApplyModifiedProperties();
+            //             }
+            //             EditorGUILayout.EndHorizontal();
+            //         }
+            //     }
+            // }
+            // EditorGUI.indentLevel--;
         }
     }
 }

@@ -11,6 +11,9 @@
     },
     "befuddledlabs.linuxvrchatsdkpatch-worlds": {
       "version": "0.3.0"
+    },
+    "com.mmmaellon.smartobjectsync": {
+      "version": "3.10.16"
     }
   },
   "locked": {
@@ -45,6 +48,12 @@
       "version": "0.3.0",
       "dependencies": {
         "com.vrchat.base": "^3.9.0"
+      }
+    },
+    "com.mmmaellon.smartobjectsync": {
+      "version": "3.10.16",
+      "dependencies": {
+        "com.vrchat.worlds": "^3.4.0"
       }
     }
   }

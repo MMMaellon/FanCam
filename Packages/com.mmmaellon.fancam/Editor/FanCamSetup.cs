@@ -18,7 +18,6 @@ namespace MMMaellon.FanCam
 
         static void OnChangesPublished(ref ObjectChangeEventStream stream)
         {
-            FanCam.MarkDirty();
         }
 
         static void OnPlayModeStateChanged(PlayModeStateChange state)
@@ -37,28 +36,44 @@ namespace MMMaellon.FanCam
             }
 
             int counter = 0;
-            foreach (var fancam in FanCam.All)
+            foreach (var fancam in GetAll<FanCam>())
             {
                 counter++;
                 var so = new SerializedObject(fancam);
                 Undo.SetCurrentGroupName("FanCam Setup");
                 so.FindProperty("_id").intValue = counter;
-                so.FindProperty("_isPlayerObject").boolValue = fancam.CheckForPlayerObj();
                 so.ApplyModifiedProperties();
             }
-
-            foreach (var menu in FanCamMenu.All)
+            //
+            //     foreach (var menu in FanCamMenu.All)
+            //     {
+            //         if (Utilities.IsValid(menu.manager))
+            //         {
+            //             menu.manager.AddMenu(menu);
+            //         }
+            //     }
+            //
+            //     foreach (var picBtn in GetAll<FanCamPictureButton>())
+            //     {
+            //         picBtn.Setup();
+            //     }
+            foreach (var switcher in GetAll<FanCamSwitcher>())
             {
-                if (Utilities.IsValid(menu.manager))
-                {
-                    menu.manager.AddMenu(menu);
-                }
+                switcher.Setup();
             }
+        }
+
+        public static T[] GetAll<T>() where T : Object
+        {
+            if (Application.isPlaying || PrefabStageUtility.GetCurrentPrefabStage() != null)
+            {
+                return new T[0];
+            }
+            return Object.FindObjectsOfType<T>(true);
         }
 
         public bool OnBuildRequested(VRCSDKRequestedBuildType requestedBuildType)
         {
-            // throw new System.NotImplementedException();
             if (requestedBuildType == VRCSDKRequestedBuildType.Scene && AutoSetup)
             {
                 Setup();

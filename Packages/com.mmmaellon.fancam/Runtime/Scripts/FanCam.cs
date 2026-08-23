@@ -18,12 +18,9 @@ namespace MMMaellon.FanCam
     [RequireComponent(typeof(Animator))]
     public class FanCam : UdonSharpBehaviour
     {
-        [SerializeField]
-        bool _isPlayerObject = false;
-        public bool IsPlayerObject
-        {
-            get => _isPlayerObject;
-        }
+        private readonly int RecHash = Animator.StringToHash("rec");
+        private readonly int EditHash = Animator.StringToHash("edit");
+        private readonly int ZoomHash = Animator.StringToHash("zoom");
         public FanCamManager manager;
         public CinemachineVirtualCamera virtualCam;
         public Animator animator;
@@ -43,18 +40,49 @@ namespace MMMaellon.FanCam
                     RequestSerialization();
                 }
 
-                //PlayerObjects get negative Ids starting from -1
-                if (IsPlayerObject)
-                {
-                    if (value < 0)
-                    {
-                        manager.AddFanCam(this);
-                    }
-                }
                 //Non player objects get positive Ids starting from 1
-                else if (value > 0)
+                // manager.AddFanCam(this);
+            }
+        }
+
+        public bool Rec
+        {
+            get => manager.ActiveCamIndex == Id;
+            set
+            {
+                if (value)
                 {
-                    manager.AddFanCam(this);
+                    virtualCam.Priority = 1001;
+                }
+                else
+                {
+                    virtualCam.Priority = 0;
+                }
+            }
+        }
+
+        public bool RecVisual
+        {
+            get => animator.GetBool(RecHash);
+            set
+            {
+                animator.SetBool(RecHash, value);
+            }
+        }
+
+        [UdonSynced]
+        [System.NonSerialized]
+        bool _edit = false;
+        public bool Edit
+        {
+            get => _edit;
+            set
+            {
+                _edit = value;
+                animator.SetBool(EditHash, value && IsOwnerLocal());
+                if (IsOwnerLocal())
+                {
+                    RequestSerialization();
                 }
             }
         }
@@ -62,32 +90,15 @@ namespace MMMaellon.FanCam
         VRCPlayerApi owner;
         void Start()
         {
-            OnDisableCam();
+            Rec = Rec;
+            Edit = Edit;
             owner = Networking.GetOwner(gameObject);
-            if (IsPlayerObject)
-            {
-                Debug.LogWarning("[FANCAM] Player Object detected");
-                if (IsOwnerLocal())
-                {
-                    Id = (owner.playerId * -10000) - Id;
-                }
-            }
-            else
-            {
-                Id = Id;
-            }
-#if !COMPILER_UDONSHARP && UNITY_EDITOR
-            _dirty = true;
-#endif
+            Id = Id;
         }
-        void OnDestroy()
-        {
-            Debug.LogWarning("ASDF");
-            manager.RemoveFanCam(this);
-#if !COMPILER_UDONSHARP && UNITY_EDITOR
-            _dirty = true;
-#endif
-        }
+        // void OnDestroy()
+        // {
+        //     manager.RemoveFanCam(this);
+        // }
         public VRCPlayerApi Owner
         {
             get => owner;
@@ -113,79 +124,22 @@ namespace MMMaellon.FanCam
 
         }
 
-        public void Click()
-        {
-            if (!CamActive)
-            {
-                EnableCam();
-            }
-            else
-            {
-                ToggleTarget();
-            }
-        }
-
-        public void OnEnableCam()
-        {
-            // virtualCam.enabled = true;
-            virtualCam.Priority = 1001;
-        }
-        public void OnDisableCam()
-        {
-            // virtualCam.enabled = false;
-            virtualCam.Priority = 0;
-        }
-        public bool CamActive
-        {
-            get => virtualCam.Priority > 0;
-        }
+        // public void Click()
+        // {
+        //     if (!CamActive)
+        //     {
+        //         EnableCam();
+        //     }
+        //     else
+        //     {
+        //         ToggleTarget();
+        //     }
+        // }
 
 #if !COMPILER_UDONSHARP && UNITY_EDITOR
-        public bool CheckForPlayerObj()
-        {
-            var playerObj = GetComponent<VRCPlayerObject>();
-            if (!Utilities.IsValid(playerObj))
-            {
-                playerObj = GetComponentInParent<VRCPlayerObject>();
-            }
-            return Utilities.IsValid(playerObj);
-        }
-
-        public static bool Dirty
-        {
-            get => _dirty;
-        }
-        static bool _dirty = true;
         void Reset()
         {
-            _dirty = true;
             animator = GetComponent<Animator>();
-        }
-        public static void MarkDirty()
-        {
-            _dirty = true;
-        }
-        static FanCam[] allFanCams = { };
-        public static FanCam[] All
-        {
-            get
-            {
-                if (Application.isPlaying || PrefabStageUtility.GetCurrentPrefabStage() != null)
-                {
-                    return new FanCam[0];
-                }
-                if (_dirty)
-                {
-                    // Debug.LogWarning("Updating Fan Cam List");
-                    allFanCams = FindObjectsOfType<FanCam>(true);
-                    _dirty = false;
-                }
-                return allFanCams;
-            }
-        }
-        void OnValidate()
-        {
-            _dirty = true;
         }
 #endif 
 
@@ -239,10 +193,10 @@ namespace MMMaellon.FanCam
 
         public float AnimatorZoom
         {
-            get => Mathf.Pow(animator.GetFloat("Zoom"), 2f);
+            get => Mathf.Pow(animator.GetFloat(ZoomHash), 2f);
             set
             {
-                animator.SetFloat("Zoom", Mathf.Pow(value, 0.5f));
+                animator.SetFloat(ZoomHash, Mathf.Pow(value, 0.5f));
             }
         }
 

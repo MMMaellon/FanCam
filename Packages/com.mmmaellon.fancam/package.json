@@ -1,7 +1,7 @@
 {
     "name": "com.mmmaellon.fancam",
     "displayName": "FanCam",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "unity": "2022.3",
     "description": "",
     "url": "https://github.com/MMMaellon/fancam.git",
@@ -13,7 +13,8 @@
         "url": "https://twitter.com/MMMaellon"
     },
     "vpmDependencies": {
-        "com.vrchat.worlds": "^3.5.2"
+        "com.vrchat.worlds": "^3.5.2",
+        "com.mmmaellon.smartobjectsync": "^3.10.16"
     },
     "samples": [
         {
