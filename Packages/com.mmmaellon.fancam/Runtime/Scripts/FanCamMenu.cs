@@ -11,139 +11,90 @@ namespace MMMaellon.FanCam
     [RequireComponent(typeof(Animator))]
     public class FanCamMenu : UdonSharpBehaviour
     {
-        private int VisibleHash = Animator.StringToHash("visible");
-        public Animator animator;
         public FanCamManager manager;
-        public VRC_Pickup pickup;
-        public bool startVisible = true;
-        void Reset()
+        public Animator animator;
+#if !COMPILER_UDONSHARP && UNITY_EDITOR
+        public void Reset()
         {
             animator = GetComponent<Animator>();
         }
-
-#if !COMPILER_UDONSHARP && UNITY_EDITOR
-        public static FanCamMenu[] All
-        {
-            get
-            {
-                return FindObjectsOfType<FanCamMenu>(true);
-            }
-        }
 #endif
-
-        public void OnManagerUpdate()
+        public void Start()
         {
-
+            manager.menu = this;
         }
 
-        VRCPlayerApi localPlayer;
-        void Start()
+        public void Cam0()
         {
-            localPlayer = Networking.LocalPlayer;
-            Debug.LogWarning("Start - launching loop");
-            SendCustomEventDelayedFrames(nameof(Loop), 0, VRC.Udon.Common.Enums.EventTiming.LateUpdate);
-            if (startVisible)
+            manager.Cam0();
+        }
+        public void Cam1()
+        {
+            manager.Cam1();
+        }
+        public void Cam2()
+        {
+            manager.Cam2();
+        }
+        public void Cam3()
+        {
+            manager.Cam3();
+        }
+        public void Cam4()
+        {
+            manager.Cam4();
+        }
+        public void Cam5()
+        {
+            manager.Cam5();
+        }
+        public void Cam6()
+        {
+            manager.Cam6();
+        }
+        public void Cam7()
+        {
+            manager.Cam7();
+        }
+        public void Cam8()
+        {
+            manager.Cam8();
+        }
+        public void Cam9()
+        {
+            manager.Cam9();
+        }
+
+        public string cameraControlsParameter = "camera controls";
+        public void CameraSwitcherBtn()
+        {
+            if (animator.GetInteger(cameraControlsParameter) == 2)
             {
-                ToggleOnMenu();
+
+                animator.SetInteger(cameraControlsParameter, 0);
             }
             else
             {
-                ToggleOffMenu();
+                animator.SetInteger(cameraControlsParameter, 2);
             }
         }
 
-        public void Loop()
+        public void OperatorControlBtn()
         {
-            SendCustomEventDelayedFrames(nameof(Loop), 0, VRC.Udon.Common.Enums.EventTiming.LateUpdate);
-            // Debug.LogWarning("asdf");
-            if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.E))
+            if (animator.GetInteger(cameraControlsParameter) == 1)
             {
-                ToggleMenu();
-            }
-            else if (MenuVisible && Vector3.ProjectOnPlane(transform.position - localPlayer.GetPosition(), Vector3.up).magnitude > despawnDistance)
-            {
-                ToggleOffMenu();
-            }
-            // if (localPlayer.IsUserInVR())
-            // {
-            //
-            // }
-        }
 
-        float lastSecondNoInput = -1001;
-        public float doubleClickDuration = 0.5f;
-        public float doubleClickDistance = 0.2f;
-        Vector3 headPos;
-        public override void InputUse(bool value, VRC.Udon.Common.UdonInputEventArgs args)
-        {
-            if (!localPlayer.IsUserInVR())
-            {
-                return;
-            }
-            if (value)
-            {
-                headPos = localPlayer.GetTrackingData(VRCPlayerApi.TrackingDataType.Head).position;
-                float distance;
-                if (args.handType == VRC.Udon.Common.HandType.LEFT)
-                {
-                    distance = Vector3.Distance(headPos, localPlayer.GetTrackingData(VRCPlayerApi.TrackingDataType.LeftHand).position);
-
-                }
-                else
-                {
-                    distance = Vector3.Distance(headPos, localPlayer.GetTrackingData(VRCPlayerApi.TrackingDataType.RightHand).position);
-                }
-                if (distance <= doubleClickDistance)
-                {
-                    if (Time.timeSinceLevelLoad - lastSecondNoInput > doubleClickDuration)
-                    {
-                        lastSecondNoInput = Time.timeSinceLevelLoad;
-                    }
-                    else
-                    {
-                        ToggleMenu();
-                    }
-                }
-            }
-        }
-
-        public bool MenuVisible
-        {
-            get
-            {
-                return animator.GetBool(VisibleHash);
-            }
-        }
-
-        public void ToggleMenu()
-        {
-            if (MenuVisible)
-            {
-                ToggleOffMenu();
+                animator.SetInteger(cameraControlsParameter, 0);
             }
             else
             {
-                ToggleOnMenu();
+                animator.SetInteger(cameraControlsParameter, 1);
             }
         }
 
-        VRCPlayerApi.TrackingData localHeadTracking;
-        public float spawnDistance = 0.5f;
-        public float despawnDistance = 3f;
-        public float spawnHeight = -0.1f;
-        public void ToggleOnMenu()
+        public void BecomeDirectorBtn()
         {
-            localHeadTracking = localPlayer.GetTrackingData(VRCPlayerApi.TrackingDataType.Head);
-            transform.SetPositionAndRotation(localHeadTracking.position + localHeadTracking.rotation * new Vector3(0, spawnHeight, spawnDistance), localHeadTracking.rotation);
-            animator.SetBool(VisibleHash, true);
-            pickup.Drop();
-            pickup.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
-        }
-
-        public void ToggleOffMenu()
-        {
-            pickup.Drop();
-            animator.SetBool(VisibleHash, false);
+            manager.TakeOwnership();
         }
     }
 }

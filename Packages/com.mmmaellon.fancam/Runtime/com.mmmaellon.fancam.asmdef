@@ -8,7 +8,8 @@
         "UdonSharp.Runtime",
         "UdonSharp.Editor",
         "Unity.TextMeshPro",
-        "Cinemachine"
+        "Cinemachine",
+        "com.mmmaellon.smartobjectsync"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

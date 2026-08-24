@@ -5,7 +5,9 @@
     "unity": "2022.3",
     "description": "",
     "url": "https://github.com/MMMaellon/fancam.git",
-    "dependencies": {},
+    "dependencies": {
+        "com.unity.textmeshpro": "^3.0.0"
+    },
     "gitDependencies": {},
     "author": {
         "name": "MMMaellon",

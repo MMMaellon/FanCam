@@ -35,31 +35,9 @@ namespace MMMaellon.FanCam
                 return;
             }
 
-            int counter = 0;
-            foreach (var fancam in GetAll<FanCam>())
+            foreach (var fancamManager in GetAll<FanCamManager>())
             {
-                counter++;
-                var so = new SerializedObject(fancam);
-                Undo.SetCurrentGroupName("FanCam Setup");
-                so.FindProperty("_id").intValue = counter;
-                so.ApplyModifiedProperties();
-            }
-            //
-            //     foreach (var menu in FanCamMenu.All)
-            //     {
-            //         if (Utilities.IsValid(menu.manager))
-            //         {
-            //             menu.manager.AddMenu(menu);
-            //         }
-            //     }
-            //
-            //     foreach (var picBtn in GetAll<FanCamPictureButton>())
-            //     {
-            //         picBtn.Setup();
-            //     }
-            foreach (var switcher in GetAll<FanCamSwitcher>())
-            {
-                switcher.Setup();
+                fancamManager.Setup();
             }
         }
 

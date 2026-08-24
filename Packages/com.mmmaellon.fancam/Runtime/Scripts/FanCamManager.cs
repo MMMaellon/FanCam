@@ -1,4 +1,5 @@
 ﻿
+using Cinemachine;
 using UdonSharp;
 using UnityEngine;
 using VRC.SDK3.Data;
@@ -10,60 +11,27 @@ namespace MMMaellon.FanCam
     [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
     public class FanCamManager : UdonSharpBehaviour
     {
-        private readonly int CamHash = Animator.StringToHash("cam");
+        public RenderTexture fullResRenderTexture;
+        public Camera realCamera;
+        public Camera previewCamera;
         public Animator animator;
-        [HideInInspector]
-        public DataDictionary fancams;
-        [UdonSynced, FieldChangeCallback(nameof(ActiveCamIndex))]
-        int _activeCamIndex = 0;
-        public int ActiveCamIndex
-        {
-            get => _activeCamIndex;
-            set
-            {
-                _activeCamIndex = value;
-                animator.SetInteger(CamHash, value);
-                if (IsOwnerLocal())
-                {
-                    RequestSerialization();
-                }
-
-                // if (fancams.TryGetValue(value, TokenType.Reference, out DataToken activeToken))
-                // {
-                //     var newCam = (FanCam)activeToken.Reference;
-                //     if (Utilities.IsValid(_activeCam))
-                //     {
-                //         if (newCam == _activeCam && _activeCam.Rec)
-                //         {
-                //             //Skip disabling and re-enabling camera.
-                //             return;
-                //         }
-                //         _activeCam.Rec = false;
-                //     }
-                //     _activeCam = newCam;
-                //     if (Utilities.IsValid(_activeCam))
-                //     {
-                //         Debug.LogWarning($"Active Cam set to {_activeCam.name}");
-                //         _activeCam.Rec = true;
-                //     }
-                // }
-                // else
-                // {
-                //     Debug.LogWarning($"Warning: FanCam failed to set the active camera to {value} from manager. Assuming it's a timing issue, we'll wait for the FanCam's network update");
-                //     Debug.LogWarning($"There are {fancams.Count} fan cams.");
-                // }
-            }
-        }
-        // FanCam _activeCam = null;
-        // public FanCam ActiveCam
-        // {
-        //     get => _activeCam;
-        // }
+        private readonly int OwnerHash = Animator.StringToHash("owner");
+        private readonly int camParameterHash = Animator.StringToHash("cam");
+        CinemachineVirtualCameraBase switcher;
+        public FanCam[] fanCams;
+        public FanCamMenu menu;
+        public FanCamCameraMenu camMenu;
 
         VRCPlayerApi owner;
         public void OnEnable()
         {
             owner = Networking.GetOwner(gameObject);
+            animator.SetBool(OwnerHash, IsOwnerLocal());
+            if (Utilities.IsValid(menu))
+            {
+                menu.animator.SetBool(OwnerHash, IsOwnerLocal());
+            }
+            ActiveCam = ActiveCam;
         }
         public VRCPlayerApi Owner
         {
@@ -72,33 +40,46 @@ namespace MMMaellon.FanCam
         public override void OnOwnershipTransferred(VRCPlayerApi player)
         {
             owner = player;
+            animator.SetBool(OwnerHash, IsOwnerLocal());
+            if (Utilities.IsValid(menu))
+            {
+                menu.animator.SetBool(OwnerHash, IsOwnerLocal());
+            }
         }
-
         public bool IsOwnerLocal()
         {
             return Utilities.IsValid(owner) && owner.isLocal;
         }
+        [UdonSynced]
+        [System.NonSerialized]
+        [FieldChangeCallback(nameof(ActiveCam))]
+        int _cam = 0;
 
-        // public void AddFanCam(FanCam newCam)
-        // {
-        //     if (fancams.ContainsKey(newCam.Id))
-        //     {
-        //         Debug.LogWarning($"[FANCAM] Fan cam with conflicting Id {newCam.Id} tried to add itself to the manager");
-        //         return;
-        //     }
-        //     fancams.Add(newCam.Id, newCam);
-        //     ActiveCamIndex = ActiveCamIndex;
-        // }
-        //
-        // public void RemoveFanCam(FanCam oldCam)
-        // {
-        //     if (oldCam == ActiveCam && IsOwnerLocal())
-        //     {
-        //         ActiveCamIndex = 0;
-        //     }
-        //     fancams.Remove(oldCam.Id);
-        //     ActiveCamIndex = ActiveCamIndex;
-        // }
+        public int ActiveCam
+        {
+            get => _cam;
+            set
+            {
+                if (_cam >= 0 && _cam < fanCams.Length && Utilities.IsValid(fanCams[_cam]))
+                {
+                    fanCams[_cam].Rec = false;
+                }
+                _cam = value;
+                animator.SetInteger(camParameterHash, value);
+                if (Utilities.IsValid(menu))
+                {
+                    menu.animator.SetInteger(camParameterHash, value);
+                }
+                if (_cam >= 0 && _cam < fanCams.Length && Utilities.IsValid(fanCams[_cam]))
+                {
+                    fanCams[_cam].Rec = true;
+                }
+                if (IsOwnerLocal())
+                {
+                    RequestSerialization();
+                }
+            }
+        }
 
         DataDictionary playerTargets = new DataDictionary();
         public DataDictionary PlayerTargets
@@ -118,47 +99,175 @@ namespace MMMaellon.FanCam
                 return;
             }
             playerTargets.Remove(playerId);
-            var fanCamlist = fancams.GetValues();
-            for (int i = 0; i < fanCamlist.Count; i++)
+        }
+
+        public void Cam1()
+        {
+            if (!IsOwnerLocal())
             {
-                var fanCam = (FanCam)fanCamlist[i].Reference;
-                if (Utilities.IsValid(fanCam) && fanCam.IsOwnerLocal() && fanCam.TargetPlayerId == playerId)
-                {
-                    fanCam.TargetPlayerId = -1001;
-                }
+                return;
+            }
+            ActiveCam = 1;
+        }
+        public void Cam2()
+        {
+            if (!IsOwnerLocal())
+            {
+                return;
+            }
+            ActiveCam = 2;
+        }
+        public void Cam3()
+        {
+            if (!IsOwnerLocal())
+            {
+                return;
+            }
+            ActiveCam = 3;
+        }
+        public void Cam4()
+        {
+            if (!IsOwnerLocal())
+            {
+                return;
+            }
+            ActiveCam = 4;
+        }
+        public void Cam5()
+        {
+            if (!IsOwnerLocal())
+            {
+                return;
+            }
+            ActiveCam = 5;
+        }
+        public void Cam6()
+        {
+            if (!IsOwnerLocal())
+            {
+                return;
+            }
+            ActiveCam = 6;
+        }
+        public void Cam7()
+        {
+            if (!IsOwnerLocal())
+            {
+                return;
+            }
+            ActiveCam = 7;
+        }
+        public void Cam8()
+        {
+            if (!IsOwnerLocal())
+            {
+                return;
+            }
+            ActiveCam = 8;
+        }
+        public void Cam9()
+        {
+            if (!IsOwnerLocal())
+            {
+                return;
+            }
+            ActiveCam = 9;
+        }
+        public void Cam0()
+        {
+            if (!IsOwnerLocal())
+            {
+                return;
+            }
+            ActiveCam = 0;
+        }
+
+        public void UpdateEdit(FanCam fanCam)
+        {
+
+        }
+
+        public void TakeOwnership()
+        {
+            Networking.SetOwner(Networking.LocalPlayer, gameObject);
+        }
+
+        public void Setup()
+        {
+            for (int i = 0; i < fanCams.Length; i++)
+            {
+                fanCams[i].Id = i;
+                fanCams[i].manager = this;
             }
         }
 
-        // DataList menus;
-        // public void AddMenu(FanCamMenu menu)
-        // {
-        //     menus.Add(menu);
-        // }
-        // public void RemoveMenu(FanCamMenu menu)
-        // {
-        //     menus.Remove(menu);
-        // }
-        //
-        // public override void OnDeserialization(VRC.Udon.Common.DeserializationResult result)
-        // {
-        //     for (int i = 0; i < menus.Count; i++)
-        //     {
-        //         if (menus.TryGetValue(i, TokenType.Reference, out DataToken menuToken))
-        //         {
-        //             ((FanCamMenu)menuToken.Reference).OnManagerUpdate();
-        //         }
-        //     }
-        // }
-        //
-        // public override void OnPreSerialization()
-        // {
-        //     for (int i = 0; i < menus.Count; i++)
-        //     {
-        //         if (menus.TryGetValue(i, TokenType.Reference, out DataToken menuToken))
-        //         {
-        //             ((FanCamMenu)menuToken.Reference).OnManagerUpdate();
-        //         }
-        //     }
-        // }
+        int lastPreview = -1001;
+        [System.NonSerialized]
+        DataList previewList = new DataList();
+        int previewCounter = 0;
+        public void PreviewLoop()
+        {
+            if (lastPreview == Time.renderedFrameCount)
+            {
+                return;
+            }
+            if (!previewCamera.enabled)
+            {
+                return;
+            }
+            SendCustomEventDelayedFrames(nameof(PreviewLoop), 0);
+            previewCounter = (previewCounter + 1) % previewList.Count;
+            if (previewList.TryGetValue(previewCounter, TokenType.Reference, out var previewTargetRef))
+            {
+                var previewTarget = (FanCam)previewTargetRef.Reference;
+                previewTarget.RenderPreview();
+            }
+        }
+
+        public void AddToPreviewList(FanCam fanCam)
+        {
+            // if (previewList.Contains(fanCam))
+            // {
+            //     return;
+            // }
+            previewList.Add(fanCam);
+            previewCamera.enabled = true;
+            SendCustomEventDelayedFrames(nameof(PreviewLoop), 0);
+        }
+
+        public void RemoveFromPreviewList(FanCam fanCam)
+        {
+            // if (fanCam.Held)
+            // {
+            //     return;
+            // }
+            previewList.Remove(fanCam);
+            if (previewList.Count == 0)
+            {
+                previewCamera.enabled = false;
+            }
+        }
+
+        public void OnGridEnable()
+        {
+            foreach (var fanCam in fanCams)
+            {
+                previewList.Add(fanCam);
+            }
+            previewCamera.enabled = true;
+            SendCustomEventDelayedFrames(nameof(PreviewLoop), 0);
+        }
+
+        public void OnGridDisable()
+        {
+            foreach (var fanCam in fanCams)
+            {
+                previewList.Remove(fanCam);
+            }
+            if (previewList.Count == 0)
+            {
+                previewCamera.enabled = false;
+            }
+        }
     }
 }

@@ -39,6 +39,8 @@ namespace MMMaellon.FanCam
             }
             EditorGUILayout.EndHorizontal();
 
+            base.OnInspectorGUI();
+
             // foreach (var fancam in FanCam.All)
             // {
             //     if (fancam.manager == target)
