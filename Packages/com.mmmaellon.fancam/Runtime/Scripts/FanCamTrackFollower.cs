@@ -109,25 +109,20 @@ namespace MMMaellon.FanCam
         bool firstPreview = true;
         public void PreviewLoop()
         {
-            Debug.LogWarning("PREVIEW LOOP");
             if (!Utilities.IsValid(previewPos))
             {
-                Debug.LogWarning("Preview Pos was invalid");
                 return;
             }
 
             if (firstPreview)
             {
-                Debug.LogWarning("Creating preview handle for the first time");
                 previewHandle = VRCTween.TweenPosition(transform, previewPos.transform.position, 0.2f, VRCTweenEase.OutSine);
                 previewHandle.OnComplete(this, nameof(PreviewLoop));
             }
             else
             {
-                Debug.LogWarning("Changing end value of previewHandle");
                 previewHandle.ChangeEndValue(previewPos.transform.position, true);
             }
-            Debug.LogWarning("Calling Play");
             previewHandle.Play();
         }
     }

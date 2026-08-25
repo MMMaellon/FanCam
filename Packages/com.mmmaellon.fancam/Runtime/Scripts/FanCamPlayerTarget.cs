@@ -37,7 +37,6 @@ namespace MMMaellon.FanCam
         bool tracking = false;
         public void TrackPlayer()
         {
-            Debug.LogWarning("UpdatePos " + name);
             if (!tracking || !Utilities.IsValid(_target))
             {
                 if (fanCam.TargetPlayerId >= 0)

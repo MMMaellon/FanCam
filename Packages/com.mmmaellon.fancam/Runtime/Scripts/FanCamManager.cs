@@ -245,11 +245,16 @@ namespace MMMaellon.FanCam
             {
                 previewCamera.enabled = true;
                 HeldFanCam.RenderPreview();
+                if (Utilities.IsValid(menu) && menu.editorFanCam != HeldFanCam)
+                {
+                    menu.editPreview.enabled = false;
+                }
             }
-            else if (Utilities.IsValid(EditFanCam) && menu.AreEditorControlsVisible())
+            else if (Utilities.IsValid(menu) && Utilities.IsValid(menu.editorFanCam) && menu.AreEditorControlsVisible())
             {
                 previewCamera.enabled = true;
-                EditFanCam.RenderPreview();
+                menu.editPreview.enabled = true;
+                menu.editorFanCam.RenderPreview();
             }
             else
             {

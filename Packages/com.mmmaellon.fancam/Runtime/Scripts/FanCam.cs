@@ -239,7 +239,7 @@ namespace MMMaellon.FanCam
                 propertyBlock.SetTexture("_MainTex", localPreview);
                 previewMesh.SetPropertyBlock(propertyBlock, previewMeshMaterialSlot);
             }
-            else if (manager.EditFanCam == this && manager.menu.AreCameraPreviewsVisible() && !Utilities.IsValid(manager.HeldFanCam))
+            else if (Utilities.IsValid(manager.menu) && manager.menu.editorFanCam == this && manager.menu.AreEditorControlsVisible() && !Utilities.IsValid(manager.HeldFanCam))
             {
                 propertyBlock.SetTexture("_MainTex", localPreview);
                 previewMesh.SetPropertyBlock(propertyBlock, previewMeshMaterialSlot);
@@ -371,11 +371,9 @@ namespace MMMaellon.FanCam
 
         public void ZoomIn()
         {
-            Debug.LogWarning("ZoomIn");
             if (!IsOwnerLocal())
             {
 
-                Debug.LogWarning("I'm not owner?");
                 if (pickupControllerPickup.IsHeld())
                 {
                     return;
@@ -388,7 +386,6 @@ namespace MMMaellon.FanCam
 
         public void ZoomOut()
         {
-            Debug.LogWarning("ZoomOut");
             if (!IsOwnerLocal())
             {
                 if (pickupControllerPickup.IsHeld())
@@ -403,7 +400,6 @@ namespace MMMaellon.FanCam
 
         public void StopZoom()
         {
-            Debug.LogWarning("StopZoom");
             if (!IsOwnerLocal())
             {
                 if (pickupControllerPickup.IsHeld())

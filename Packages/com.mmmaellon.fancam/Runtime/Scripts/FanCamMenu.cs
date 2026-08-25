@@ -24,6 +24,7 @@ namespace MMMaellon.FanCam
         public TMP_Dropdown playerTrackingDropdown;
         public Animator animator;
         public TextMeshProUGUI ownerNameTMP;
+        public RawImage editPreview;
 #if !COMPILER_UDONSHARP && UNITY_EDITOR
         public void Reset()
         {
@@ -132,16 +133,13 @@ namespace MMMaellon.FanCam
             return animator.GetInteger(cameraControlsParameter) == 1 && gameObject.activeInHierarchy && enabled;
         }
 
-        FanCam editorFanCam;
+        [System.NonSerialized]
+        public FanCam editorFanCam;
         public void OnChangeEditorDropdown()
         {
             if (editorDropdown.value >= 0 && editorDropdown.value < manager.fanCams.Length)
             {
                 editorFanCam = manager.fanCams[editorDropdown.value];
-                if (editorFanCam.Edit)
-                {
-                    manager.EditFanCam = editorFanCam;
-                }
             }
             else
             {
@@ -156,8 +154,14 @@ namespace MMMaellon.FanCam
             if (!Utilities.IsValid(editorFanCam))
             {
                 animator.SetBool(EditHash, false);
+                editPreview.texture = null;
                 return;
             }
+            if (editorFanCam.Edit)
+            {
+                manager.EditFanCam = editorFanCam;
+            }
+            editPreview.texture = editorFanCam.localPreview;
             animator.SetBool(EditHash, editorFanCam.Edit);
             animator.SetBool(EditOwnerHash, editorFanCam.IsOwnerLocal());
             animator.SetBool(EditDollyHash, editorFanCam.Dolly);
@@ -226,6 +230,18 @@ namespace MMMaellon.FanCam
             //         editorFanCam.pickupControllerPickup.TeleportToWorldSpace(position + rotation * editorTeleportOffset, rotation, Vector3.zero, Vector3.zero);
             //     }
             // }
+        }
+        public void SwitchBtn()
+        {
+            if (!manager.IsOwnerLocal())
+            {
+                return;
+            }
+            if (!Utilities.IsValid(editorFanCam))
+            {
+                return;
+            }
+            manager.ActiveCam = editorFanCam.Id;
         }
 
         public void OnChangePlayerTrackingDropdown()
