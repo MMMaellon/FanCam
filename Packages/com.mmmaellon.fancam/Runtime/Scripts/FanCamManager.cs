@@ -82,40 +82,40 @@ namespace MMMaellon.FanCam
             }
         }
 
-        DataDictionary playerTargets = new DataDictionary();
-        public DataDictionary PlayerTargets
-        {
-            get => playerTargets;
-        }
+        // DataDictionary playerTargets = new DataDictionary();
+        // public DataDictionary PlayerTargets
+        // {
+        //     get => playerTargets;
+        // }
 
-        public void AddPlayerTarget(FanCamPlayerTarget target)
-        {
-            playerTargets.Add(target.PlayerId, target);
-            if (Utilities.IsValid(menu))
-            {
-                menu.PopulatePlayerTrackingDropdown();
-            }
-        }
-
-        public void RemovePlayerTarget(int playerId)
-        {
-            if (playerId < 0)
-            {
-                return;
-            }
-            foreach (var fanCam in fanCams)
-            {
-                if (fanCam.IsOwnerLocal() && fanCam.TargetPlayerId == playerId)
-                {
-                    fanCam.TargetPlayerId = -1001;
-                }
-            }
-            playerTargets.Remove(playerId);
-            if (Utilities.IsValid(menu))
-            {
-                menu.PopulatePlayerTrackingDropdown();
-            }
-        }
+        // public void AddPlayerTarget(FanCamPlayerTarget target)
+        // {
+        //     playerTargets.Add(target.playerId, target);
+        //     if (Utilities.IsValid(menu))
+        //     {
+        //         menu.PopulatePlayerTrackingDropdown();
+        //     }
+        // }
+        //
+        // public void RemovePlayerTarget(int playerId)
+        // {
+        //     if (playerId < 0)
+        //     {
+        //         return;
+        //     }
+        //     foreach (var fanCam in fanCams)
+        //     {
+        //         if (fanCam.IsOwnerLocal() && fanCam.TargetPlayerId == playerId)
+        //         {
+        //             fanCam.TargetPlayerId = -1001;
+        //         }
+        //     }
+        //     playerTargets.Remove(playerId);
+        //     if (Utilities.IsValid(menu))
+        //     {
+        //         menu.PopulatePlayerTrackingDropdown();
+        //     }
+        // }
 
         public void Cam1()
         {
@@ -234,15 +234,16 @@ namespace MMMaellon.FanCam
             // {
             //     return;
             // }
-            previewCamera.enabled = true;
             if (Utilities.IsValid(menu) && menu.AreCameraPreviewsVisible())
             {
+                previewCamera.enabled = true;
                 previewCounter = (previewCounter + 1) % fanCams.Length;
                 fanCams[previewCounter].RenderPreview();
             }
             else
             if (Utilities.IsValid(HeldFanCam))
             {
+                previewCamera.enabled = true;
                 HeldFanCam.RenderPreview();
             }
             else
@@ -498,17 +499,21 @@ namespace MMMaellon.FanCam
 
         public override void InputLookVertical(float value, VRC.Udon.Common.UdonInputEventArgs args)
         {
-            if (!Networking.LocalPlayer.IsUserInVR())
+            if (!Networking.LocalPlayer.IsUserInVR() || !Utilities.IsValid(HeldFanCam))
             {
                 return;
             }
             if (value > 0.5f)
             {
-
+                HeldFanCam.ZoomIn();
             }
             else if (value < -0.5f)
             {
-
+                HeldFanCam.ZoomOut();
+            }
+            else
+            {
+                HeldFanCam.StopZoom();
             }
         }
     }

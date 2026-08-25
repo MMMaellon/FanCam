@@ -6,7 +6,6 @@ using VRC.SDK3.Components;
 using VRC.SDK3.Data;
 using VRC.SDKBase;
 using VRC.Udon;
-using Algolia.Search.Models.Rules;
 
 
 #if !COMPILER_UDONSHARP && UNITY_EDITOR
@@ -20,6 +19,7 @@ namespace MMMaellon.FanCam
     [RequireComponent(typeof(Animator))]
     public class FanCam : UdonSharpBehaviour
     {
+        private readonly int PlayerTrackingHash = Animator.StringToHash("player tracking");
         public RenderTexture localPreview;
         public Transform localPreviewParent;
         public MeshRenderer previewMesh;
@@ -37,6 +37,8 @@ namespace MMMaellon.FanCam
         public SmartObjectSync pickupControllerPickup;
         public SmartObjectSync[] dollyTrackPickups;
         public FanCamTrackFollower dollyTrack;
+        public FanCamPlayerTarget playerTarget;
+        public Transform FOVTracker;
 
         // [UdonSynced]
         [SerializeField]
@@ -200,6 +202,10 @@ namespace MMMaellon.FanCam
         }
         public void OnPickupListener(FanCamPickupListener listener)
         {
+            if (listener.gameObject == pickupControllerPickup.gameObject && pickupControllerPickup.IsLocalOwner())
+            {
+                Networking.SetOwner(Networking.LocalPlayer, gameObject);
+            }
             // localPreviewCamera.enabled = true;
             held = true;
             // manager.AddToPreviewList(this);
@@ -248,55 +254,96 @@ namespace MMMaellon.FanCam
         }
 #endif 
 
-        FanCamPlayerTarget target;
-        public FanCamPlayerTarget Target
-        {
-            get => target;
-        }
-
         Transform defaultStartTarget;
         Transform dollyStartTarget;
         [UdonSynced]
         [FieldChangeCallback(nameof(TargetPlayerId))]
         int targetId = -1001;
+        bool firstTarget = true;
         public int TargetPlayerId
         {
             get => targetId;
             set
             {
-                if (targetId < 0)
+                if (firstTarget)
                 {
                     defaultStartTarget = defaultCamera.LookAt;
                     dollyStartTarget = dollyCamera.LookAt;
+                    firstTarget = false;
                 }
                 targetId = value;
-                if (IsOwnerLocal())
+
+                playerTarget.Target = VRCPlayerApi.GetPlayerById(value);
+                if (Utilities.IsValid(playerTarget.Target))
                 {
-                    RequestSerialization();
-                }
-                if (manager.PlayerTargets.TryGetValue(value, TokenType.Reference, out DataToken token))
-                {
-                    target = (FanCamPlayerTarget)token.Reference;
-                    defaultCamera.LookAt = target.transform;
-                    dollyCamera.LookAt = target.transform;
+                    defaultCamera.LookAt = playerTarget.transform;
+                    dollyCamera.LookAt = playerTarget.transform;
+                    animator.SetBool(PlayerTrackingHash, true);
                 }
                 else
                 {
-                    target = null;
+                    playerTarget.Target = null;
+                    targetId = -1001;
                     defaultCamera.LookAt = defaultStartTarget;
                     dollyCamera.LookAt = dollyStartTarget;
+                    animator.SetBool(PlayerTrackingHash, false);
                 }
                 if (Utilities.IsValid(manager.menu))
                 {
                     manager.menu.UpdateEditor();
                 }
+                if (IsOwnerLocal())
+                {
+                    RequestSerialization();
+                }
             }
         }
+
+        public FanCamPlayerTarget FindPlayerTarget(VRCPlayerApi player)
+        {
+            var objects = Networking.GetPlayerObjects(player);
+            for (int i = 0; i < objects.Length; i++)
+            {
+                if (!Utilities.IsValid(objects[i])) continue;
+                FanCamPlayerTarget foundScript = objects[i].GetComponentInChildren<FanCamPlayerTarget>();
+                if (Utilities.IsValid(foundScript)) return foundScript;
+            }
+            return null;
+        }
+
+        // public void TrackPlayerTarget(FanCamPlayerTarget newTarget)
+        // {
+        //     if (targetId < 0)
+        //     {
+        //         defaultStartTarget = defaultCamera.LookAt;
+        //         dollyStartTarget = dollyCamera.LookAt;
+        //     }
+        //     if (Utilities.IsValid(newTarget))
+        //     {
+        //         targetId = newTarget.PlayerId;
+        //         target = newTarget;
+        //         defaultCamera.LookAt = target.transform;
+        //         dollyCamera.LookAt = target.transform;
+        //     }
+        //     else
+        //     {
+        //         targetId = -1001;
+        //         target = null;
+        //         defaultCamera.LookAt = defaultStartTarget;
+        //         dollyCamera.LookAt = dollyStartTarget;
+        //     }
+        //     if (Utilities.IsValid(manager.menu))
+        //     {
+        //         manager.menu.UpdateEditor();
+        //     }
+        //     animator.SetBool(PlayerTrackingHash, Utilities.IsValid(target));
+        // }
 
         public void RenderPreview()
         {
             manager.previewCamera.targetTexture = localPreview;
             manager.previewCamera.transform.SetParent(localPreviewParent, false);
+            manager.previewCamera.fieldOfView = FOVTracker.transform.localPosition.x;
         }
 
         [System.NonSerialized, UdonSynced, FieldChangeCallback(nameof(Zoom))]
@@ -307,7 +354,7 @@ namespace MMMaellon.FanCam
             set
             {
                 _zoom = Mathf.Clamp01(value);
-                if (Networking.LocalPlayer.IsOwner(gameObject))
+                if (IsOwnerLocal())
                 {
                     RequestSerialization();
                 }
@@ -319,8 +366,11 @@ namespace MMMaellon.FanCam
 
         public void ZoomIn()
         {
+            Debug.LogWarning("ZoomIn");
             if (!IsOwnerLocal())
             {
+
+                Debug.LogWarning("I'm not owner?");
                 if (pickupControllerPickup.IsHeld())
                 {
                     return;
@@ -333,6 +383,7 @@ namespace MMMaellon.FanCam
 
         public void ZoomOut()
         {
+            Debug.LogWarning("ZoomOut");
             if (!IsOwnerLocal())
             {
                 if (pickupControllerPickup.IsHeld())
@@ -347,6 +398,7 @@ namespace MMMaellon.FanCam
 
         public void StopZoom()
         {
+            Debug.LogWarning("StopZoom");
             if (!IsOwnerLocal())
             {
                 if (pickupControllerPickup.IsHeld())

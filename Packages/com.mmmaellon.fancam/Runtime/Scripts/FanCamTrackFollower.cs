@@ -12,6 +12,7 @@ namespace MMMaellon.FanCam
         public FanCamTrackPoint[] points;
         [System.NonSerialized]
         public Vector3[] wayPoints = { };
+        public SmartObjectSync targetBall;
         VRCTweenHandle pathHandle;
         VRCTweenHandle previewHandle;
 

@@ -119,10 +119,8 @@ namespace MMMaellon.FanCam
         FanCam editorFanCam;
         public void OnChangeEditorDropdown()
         {
-            Debug.LogWarning("ASDFASDFASDFASDFASDFASDF: " + editorDropdown.value);
             if (editorDropdown.value >= 0 && editorDropdown.value < manager.fanCams.Length)
             {
-                Debug.LogWarning("Getting fancam");
                 editorFanCam = manager.fanCams[editorDropdown.value];
                 if (editorFanCam.Edit)
                 {
@@ -131,7 +129,6 @@ namespace MMMaellon.FanCam
             }
             else
             {
-                Debug.LogWarning("Was null");
                 editorFanCam = null;
             }
             UpdateEditor();
@@ -157,18 +154,18 @@ namespace MMMaellon.FanCam
 
         public void SetPlayerTrackingDropdown()
         {
-            if (Utilities.IsValid(editorFanCam) && Utilities.IsValid(editorFanCam.Target))
+            if (Utilities.IsValid(editorFanCam) && Utilities.IsValid(editorFanCam.playerTarget.Target))
             {
-                for (int i = 0; i < playerTargetsCache.Length; i++)
+                for (int i = 0; i < playerIdCache.Length; i++)
                 {
-                    if (Utilities.IsValid(playerTargetsCache[i]) && playerTargetsCache[i].PlayerId == editorFanCam.TargetPlayerId)
+                    if (Utilities.IsValid(playerIdCache[i]) && playerIdCache[i] == editorFanCam.TargetPlayerId)
                     {
                         playerTrackingDropdown.SetValueWithoutNotify(i);
                         return;
                     }
                 }
             }
-            playerTrackingDropdown.SetValueWithoutNotify(playerTargetsCache.Length + 1);
+            playerTrackingDropdown.SetValueWithoutNotify(playerIdCache.Length + 1);
         }
 
         public Vector3 editorTeleportOffset = new Vector3(0, 1f, 1f);
@@ -185,6 +182,7 @@ namespace MMMaellon.FanCam
                     {
                         points[i].sync.TeleportToWorldSpace(position + rotation * editorTeleportOffset + rotation * Vector3.right * (i - points.Length / 2f), rotation, Vector3.zero, Vector3.zero);
                     }
+                    editorFanCam.dollyTrack.targetBall.Respawn();
                 }
                 else
                 {
@@ -220,9 +218,9 @@ namespace MMMaellon.FanCam
             {
                 return;
             }
-            if (playerTrackingDropdown.value >= 0 && playerTrackingDropdown.value < playerTargetsCache.Length)
+            if (playerTrackingDropdown.value >= 0 && playerTrackingDropdown.value < playerIdCache.Length)
             {
-                editorFanCam.TargetPlayerId = playerTargetsCache[playerTrackingDropdown.value].PlayerId;
+                editorFanCam.TargetPlayerId = playerIdCache[playerTrackingDropdown.value];
             }
             else
             {
@@ -230,22 +228,40 @@ namespace MMMaellon.FanCam
             }
         }
 
-        FanCamPlayerTarget[] playerTargetsCache = { };
+        int[] playerIdCache = { };
         string[] playerTargetOptions = { };
         public void PopulatePlayerTrackingDropdown()
         {
             playerTrackingDropdown.ClearOptions();
-            var targets = manager.PlayerTargets.GetValues();
-            playerTargetsCache = new FanCamPlayerTarget[targets.Count];
-            playerTargetOptions = new string[targets.Count + 1];
-            for (int i = 0; i < playerTargetsCache.Length; i++)
+            var players = VRCPlayerApi.GetPlayers();
+            playerIdCache = new int[players.Length];
+            playerTargetOptions = new string[players.Length + 1];
+            for (int i = 0; i < playerIdCache.Length; i++)
             {
-                playerTargetsCache[i] = (FanCamPlayerTarget)targets[i].Reference;
-                playerTargetOptions[i] = playerTargetsCache[i].Username;
+                if (Utilities.IsValid(players[i]))
+                {
+                    playerIdCache[i] = players[i].playerId;
+                    playerTargetOptions[i] = players[i].displayName;
+                }
+                else
+                {
+                    playerIdCache[i] = -1001;
+                    playerTargetOptions[i] = "________";
+                }
             }
             playerTargetOptions[playerTargetOptions.Length - 1] = "No Player Tracking";
             playerTrackingDropdown.AddOptions(playerTargetOptions);
             SetPlayerTrackingDropdown();
+        }
+
+        public override void OnPlayerJoined(VRCPlayerApi player)
+        {
+            PopulatePlayerTrackingDropdown();
+        }
+
+        public override void OnPlayerLeft(VRCPlayerApi player)
+        {
+            PopulatePlayerTrackingDropdown();
         }
 
         public void DollyBtn()

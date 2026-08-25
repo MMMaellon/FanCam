@@ -8,52 +8,46 @@ using VRC.Udon;
 
 namespace MMMaellon.FanCam
 {
-    [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
     public class FanCamPlayerTarget : UdonSharpBehaviour
     {
-        public FanCamManager manager;
-        // public Transform feet;
-        VRCPlayerApi owner;
-        public VRCPlayerApi Owner
+        public FanCam fanCam;
+        VRCPlayerApi _target;
+        public VRCPlayerApi Target
         {
-            get => owner;
-        }
-        int playerId = -1001;
-        public int PlayerId
-        {
-            get => playerId;
-        }
-        string username = "target";
-        public float speed = 4f;
-        public string Username
-        {
-            get => username;
-        }
-
-        VRCTweenHandle headHandle;
-        // VRCTweenHandle feetHandle;
-        void Start()
-        {
-            owner = Networking.GetOwner(gameObject);
-            username = owner.displayName;
-            playerId = owner.playerId;
-            manager.AddPlayerTarget(this);
-            headHandle = VRCTween.TweenPosition(transform, owner.GetTrackingData(VRCPlayerApi.TrackingDataType.Head).position, speed, VRCTweenEase.OutSine)
-                .SetSpeedBased()
-                .OnComplete(this, nameof(UpdatePos));
-            // feetHandle = VRCTween.TweenPosition(feet, owner.GetPosition(), speed, VRCTweenEase.OutSine)
-            //     .SetSpeedBased();
+            get => _target;
+            set
+            {
+                _target = value;
+                if (Utilities.IsValid(value))
+                {
+                    tracking = true;
+                    SendCustomEventDelayedFrames(nameof(TrackPlayer), 2);
+                }
+                else
+                {
+                    if (fanCam.TargetPlayerId >= 0)
+                    {
+                        fanCam.TargetPlayerId = -1001;
+                    }
+                    tracking = false;
+                }
+            }
         }
 
-        void OnDestroy()
+        bool tracking = false;
+        public void TrackPlayer()
         {
-            manager.RemovePlayerTarget(playerId);
-        }
-
-        public void UpdatePos()
-        {
-            headHandle.ChangeEndValue(owner.GetTrackingData(VRCPlayerApi.TrackingDataType.Head).position, true);
-            // feetHandle.ChangeEndValue(owner.GetPosition(), true);
+            Debug.LogWarning("UpdatePos " + name);
+            if (!tracking || !Utilities.IsValid(_target))
+            {
+                if (fanCam.TargetPlayerId >= 0)
+                {
+                    fanCam.TargetPlayerId = -1001;
+                }
+                return;
+            }
+            SendCustomEventDelayedFrames(nameof(TrackPlayer), 0);
+            transform.position = _target.GetTrackingData(VRCPlayerApi.TrackingDataType.Head).position;
         }
     }
 }
