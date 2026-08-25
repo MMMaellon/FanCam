@@ -2,7 +2,12 @@ name: Build Release
 
 on: 
   workflow_dispatch:
+  push:
+    branches: main
+    paths: Packages/com.mmmaellon.fancam/**
 
+permissions:
+  contents: write
 jobs:
 
   # Validate Repository Configuration
