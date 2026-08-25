@@ -323,7 +323,7 @@ MonoBehaviour:
   - {fileID: 7145544147847528860}
   - {fileID: 8022024775090603856}
   - {fileID: 2948978748574163142}
-  targetBall: {fileID: 0}
+  targetBall: {fileID: 7428106243435580384}
   _speed: 1
 --- !u!114 &7089017358413746064
 MonoBehaviour:
@@ -626,7 +626,7 @@ MonoBehaviour:
   m_HorizontalDamping: 0.5
   m_VerticalDamping: 0.5
   m_ScreenX: 0.5
-  m_ScreenY: 0.3
+  m_ScreenY: 0.5
   m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
   m_SoftZoneWidth: 0.4
@@ -681,7 +681,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2261934296133323902}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.113237135, y: -1e-45, z: -0, w: 0.993568}
+  m_LocalRotation: {x: 0.000000013360017, y: 0.000000029802326, z: -3.3656415e-16,
+    w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2967,7 +2968,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7653259609463969653}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.00000001560446, y: 0.00000002379494, z: -3.7130716e-16, w: 1}
+  m_LocalRotation: {x: 0.000000015604458, y: 0.00000002379494, z: -3.7130716e-16,
+    w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

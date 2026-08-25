@@ -127,6 +127,11 @@ namespace MMMaellon.FanCam
             return animator.GetInteger(cameraControlsParameter) == 2 && gameObject.activeInHierarchy && enabled;
         }
 
+        public bool AreEditorControlsVisible()
+        {
+            return animator.GetInteger(cameraControlsParameter) == 1 && gameObject.activeInHierarchy && enabled;
+        }
+
         FanCam editorFanCam;
         public void OnChangeEditorDropdown()
         {

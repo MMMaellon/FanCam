@@ -239,6 +239,11 @@ namespace MMMaellon.FanCam
                 propertyBlock.SetTexture("_MainTex", localPreview);
                 previewMesh.SetPropertyBlock(propertyBlock, previewMeshMaterialSlot);
             }
+            else if (manager.EditFanCam == this && manager.menu.AreCameraPreviewsVisible() && !Utilities.IsValid(manager.HeldFanCam))
+            {
+                propertyBlock.SetTexture("_MainTex", localPreview);
+                previewMesh.SetPropertyBlock(propertyBlock, previewMeshMaterialSlot);
+            }
             else
             {
                 propertyBlock.SetTexture("_MainTex", placeholderTexture);

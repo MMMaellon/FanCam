@@ -246,6 +246,11 @@ namespace MMMaellon.FanCam
                 previewCamera.enabled = true;
                 HeldFanCam.RenderPreview();
             }
+            else if (Utilities.IsValid(EditFanCam) && menu.AreEditorControlsVisible())
+            {
+                previewCamera.enabled = true;
+                EditFanCam.RenderPreview();
+            }
             else
             {
                 previewCamera.enabled = false;
@@ -328,10 +333,10 @@ namespace MMMaellon.FanCam
                     _heldFanCam.StopZoom();
                 }
                 _heldFanCam = value;
-                // if (Utilities.IsValid(value))
-                // {
-                //     SendCustomEventDelayedFrames(nameof(PreviewLoop), 0);
-                // }
+                if (Utilities.IsValid(EditFanCam))
+                {
+                    EditFanCam.UpdatePreview();
+                }
             }
         }
         FanCam _editFanCam;
@@ -345,6 +350,10 @@ namespace MMMaellon.FanCam
                     _editFanCam.StopZoom();
                 }
                 _editFanCam = value;
+                if (Utilities.IsValid(value))
+                {
+                    value.UpdatePreview();
+                }
             }
         }
 
