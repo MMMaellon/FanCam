@@ -65,7 +65,7 @@ MonoBehaviour:
   SynchronizePosition: 0
   AllowCollisionOwnershipTransfer: 0
   Reliable: 0
-  _syncMethod: 2
+  _syncMethod: 3
   serializedProgramAsset: {fileID: 11400000, guid: a776c3072e506305f891ee0da8f72d2d,
     type: 2}
   programSource: {fileID: 11400000, guid: 3e8941933b483fa96b6c29a0934efdf7, type: 2}
@@ -94,3 +94,5 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 1441353913852136960}
+  manager: {fileID: 0}
+  speed: 4

@@ -20,7 +20,6 @@ namespace MMMaellon.FanCam
         CinemachineVirtualCameraBase switcher;
         public FanCam[] fanCams;
         public FanCamMenu menu;
-        public FanCamCameraMenu camMenu;
 
         VRCPlayerApi owner;
         public void OnEnable()
@@ -184,7 +183,10 @@ namespace MMMaellon.FanCam
 
         public void UpdateEdit(FanCam fanCam)
         {
-
+            if (fanCam != EditFanCam)
+            {
+                return;
+            }
         }
 
         public void TakeOwnership()
@@ -201,72 +203,296 @@ namespace MMMaellon.FanCam
             }
         }
 
-        int lastPreview = -1001;
-        [System.NonSerialized]
-        DataList previewList = new DataList();
+        // int lastPreview = -1001;
+        // [System.NonSerialized]
+        // DataList previewList = new DataList();
         int previewCounter = 0;
         public void PreviewLoop()
         {
-            if (lastPreview == Time.renderedFrameCount)
-            {
-                return;
-            }
-            if (!previewCamera.enabled)
-            {
-                return;
-            }
-            SendCustomEventDelayedFrames(nameof(PreviewLoop), 0);
-            previewCounter = (previewCounter + 1) % previewList.Count;
-            if (previewList.TryGetValue(previewCounter, TokenType.Reference, out var previewTargetRef))
-            {
-                var previewTarget = (FanCam)previewTargetRef.Reference;
-                previewTarget.RenderPreview();
-            }
-        }
-
-        public void AddToPreviewList(FanCam fanCam)
-        {
-            // if (previewList.Contains(fanCam))
+            // if (lastPreview == Time.renderedFrameCount)
             // {
             //     return;
             // }
-            previewList.Add(fanCam);
-            previewCamera.enabled = true;
-            SendCustomEventDelayedFrames(nameof(PreviewLoop), 0);
-        }
-
-        public void RemoveFromPreviewList(FanCam fanCam)
-        {
-            // if (fanCam.Held)
+            // if (!previewCamera.enabled || previewList.Count == 0)
             // {
             //     return;
             // }
-            previewList.Remove(fanCam);
-            if (previewList.Count == 0)
-            {
-                previewCamera.enabled = false;
-            }
-        }
-
-        public void OnGridEnable()
-        {
-            foreach (var fanCam in fanCams)
-            {
-                previewList.Add(fanCam);
-            }
             previewCamera.enabled = true;
-            SendCustomEventDelayedFrames(nameof(PreviewLoop), 0);
-        }
-
-        public void OnGridDisable()
-        {
-            foreach (var fanCam in fanCams)
+            if (Utilities.IsValid(menu) && menu.AreCameraPreviewsVisible())
             {
-                previewList.Remove(fanCam);
+                previewCounter = (previewCounter + 1) % fanCams.Length;
+                fanCams[previewCounter].RenderPreview();
             }
-            if (previewList.Count == 0)
+            else
+            if (Utilities.IsValid(HeldFanCam))
+            {
+                HeldFanCam.RenderPreview();
+            }
+            else
             {
                 previewCamera.enabled = false;
+                return;
+            }
+            // SendCustomEventDelayedFrames(nameof(PreviewLoop), 0);
+            // previewCounter = (previewCounter + 1) % previewList.Count;
+            // if (previewList.TryGetValue(previewCounter, TokenType.Reference, out var previewTargetRef))
+            // {
+            //     var previewTarget = (FanCam)previewTargetRef.Reference;
+            //     previewTarget.RenderPreview();
+            // }
+            // previewCounter = (previewCounter + 1) % fanCams.Length;
+            // fanCams[previewCounter].RenderPreview();
+        }
+
+        // public void AddToPreviewList(FanCam fanCam)
+        // {
+        //     // if (previewList.Contains(fanCam))
+        //     // {
+        //     //     return;
+        //     // }
+        //     previewList.Add(fanCam);
+        //     previewCamera.enabled = true;
+        //     SendCustomEventDelayedFrames(nameof(PreviewLoop), 0);
+        // }
+
+        // public void RemoveFromPreviewList(FanCam fanCam)
+        // {
+        //     // if (fanCam.Held)
+        //     // {
+        //     //     return;
+        //     // }
+        //     previewList.Remove(fanCam);
+        //     if (previewList.Count == 0)
+        //     {
+        //         previewCamera.enabled = false;
+        //     }
+        // }
+
+        // public void ClearPreviewList()
+        // {
+        //     previewList.Clear();
+        // }
+
+        // bool gridEnabled = false;
+        // public void OnGridEnable()
+        // {
+        //     // foreach (var fanCam in fanCams)
+        //     // {
+        //     //     previewList.Add(fanCam);
+        //     // }
+        //     gridEnabled = true;
+        //     // previewCamera.enabled = true;
+        //     SendCustomEventDelayedFrames(nameof(PreviewLoop), 0);
+        // }
+        //
+        // public void OnGridDisable()
+        // {
+        //     // foreach (var fanCam in fanCams)
+        //     // {
+        //     //     previewList.Remove(fanCam);
+        //     // }
+        //     // if (previewList.Count == 0)
+        //     // {
+        //     //     previewCamera.enabled = false;
+        //     // }
+        //     // previewList.Clear();
+        //     gridEnabled = false;
+        // }
+
+        FanCam _heldFanCam;
+        public FanCam HeldFanCam
+        {
+            get => _heldFanCam;
+            set
+            {
+                if (Utilities.IsValid(_heldFanCam))
+                {
+                    _heldFanCam.StopZoom();
+                }
+                _heldFanCam = value;
+                // if (Utilities.IsValid(value))
+                // {
+                //     SendCustomEventDelayedFrames(nameof(PreviewLoop), 0);
+                // }
+            }
+        }
+        FanCam _editFanCam;
+        public FanCam EditFanCam
+        {
+            get => _editFanCam;
+            set
+            {
+                if (Utilities.IsValid(_editFanCam))
+                {
+                    _editFanCam.StopZoom();
+                }
+                _editFanCam = value;
+                UpdateEdit(value);
+            }
+        }
+
+        public void Update()
+        {
+            PreviewLoop();
+            if (Utilities.IsValid(HeldFanCam))
+            {
+                if (Input.GetKeyDown(KeyCode.Q))
+                {
+                    HeldFanCam.ZoomIn();
+                }
+                else if (Input.GetKeyDown(KeyCode.E))
+                {
+                    HeldFanCam.ZoomOut();
+                }
+                else if (Input.GetKeyUp(KeyCode.Q))
+                {
+                    HeldFanCam.StopZoom();
+                }
+                else if (Input.GetKeyUp(KeyCode.E))
+                {
+                    HeldFanCam.StopZoom();
+                }
+            }
+            if (Utilities.IsValid(EditFanCam) && EditFanCam.Edit)
+            {
+                if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.PageUp))
+                {
+                    EditFanCam.ZoomIn();
+                    return;
+                }
+                else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.PageDown))
+                {
+                    EditFanCam.ZoomOut();
+                    return;
+                }
+                else if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.PageUp))
+                {
+                    EditFanCam.StopZoom();
+                    return;
+                }
+                else if (Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.PageDown))
+                {
+                    EditFanCam.StopZoom();
+                    return;
+                }
+            }
+            if (!IsOwnerLocal())
+            {
+                return;
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha0) || Input.GetKeyDown(KeyCode.Keypad0))
+            {
+                ActiveCam = 0;
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
+            {
+                ActiveCam = 1;
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2))
+            {
+                ActiveCam = 2;
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3))
+            {
+                ActiveCam = 3;
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Keypad4))
+            {
+                ActiveCam = 4;
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha5) || Input.GetKeyDown(KeyCode.Keypad5))
+            {
+                ActiveCam = 5;
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha6) || Input.GetKeyDown(KeyCode.Keypad6))
+            {
+                ActiveCam = 6;
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha7) || Input.GetKeyDown(KeyCode.Keypad7))
+            {
+                ActiveCam = 7;
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha8) || Input.GetKeyDown(KeyCode.Keypad8))
+            {
+                ActiveCam = 8;
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha9) || Input.GetKeyDown(KeyCode.Keypad9))
+            {
+                ActiveCam = 9;
+            }
+            else if (_cam >= 0 && _cam < fanCams.Length)
+            {
+                if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.PageUp))
+                {
+                    fanCams[_cam].ZoomIn();
+                }
+                else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.PageDown))
+                {
+                    fanCams[_cam].ZoomOut();
+                }
+                else if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.PageUp))
+                {
+                    fanCams[_cam].StopZoom();
+                }
+                else if (Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.PageDown))
+                {
+                    fanCams[_cam].StopZoom();
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.Equals) || Input.GetKeyDown(KeyCode.KeypadPlus))
+            {
+                SpeedUp();
+            }
+            else if (Input.GetKeyDown(KeyCode.Minus) || Input.GetKeyDown(KeyCode.KeypadMinus))
+            {
+                SpeedDown();
+            }
+        }
+
+        [UdonSynced]
+        [FieldChangeCallback(nameof(Speed))]
+        public float _speed = 120;
+        public float Speed
+        {
+            get => _speed;
+            set
+            {
+                _speed = value;
+                foreach (var fanCam in fanCams)
+                {
+                    fanCam.dollyTrack.Speed = value;
+                }
+                if (IsOwnerLocal())
+                {
+                    RequestSerialization();
+                }
+            }
+        }
+        public void SpeedUp()
+        {
+            Speed = Mathf.Min(10f, Speed + 0.25f);
+        }
+
+        public void SpeedDown()
+        {
+            Speed = Mathf.Max(0.25f, Speed - 0.25f);
+        }
+
+
+        public override void InputLookVertical(float value, VRC.Udon.Common.UdonInputEventArgs args)
+        {
+            if (!Networking.LocalPlayer.IsUserInVR())
+            {
+                return;
+            }
+            if (value > 0.5f)
+            {
+
+            }
+            else if (value < -0.5f)
+            {
+
             }
         }
     }

@@ -72,10 +72,12 @@ namespace MMMaellon.FanCam
             {
 
                 animator.SetInteger(cameraControlsParameter, 0);
+                // manager.OnGridDisable();
             }
             else
             {
                 animator.SetInteger(cameraControlsParameter, 2);
+                // manager.OnGridEnable();
             }
         }
 
@@ -85,16 +87,23 @@ namespace MMMaellon.FanCam
             {
 
                 animator.SetInteger(cameraControlsParameter, 0);
+                // manager.OnGridDisable();
             }
             else
             {
                 animator.SetInteger(cameraControlsParameter, 1);
+                // manager.OnGridDisable();
             }
         }
 
         public void BecomeDirectorBtn()
         {
             manager.TakeOwnership();
+        }
+
+        public bool AreCameraPreviewsVisible()
+        {
+            return animator.GetInteger(cameraControlsParameter) == 2 && gameObject.activeInHierarchy && enabled;
         }
     }
 }

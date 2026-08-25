@@ -5,6 +5,7 @@
         "VRC.SDK3",
         "VRC.SDKBase",
         "VRC.Udon",
+        "VRC.Udon.Serialization.OdinSerializer",
         "UdonSharp.Runtime",
         "UdonSharp.Editor",
         "Unity.TextMeshPro",

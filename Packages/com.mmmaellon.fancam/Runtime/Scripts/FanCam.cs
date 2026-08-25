@@ -21,7 +21,6 @@ namespace MMMaellon.FanCam
     public class FanCam : UdonSharpBehaviour
     {
         public RenderTexture localPreview;
-        public Camera localPreviewCamera;
         public Transform localPreviewParent;
         public MeshRenderer previewMesh;
         public int previewMeshMaterialSlot = 1;
@@ -37,6 +36,7 @@ namespace MMMaellon.FanCam
         public Animator animator;
         public SmartObjectSync pickupControllerPickup;
         public SmartObjectSync[] dollyTrackPickups;
+        public FanCamTrackFollower dollyTrack;
 
         // [UdonSynced]
         [SerializeField]
@@ -68,7 +68,7 @@ namespace MMMaellon.FanCam
             }
         }
 
-        bool _edit = false;
+        public bool _edit = false;
         public bool Edit
         {
             get => _edit;
@@ -77,12 +77,16 @@ namespace MMMaellon.FanCam
                 _edit = value;
                 animator.SetBool(EditHash, value && IsOwnerLocal());
                 manager.UpdateEdit(this);
+                if (!value && IsOwnerLocal())
+                {
+                    StopZoom();
+                }
             }
         }
 
         [UdonSynced]
         [FieldChangeCallback(nameof(Dolly))]
-        bool _dolly = false;
+        public bool _dolly = false;
         public bool Dolly
         {
             get => _dolly;
@@ -112,7 +116,22 @@ namespace MMMaellon.FanCam
         {
             Dolly = !Dolly;
         }
-
+        // [UdonSynced]
+        // [FieldChangeCallback(nameof(Speed))]
+        // public float _speed = 1f;
+        // public float Speed
+        // {
+        //     get => _speed;
+        //     set
+        //     {
+        //         _speed = value;
+        //         dollyTrack._speed = value;
+        //         if (IsOwnerLocal())
+        //         {
+        //             RequestSerialization();
+        //         }
+        //     }
+        // }
 
         VRCPlayerApi owner;
         public void OnEnable()
@@ -134,6 +153,10 @@ namespace MMMaellon.FanCam
             owner = player;
             animator.SetBool(OwnerHash, IsOwnerLocal());
             Edit = Edit && IsOwnerLocal();
+            if (IsOwnerLocal())
+            {
+                StopZoom();
+            }
         }
 
         public bool IsOwnerLocal()
@@ -177,7 +200,8 @@ namespace MMMaellon.FanCam
         {
             // localPreviewCamera.enabled = true;
             held = true;
-            manager.AddToPreviewList(this);
+            // manager.AddToPreviewList(this);
+            manager.HeldFanCam = this;
             UpdatePreview();
         }
 
@@ -185,7 +209,8 @@ namespace MMMaellon.FanCam
         {
             // localPreviewCamera.enabled = false;
             held = false;
-            manager.RemoveFromPreviewList(this);
+            // manager.RemoveFromPreviewList(this);
+            manager.HeldFanCam = null;
             UpdatePreview();
         }
 
@@ -227,6 +252,8 @@ namespace MMMaellon.FanCam
             get => target;
         }
 
+        Transform defaultStartTarget;
+        Transform dollyStartTarget;
         [UdonSynced]
         [FieldChangeCallback(nameof(TargetPlayerId))]
         int targetId = -1001;
@@ -235,6 +262,11 @@ namespace MMMaellon.FanCam
             get => targetId;
             set
             {
+                if (targetId < 0)
+                {
+                    defaultStartTarget = defaultCamera.LookAt;
+                    dollyStartTarget = dollyCamera.LookAt;
+                }
                 targetId = value;
                 if (IsOwnerLocal())
                 {
@@ -243,10 +275,14 @@ namespace MMMaellon.FanCam
                 if (manager.PlayerTargets.TryGetValue(value, TokenType.Reference, out DataToken token))
                 {
                     target = (FanCamPlayerTarget)token.Reference;
+                    defaultCamera.LookAt = target.transform;
+                    dollyCamera.LookAt = target.transform;
                 }
                 else
                 {
                     target = null;
+                    defaultCamera.LookAt = defaultStartTarget;
+                    dollyCamera.LookAt = dollyStartTarget;
                 }
             }
         }
@@ -273,6 +309,47 @@ namespace MMMaellon.FanCam
                 // LerpZoom();
                 SendCustomEventDelayedFrames(nameof(LerpZoom), 1);
             }
+        }
+
+        public void ZoomIn()
+        {
+            if (!IsOwnerLocal())
+            {
+                if (pickupControllerPickup.IsHeld())
+                {
+                    return;
+                }
+                Networking.SetOwner(Networking.LocalPlayer, gameObject);
+            }
+
+            Zoom = 1.0f;
+        }
+
+        public void ZoomOut()
+        {
+            if (!IsOwnerLocal())
+            {
+                if (pickupControllerPickup.IsHeld())
+                {
+                    return;
+                }
+                Networking.SetOwner(Networking.LocalPlayer, gameObject);
+            }
+
+            Zoom = 0f;
+        }
+
+        public void StopZoom()
+        {
+            if (!IsOwnerLocal())
+            {
+                if (pickupControllerPickup.IsHeld())
+                {
+                    return;
+                }
+                Networking.SetOwner(Networking.LocalPlayer, gameObject);
+            }
+            Zoom = Mathf.Clamp01(AnimatorZoom + ConstAccelerationDistance(zoomSpeed, 0, Mathf.Sign(zoomSpeed) * -zoomAcceleration));
         }
 
         public float AnimatorZoom
