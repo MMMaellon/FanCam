@@ -76,10 +76,13 @@ namespace MMMaellon.FanCam
             {
                 _edit = value;
                 animator.SetBool(EditHash, value && IsOwnerLocal());
-                manager.UpdateEdit(this);
                 if (!value && IsOwnerLocal())
                 {
                     StopZoom();
+                }
+                if (Utilities.IsValid(manager.menu))
+                {
+                    manager.menu.UpdateEditor();
                 }
             }
         }
@@ -108,6 +111,10 @@ namespace MMMaellon.FanCam
                 if (IsOwnerLocal())
                 {
                     RequestSerialization();
+                }
+                if (Utilities.IsValid(manager.menu))
+                {
+                    manager.menu.UpdateEditor();
                 }
             }
         }
@@ -168,11 +175,6 @@ namespace MMMaellon.FanCam
         {
             Networking.SetOwner(Networking.LocalPlayer, manager.gameObject);
             manager.ActiveCam = Id;
-        }
-
-        public void ToggleTarget()
-        {
-
         }
 
         public void EnableEdit()
@@ -283,6 +285,10 @@ namespace MMMaellon.FanCam
                     target = null;
                     defaultCamera.LookAt = defaultStartTarget;
                     dollyCamera.LookAt = dollyStartTarget;
+                }
+                if (Utilities.IsValid(manager.menu))
+                {
+                    manager.menu.UpdateEditor();
                 }
             }
         }

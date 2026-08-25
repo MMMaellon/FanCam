@@ -31,7 +31,7 @@
       "dependencies": {}
     },
     "com.vrchat.base": {
-      "version": "3.10.4",
+      "version": "3.10.5-beta.1",
       "dependencies": {}
     },
     "com.mmmaellon.lightsync": {
@@ -41,9 +41,9 @@
       }
     },
     "com.vrchat.worlds": {
-      "version": "3.10.4",
+      "version": "3.10.5-beta.1",
       "dependencies": {
-        "com.vrchat.base": "3.10.4"
+        "com.vrchat.base": "3.10.5-beta.1"
       }
     },
     "befuddledlabs.linuxvrchatsdkpatch-worlds": {

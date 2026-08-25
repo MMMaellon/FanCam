@@ -9,6 +9,7 @@ namespace MMMaellon.FanCam
     public class FanCamTrackPoint : SmartObjectSyncListener
     {
         public FanCamTrackFollower track;
+        public SmartObjectSync sync;
 
         public override void OnChangeOwner(SmartObjectSync sync, VRCPlayerApi oldOwner, VRCPlayerApi newOwner)
         {
@@ -27,10 +28,10 @@ namespace MMMaellon.FanCam
                 return;
             }
 
-            if (oldState == SmartObjectSync.STATE_LEFT_HAND_HELD || oldState == SmartObjectSync.STATE_RIGHT_HAND_HELD || oldState == SmartObjectSync.STATE_NO_HAND_HELD)
-            {
-                track.PopulateWaypoints();
-            }
+            // if (oldState == SmartObjectSync.STATE_LEFT_HAND_HELD || oldState == SmartObjectSync.STATE_RIGHT_HAND_HELD || oldState == SmartObjectSync.STATE_NO_HAND_HELD)
+            // {
+            // }
+            track.PopulateWaypoints();
         }
     }
 }

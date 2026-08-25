@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Icon 2
+  m_Name: Icon 0
   m_Shader: {fileID: 4800000, guid: 531c3c0e0c1b33642aa765166dd1fbd1, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -44,7 +44,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: e2904a457abb2856092bb18de2332bb3, type: 3}
+        m_Texture: {fileID: 2800000, guid: f00ab2f4ec5740f3c8fce8a30b0af009, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:

@@ -29,6 +29,7 @@ namespace MMMaellon.FanCam
             if (Utilities.IsValid(menu))
             {
                 menu.animator.SetBool(OwnerHash, IsOwnerLocal());
+                menu.ownerNameTMP.text = owner.displayName;
             }
             ActiveCam = ActiveCam;
         }
@@ -43,6 +44,7 @@ namespace MMMaellon.FanCam
             if (Utilities.IsValid(menu))
             {
                 menu.animator.SetBool(OwnerHash, IsOwnerLocal());
+                menu.ownerNameTMP.text = owner.displayName;
             }
         }
         public bool IsOwnerLocal()
@@ -89,6 +91,10 @@ namespace MMMaellon.FanCam
         public void AddPlayerTarget(FanCamPlayerTarget target)
         {
             playerTargets.Add(target.PlayerId, target);
+            if (Utilities.IsValid(menu))
+            {
+                menu.PopulatePlayerTrackingDropdown();
+            }
         }
 
         public void RemovePlayerTarget(int playerId)
@@ -97,7 +103,18 @@ namespace MMMaellon.FanCam
             {
                 return;
             }
+            foreach (var fanCam in fanCams)
+            {
+                if (fanCam.IsOwnerLocal() && fanCam.TargetPlayerId == playerId)
+                {
+                    fanCam.TargetPlayerId = -1001;
+                }
+            }
             playerTargets.Remove(playerId);
+            if (Utilities.IsValid(menu))
+            {
+                menu.PopulatePlayerTrackingDropdown();
+            }
         }
 
         public void Cam1()
@@ -327,7 +344,6 @@ namespace MMMaellon.FanCam
                     _editFanCam.StopZoom();
                 }
                 _editFanCam = value;
-                UpdateEdit(value);
             }
         }
 
