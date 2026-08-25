@@ -15,6 +15,7 @@ namespace MMMaellon.FanCam
     [RequireComponent(typeof(Animator))]
     public class FanCamMenu : UdonSharpBehaviour
     {
+        private readonly int OwnerHash = Animator.StringToHash("owner");
         private readonly int EditHash = Animator.StringToHash("edit");
         private readonly int EditOwnerHash = Animator.StringToHash("edit owner");
         private readonly int EditDollyHash = Animator.StringToHash("edit dolly");
@@ -38,6 +39,16 @@ namespace MMMaellon.FanCam
             {
                 ownerNameTMP.text = manager.Owner.displayName;
             }
+        }
+
+        public void OnEnable()
+        {
+            if (Utilities.IsValid(manager.Owner))
+            {
+                ownerNameTMP.text = manager.Owner.displayName;
+            }
+            UpdateEditor();
+            animator.SetBool(OwnerHash, manager.IsOwnerLocal());
         }
 
         public void Cam0()
