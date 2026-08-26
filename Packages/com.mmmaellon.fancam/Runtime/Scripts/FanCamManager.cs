@@ -218,12 +218,10 @@ namespace MMMaellon.FanCam
             }
             else if (Utilities.IsValid(HeldFanCam))
             {
-                Debug.LogWarning("Rendering held cam");
                 previewCamera.enabled = true;
                 HeldFanCam.RenderPreview();
                 if (Utilities.IsValid(menu) && menu.EditorFanCam != HeldFanCam)
                 {
-                    Debug.LogWarning("disabling edit preview");
                     menu.editPreview.enabled = false;
                 }
             }
