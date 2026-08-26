@@ -61,10 +61,6 @@ namespace MMMaellon.FanCam
             get => _cam;
             set
             {
-                if (_cam >= 0 && _cam < fanCams.Length && Utilities.IsValid(fanCams[_cam]))
-                {
-                    fanCams[_cam].Rec = false;
-                }
                 _cam = value;
                 animator.SetInteger(camParameterHash, value);
                 if (Utilities.IsValid(menu))
@@ -73,7 +69,7 @@ namespace MMMaellon.FanCam
                 }
                 if (_cam >= 0 && _cam < fanCams.Length && Utilities.IsValid(fanCams[_cam]))
                 {
-                    fanCams[_cam].Rec = true;
+                    RecFanCam = fanCams[_cam];
                 }
                 if (IsDirector())
                 {
@@ -207,6 +203,53 @@ namespace MMMaellon.FanCam
             }
         }
 
+        FanCam _previewFanCam;
+        public FanCam PreviewFanCam
+        {
+            get => _previewFanCam;
+            set
+            {
+                if (_previewFanCam == value)
+                {
+                    return;
+                }
+                if (Utilities.IsValid(_previewFanCam) && _previewFanCam != _recFanCam)
+                {
+                    _previewFanCam.ClearPreviewMesh();
+                }
+                _previewFanCam = value;
+                if (Utilities.IsValid(_previewFanCam) && _recFanCam != _previewFanCam)
+                {
+                    _previewFanCam.SetPreviewMesh();
+                }
+            }
+        }
+        FanCam _recFanCam;
+        public FanCam RecFanCam
+        {
+            get => _recFanCam;
+            set
+            {
+                if (Utilities.IsValid(_recFanCam))
+                {
+                    _recFanCam.Rec = false;
+                    if (_recFanCam == PreviewFanCam)
+                    {
+                        _recFanCam.SetPreviewMesh();
+                    }
+                    else
+                    {
+                        _recFanCam.ClearPreviewMesh();
+                    }
+                }
+                _recFanCam = value;
+                if (Utilities.IsValid(_recFanCam))
+                {
+                    _recFanCam.Rec = true;
+                    _recFanCam.SetRecPreviewMesh();
+                }
+            }
+        }
         int previewCounter = 0;
         public void PreviewLoop()
         {
@@ -224,16 +267,19 @@ namespace MMMaellon.FanCam
                 {
                     menu.editPreview.enabled = false;
                 }
+                PreviewFanCam = HeldFanCam;
             }
             else if (Utilities.IsValid(menu) && Utilities.IsValid(menu.EditorFanCam) && menu.AreEditorControlsVisible())
             {
                 previewCamera.enabled = true;
                 menu.editPreview.enabled = true;
                 menu.EditorFanCam.RenderPreview();
+                PreviewFanCam = menu.EditorFanCam;
             }
             else
             {
                 previewCamera.enabled = false;
+                PreviewFanCam = null;
                 return;
             }
         }

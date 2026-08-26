@@ -9,6 +9,7 @@ namespace MMMaellon.FanCam
     public class AttachSmartObjectSyncToPlayer : UdonSharpBehaviour
     {
         public SmartObjectSync sync;
+        public bool disableAttachToSelfOnDesktop = true;
         public Vector3 forwardVector = Vector3.forward;
         public float holdDuration = 0.5f;
         public override void OnPickupUseDown()
@@ -85,6 +86,10 @@ namespace MMMaellon.FanCam
             var newVector = Vector3.zero;
             foreach (var player in players)
             {
+                if (player.isLocal && disableAttachToSelfOnDesktop)
+                {
+                    continue;
+                }
                 newVector = player.GetTrackingData(VRCPlayerApi.TrackingDataType.Head).position - pos;
                 float dot = Vector3.Dot(newVector.normalized, vector.normalized) + 1.01f;
                 if (dot <= 0)

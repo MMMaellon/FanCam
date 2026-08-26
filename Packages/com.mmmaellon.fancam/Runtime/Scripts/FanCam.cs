@@ -59,7 +59,7 @@ namespace MMMaellon.FanCam
             set
             {
                 animator.SetBool(RecHash, value);
-                UpdatePreviewMesh();
+                // UpdatePreviewMesh();
                 if (Utilities.IsValid(manager.menu) && manager.menu.EditorFanCam == this)
                 {
                     manager.menu.animator.SetBool(RecHash, value);
@@ -76,10 +76,9 @@ namespace MMMaellon.FanCam
             get => _edit;
             set
             {
-                Debug.LogWarning("changing edit");
                 _edit = value && IsOwnerLocal();
                 animator.SetBool(EditHash, _edit);
-                UpdatePreviewMesh();
+                // UpdatePreviewMesh();
                 if (!_edit)
                 {
                     if (Dolly)
@@ -100,7 +99,6 @@ namespace MMMaellon.FanCam
                 }
                 if (Utilities.IsValid(manager.menu) && manager.menu.EditorFanCam == this)
                 {
-                    Debug.LogWarning("changing animator");
                     manager.menu.animator.SetBool(EditHash, _edit);
                 }
             }
@@ -218,7 +216,7 @@ namespace MMMaellon.FanCam
         public void OnEnable()
         {
             Owner = Networking.GetOwner(gameObject);
-            UpdatePreviewMesh();
+            // UpdatePreviewMesh();
             Edit = Edit;
             Dolly = Dolly;
         }
@@ -330,7 +328,7 @@ namespace MMMaellon.FanCam
                     manager.HeldFanCam = null;
                 }
                 _held = true;
-                UpdatePreviewMesh();
+                // UpdatePreviewMesh();
             }
         }
         public void OnPickupListener(FanCamPickupListener listener)
@@ -347,45 +345,36 @@ namespace MMMaellon.FanCam
             Held = false;
         }
 
-        public void UpdatePreviewMesh()
+        public void SetRecPreviewMesh()
         {
             if (!Utilities.IsValid(propertyBlock))
             {
                 propertyBlock = new MaterialPropertyBlock();
                 previewMesh.GetPropertyBlock(propertyBlock, previewMeshMaterialSlot);
             }
-            if (Rec)
-            {
-                propertyBlock.SetTexture("_MainTex", manager.fullResRenderTexture);
-                previewMesh.SetPropertyBlock(propertyBlock, previewMeshMaterialSlot);
-            }
-            else if (Held)
-            {
-                propertyBlock.SetTexture("_MainTex", localPreview);
-                previewMesh.SetPropertyBlock(propertyBlock, previewMeshMaterialSlot);
-            }
-            else if (Utilities.IsValid(manager.menu) && manager.menu.EditorFanCam == this && Edit && manager.menu.AreEditorControlsVisible() && !Utilities.IsValid(manager.HeldFanCam))
-            {
-                propertyBlock.SetTexture("_MainTex", localPreview);
-                previewMesh.SetPropertyBlock(propertyBlock, previewMeshMaterialSlot);
-            }
-            else
-            {
-                propertyBlock.SetTexture("_MainTex", placeholderTexture);
-                previewMesh.SetPropertyBlock(propertyBlock, previewMeshMaterialSlot);
-            }
+            propertyBlock.SetTexture("_MainTex", manager.fullResRenderTexture);
+            previewMesh.SetPropertyBlock(propertyBlock, previewMeshMaterialSlot);
         }
-
-        // public void ClearPreviewMesh()
-        // {
-        //     if (!Utilities.IsValid(propertyBlock))
-        //     {
-        //         propertyBlock = new MaterialPropertyBlock();
-        //         previewMesh.GetPropertyBlock(propertyBlock, previewMeshMaterialSlot);
-        //     }
-        //     propertyBlock.SetTexture("_MainTex", placeholderTexture);
-        //     previewMesh.SetPropertyBlock(propertyBlock, previewMeshMaterialSlot);
-        // }
+        public void SetPreviewMesh()
+        {
+            if (!Utilities.IsValid(propertyBlock))
+            {
+                propertyBlock = new MaterialPropertyBlock();
+                previewMesh.GetPropertyBlock(propertyBlock, previewMeshMaterialSlot);
+            }
+            propertyBlock.SetTexture("_MainTex", localPreview);
+            previewMesh.SetPropertyBlock(propertyBlock, previewMeshMaterialSlot);
+        }
+        public void ClearPreviewMesh()
+        {
+            if (!Utilities.IsValid(propertyBlock))
+            {
+                propertyBlock = new MaterialPropertyBlock();
+                previewMesh.GetPropertyBlock(propertyBlock, previewMeshMaterialSlot);
+            }
+            propertyBlock.SetTexture("_MainTex", placeholderTexture);
+            previewMesh.SetPropertyBlock(propertyBlock, previewMeshMaterialSlot);
+        }
 
 
 #if !COMPILER_UDONSHARP && UNITY_EDITOR
@@ -566,8 +555,8 @@ namespace MMMaellon.FanCam
             }
         }
 
-        readonly float maxZoomSpeed = 0.2f;
-        readonly float zoomAcceleration = 0.2f;
+        readonly float maxZoomSpeed = 0.3f;
+        readonly float zoomAcceleration = 0.25f;
 
         float zoomSpeed = 0;
 

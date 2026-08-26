@@ -19,8 +19,8 @@ namespace MMMaellon.FanCam
         public TMP_Dropdown editorDropdown;
         public TMP_Dropdown playerTrackingDropdown;
         public Animator animator;
-        readonly int cameraControlsParameter = Animator.StringToHash("camera controls");
-        public readonly int PlayerTrackingHash = Animator.StringToHash("player tracking");
+        readonly int cameraControlsHash = Animator.StringToHash("camera controls");
+        // public readonly int PlayerTrackingHash = Animator.StringToHash("player tracking");
         public TextMeshProUGUI ownerNameTMP;
         public RawImage editPreview;
         public Slider zoomSlider;
@@ -44,7 +44,7 @@ namespace MMMaellon.FanCam
             OnChangeEditorDropdown();
             PopulatePlayerTrackingDropdown();//get all the people we missed while the menu was closed
             animator.SetBool(manager.DirectorHash, manager.IsDirector());
-            animator.SetInteger(cameraControlState, cameraControlState);
+            animator.SetInteger(cameraControlsHash, cameraControlState);
         }
 
         int cameraControlState = 0;
@@ -96,25 +96,25 @@ namespace MMMaellon.FanCam
 
         public void CameraSwitcherBtn()
         {
-            if (animator.GetInteger(cameraControlsParameter) == 2)
+            if (animator.GetInteger(cameraControlsHash) == 2)
             {
-                animator.SetInteger(cameraControlsParameter, 0);
+                animator.SetInteger(cameraControlsHash, 0);
             }
             else
             {
-                animator.SetInteger(cameraControlsParameter, 2);
+                animator.SetInteger(cameraControlsHash, 2);
             }
         }
 
         public void OperatorControlBtn()
         {
-            if (animator.GetInteger(cameraControlsParameter) == 1)
+            if (animator.GetInteger(cameraControlsHash) == 1)
             {
-                animator.SetInteger(cameraControlsParameter, 0);
+                animator.SetInteger(cameraControlsHash, 0);
             }
             else
             {
-                animator.SetInteger(cameraControlsParameter, 1);
+                animator.SetInteger(cameraControlsHash, 1);
             }
         }
 
@@ -125,12 +125,12 @@ namespace MMMaellon.FanCam
 
         public bool AreCameraPreviewsVisible()
         {
-            return animator.GetInteger(cameraControlsParameter) == 2 && gameObject.activeInHierarchy && enabled;
+            return animator.GetInteger(cameraControlsHash) == 2 && gameObject.activeInHierarchy && enabled;
         }
 
         public bool AreEditorControlsVisible()
         {
-            return animator.GetInteger(cameraControlsParameter) == 1 && gameObject.activeInHierarchy && enabled;
+            return animator.GetInteger(cameraControlsHash) == 1 && gameObject.activeInHierarchy && enabled;
         }
 
         FanCam _editorFanCam;
@@ -139,11 +139,13 @@ namespace MMMaellon.FanCam
             get => _editorFanCam;
             set
             {
-                if (Utilities.IsValid(_editorFanCam))
-                {
-                    _editorFanCam.Edit = false;
-                }
+                var old = _editorFanCam;
                 _editorFanCam = value;
+
+                if (Utilities.IsValid(old))
+                {
+                    old.Edit = false;
+                }
                 if (!Utilities.IsValid(_editorFanCam))
                 {
                     editPreview.texture = null;
@@ -200,11 +202,12 @@ namespace MMMaellon.FanCam
                 if (_editorFanCam.Dolly)
                 {
                     var points = _editorFanCam.dollyTrack.points;
+                    var root = position + rotation * editorTeleportOffset;
                     for (int i = 0; i < points.Length; i++)
                     {
-                        points[i].sync.TeleportToWorldSpace(position + rotation * editorTeleportOffset + rotation * Vector3.right * (i - points.Length / 2f), rotation, Vector3.zero, Vector3.zero);
+                        points[i].sync.TeleportToWorldSpace(root + rotation * Vector3.right * (i - (points.Length - 1) / 2f), rotation, Vector3.zero, Vector3.zero);
                     }
-                    _editorFanCam.dollyTrack.targetBall.Respawn();
+                    _editorFanCam.dollyTrack.targetBall.TeleportTo(root + rotation * Vector3.back, rotation, Vector3.zero, Vector3.zero);
                 }
                 else
                 {

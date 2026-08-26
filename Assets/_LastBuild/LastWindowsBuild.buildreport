@@ -1,0 +1,3830 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!668709126 &-9217535990020037868
+BuiltAssetBundleInfoSet:
+  bundleInfos:
+  - bundleName: scene-standalonewindows64-examplescene-d9dae8f2-1c06-43ee-8eae-6a1a65c14c52.vrcw
+    bundleArchiveFile: 2
+    packagedFileIndices: 0000000001000000
+  - bundleName: vpm-package-maker
+    bundleArchiveFile: 5
+    packagedFileIndices: 04000000
+--- !u!1126 &-306687973144845699
+PackedAssets:
+  m_ShortPath: BuildPlayer-ExampleScene.sharedAssets
+  m_Overhead: 185465
+  m_Contents:
+  - fileID: 1
+    classID: 150
+    packedSize: 121
+    offset: 189440
+    sourceAssetGUID: 00000000000000000000000000000000
+    buildTimeAssetPath: 
+  - fileID: 2
+    classID: 142
+    packedSize: 212
+    offset: 189568
+    sourceAssetGUID: 00000000000000000000000000000000
+    buildTimeAssetPath: 
+  - fileID: 3
+    classID: 21
+    packedSize: 1784
+    offset: 189784
+    sourceAssetGUID: 40d95203423ed67b58897f77cd9ffe20
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/IBMPlexSansCondensed-Medium.asset
+  - fileID: 4
+    classID: 21
+    packedSize: 1080
+    offset: 191568
+    sourceAssetGUID: 0000000000000000f000000000000000
+    buildTimeAssetPath: Resources/unity_builtin_extra
+  - fileID: 5
+    classID: 21
+    packedSize: 268
+    offset: 192648
+    sourceAssetGUID: 0000000000000000f000000000000000
+    buildTimeAssetPath: Resources/unity_builtin_extra
+  - fileID: 6
+    classID: 21
+    packedSize: 500
+    offset: 192920
+    sourceAssetGUID: 1101738f5e7673d90bab461fc5510c80
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/CameraBorder.mat
+  - fileID: 7
+    classID: 21
+    packedSize: 612
+    offset: 193424
+    sourceAssetGUID: b6edfcd4ea92276c8ae50dff1fa12268
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/CameraCuller.mat
+  - fileID: 8
+    classID: 21
+    packedSize: 500
+    offset: 194040
+    sourceAssetGUID: dd86a3f8949f00152b8f86f017f7f58f
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/CameraDot.mat
+  - fileID: 9
+    classID: 21
+    packedSize: 616
+    offset: 194544
+    sourceAssetGUID: e9651f1fc4d6cc0ec9e9065dcfccb511
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/CameraOverlay.mat
+  - fileID: 10
+    classID: 21
+    packedSize: 512
+    offset: 195160
+    sourceAssetGUID: 2810f6b06220cd55e934897876dff34a
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/CameraVisualBody Blue.mat
+  - fileID: 11
+    classID: 21
+    packedSize: 504
+    offset: 195672
+    sourceAssetGUID: eb6874ea9c26aa40f85eb23097416326
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/CameraVisualBody.mat
+  - fileID: 12
+    classID: 21
+    packedSize: 504
+    offset: 196176
+    sourceAssetGUID: 280c8aa401e6d1cfeb77220d695348ec
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/CameraVisualLens.mat
+  - fileID: 13
+    classID: 21
+    packedSize: 552
+    offset: 196680
+    sourceAssetGUID: 9f2f45f826df0b6e6888cc0c929f821f
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/Icon 1.mat
+  - fileID: 14
+    classID: 21
+    packedSize: 552
+    offset: 197232
+    sourceAssetGUID: 4c8e0b804a5a42da6b03f151f0bf986d
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/Icon 2.mat
+  - fileID: 15
+    classID: 21
+    packedSize: 552
+    offset: 197784
+    sourceAssetGUID: 998b9c5cc861e3b5a8dd64e2cbf4a9f0
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/Icon 3.mat
+  - fileID: 16
+    classID: 21
+    packedSize: 552
+    offset: 198336
+    sourceAssetGUID: d3beeafce44c3bbc3a74a97009dbab0c
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/Icon 4.mat
+  - fileID: 17
+    classID: 21
+    packedSize: 552
+    offset: 198888
+    sourceAssetGUID: 51718e81cac03440680d3ec86e3fb510
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/Icon 5.mat
+  - fileID: 18
+    classID: 21
+    packedSize: 552
+    offset: 199440
+    sourceAssetGUID: 1e7e74ef23dd7a2849d5f97fee8116d7
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/Icon 6.mat
+  - fileID: 19
+    classID: 21
+    packedSize: 552
+    offset: 199992
+    sourceAssetGUID: 4f2fd6e199e9101c08af9a0fbebe517f
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/Icon 7.mat
+  - fileID: 20
+    classID: 21
+    packedSize: 552
+    offset: 200544
+    sourceAssetGUID: 1521e8435fa6bcf7dbf7bb5474a2beed
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/Icon 8.mat
+  - fileID: 21
+    classID: 21
+    packedSize: 552
+    offset: 201096
+    sourceAssetGUID: e1e6d6b0a0c6ef124a0a00340fa07b82
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/Icon 9.mat
+  - fileID: 22
+    classID: 21
+    packedSize: 108
+    offset: 201648
+    sourceAssetGUID: 1f349fefcf20ddb7d830457b83cf3558
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/Mocap0.mat
+  - fileID: 23
+    classID: 21
+    packedSize: 108
+    offset: 201760
+    sourceAssetGUID: 31e18df76d17dc987bd9613e5ea8eae7
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/Mocap1.mat
+  - fileID: 24
+    classID: 21
+    packedSize: 108
+    offset: 201872
+    sourceAssetGUID: d2ed1c977bd9e2d3f8dae9db951acbac
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/Mocap2.mat
+  - fileID: 25
+    classID: 21
+    packedSize: 108
+    offset: 201984
+    sourceAssetGUID: c594090f12a0b5e609d36be241591542
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/Mocap3.mat
+  - fileID: 26
+    classID: 21
+    packedSize: 536
+    offset: 202096
+    sourceAssetGUID: eedf26374528f0470a8530a4993afec1
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/Number1.mat
+  - fileID: 27
+    classID: 21
+    packedSize: 536
+    offset: 202632
+    sourceAssetGUID: 87e45917858487ff880555536720f354
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/Number2.mat
+  - fileID: 28
+    classID: 21
+    packedSize: 536
+    offset: 203168
+    sourceAssetGUID: d37ff8064c493e96fb9feba15f9c0003
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/Number3.mat
+  - fileID: 29
+    classID: 21
+    packedSize: 536
+    offset: 203704
+    sourceAssetGUID: 88de5b5b39e652b589df6fc364928d6c
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/Number4.mat
+  - fileID: 30
+    classID: 21
+    packedSize: 536
+    offset: 204240
+    sourceAssetGUID: a3eb1fc3f2da5b9789916663deabd0b3
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/Number5.mat
+  - fileID: 31
+    classID: 21
+    packedSize: 536
+    offset: 204776
+    sourceAssetGUID: 7f37e6513a3b47d149b8e145a1e95e0e
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/Number6.mat
+  - fileID: 32
+    classID: 21
+    packedSize: 536
+    offset: 205312
+    sourceAssetGUID: 3128e2ad70cc0f0c4b1d633a6e1fb561
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/Number7.mat
+  - fileID: 33
+    classID: 21
+    packedSize: 536
+    offset: 205848
+    sourceAssetGUID: 0174d1f74e4dd7ee0af051857947a32a
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/Number8.mat
+  - fileID: 34
+    classID: 21
+    packedSize: 536
+    offset: 206384
+    sourceAssetGUID: 36500bb6ada002d9783353d6fbfe15f3
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/LowRes4.mat
+  - fileID: 35
+    classID: 21
+    packedSize: 536
+    offset: 206920
+    sourceAssetGUID: 1d1543a7e434a48e7a0eb44cc8f2ab5c
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/LowRes5.mat
+  - fileID: 36
+    classID: 21
+    packedSize: 536
+    offset: 207456
+    sourceAssetGUID: 3f26a7c9c71858718952c66e99236d5f
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/LowRes6.mat
+  - fileID: 37
+    classID: 21
+    packedSize: 984
+    offset: 207992
+    sourceAssetGUID: 03d4c70e007a062afb1239fdbea4b629
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/transparentMarker.mat
+  - fileID: 38
+    classID: 21
+    packedSize: 996
+    offset: 208976
+    sourceAssetGUID: 85ac0cc848872cd1b9f69a76a5ae0d66
+    buildTimeAssetPath: Assets/MMMaellon/Menu/LiberationSans SDF - Variant Header.mat
+  - fileID: 39
+    classID: 21
+    packedSize: 908
+    offset: 209976
+    sourceAssetGUID: c4a71c442eb5d9c46a9300364cda5dd7
+    buildTimeAssetPath: Assets/MMMaellon/Menu/MenuBacking.mat
+  - fileID: 40
+    classID: 21
+    packedSize: 700
+    offset: 210888
+    sourceAssetGUID: 697e29d7c5a7809d59930086ad86b16a
+    buildTimeAssetPath: Assets/MMMaellon/OnlyVisibleToPlayers.mat
+  - fileID: 41
+    classID: 21
+    packedSize: 540
+    offset: 211592
+    sourceAssetGUID: 05f5e1b8ab113714d9ab66a743f11ba3
+    buildTimeAssetPath: Assets/UdonMotion/Model/gizmo/x_material.mat
+  - fileID: 42
+    classID: 21
+    packedSize: 540
+    offset: 212136
+    sourceAssetGUID: 99ffd20d676ac214fb320fd4c3104622
+    buildTimeAssetPath: Assets/UdonMotion/Model/gizmo/y_material.mat
+  - fileID: 43
+    classID: 21
+    packedSize: 540
+    offset: 212680
+    sourceAssetGUID: 1daf796524db8be42a228ef3ce2041b7
+    buildTimeAssetPath: Assets/UdonMotion/Model/gizmo/z_material.mat
+  - fileID: 44
+    classID: 21
+    packedSize: 528
+    offset: 213224
+    sourceAssetGUID: 8e2c64a50c55bf927beadd42487d6be1
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/CameraBody.mat
+  - fileID: 45
+    classID: 21
+    packedSize: 1780
+    offset: 213752
+    sourceAssetGUID: 1bbe5bc3913d4db778cdbae420ba545d
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/IBMPlexSansCondensed-Medium
+      - Black.mat
+  - fileID: 46
+    classID: 21
+    packedSize: 1780
+    offset: 215536
+    sourceAssetGUID: 20c312690e26b6a1996693e412eed65d
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/IBMPlexSansCondensed-Medium
+      - Red.mat
+  - fileID: 47
+    classID: 21
+    packedSize: 552
+    offset: 217320
+    sourceAssetGUID: 3a5823f4c5fead7c384fd6574ed771bc
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/Icon 0.mat
+  - fileID: 48
+    classID: 21
+    packedSize: 552
+    offset: 217872
+    sourceAssetGUID: 17d633b5c9ba77d629c65401ec39b882
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/Icon 1.mat
+  - fileID: 49
+    classID: 21
+    packedSize: 552
+    offset: 218424
+    sourceAssetGUID: 715a12e8458abf8c788df1830871eb2c
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/Icon 2.mat
+  - fileID: 50
+    classID: 21
+    packedSize: 552
+    offset: 218976
+    sourceAssetGUID: fa0c16b25ab751bd49f6f9ca1d294ada
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/Icon 3.mat
+  - fileID: 51
+    classID: 21
+    packedSize: 552
+    offset: 219528
+    sourceAssetGUID: 6d8865edfa2fe77df9616e08a4ae039b
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/Icon 4.mat
+  - fileID: 52
+    classID: 21
+    packedSize: 552
+    offset: 220080
+    sourceAssetGUID: 1ac0ee9fe226aef57a2c71427ffdc6c6
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/Icon 5.mat
+  - fileID: 53
+    classID: 21
+    packedSize: 552
+    offset: 220632
+    sourceAssetGUID: 70184b7de708da8c7aa24153603f91ba
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/Icon 6.mat
+  - fileID: 54
+    classID: 21
+    packedSize: 552
+    offset: 221184
+    sourceAssetGUID: d6a49df773f6e514ea08da4d196511ec
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/Icon 7.mat
+  - fileID: 55
+    classID: 21
+    packedSize: 552
+    offset: 221736
+    sourceAssetGUID: df0e15362f3f6f8ee86b3f6606536053
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/Icon 8.mat
+  - fileID: 56
+    classID: 21
+    packedSize: 552
+    offset: 222288
+    sourceAssetGUID: 5152eeeaac394430dbfbc2463a289fee
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/Icon 9.mat
+  - fileID: 57
+    classID: 21
+    packedSize: 692
+    offset: 222840
+    sourceAssetGUID: a4492526e35bfcfdfafcde080578a8af
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/PreviewFull.mat
+  - fileID: 58
+    classID: 21
+    packedSize: 1164
+    offset: 223536
+    sourceAssetGUID: b988eb0afea68dc848552dcad346abee
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/TransparentBlue.mat
+  - fileID: 59
+    classID: 21
+    packedSize: 1164
+    offset: 224704
+    sourceAssetGUID: 28fd0c1dbd76fdb76bbce475f1a2104e
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/TransparentGreen.mat
+  - fileID: 60
+    classID: 21
+    packedSize: 708
+    offset: 225872
+    sourceAssetGUID: 35630e38b4e5ffb40b44ec5348b4333f
+    buildTimeAssetPath: Packages/com.vrchat.worlds/Editor/VRCSDK/SDK3/VRCSuperSampledUIMaterial.mat
+  - fileID: 61
+    classID: 21
+    packedSize: 912
+    offset: 226584
+    sourceAssetGUID: fd20e45036ef323459e8286e9c23c02c
+    buildTimeAssetPath: Packages/com.vrchat.worlds/Samples/UdonExampleScene/SampleAssetsSet/Materials/GridFloor_udon.mat
+  - fileID: 62
+    classID: 21
+    packedSize: 900
+    offset: 227496
+    sourceAssetGUID: 1057e7bf128f5cc40a6434226c0690b3
+    buildTimeAssetPath: Assets/UdonMotion/Model/Shapell/shapell.fbx
+  - fileID: 63
+    classID: 21
+    packedSize: 148
+    offset: 228400
+    sourceAssetGUID: e3265ab4bf004d28a9537516768c1c75
+    buildTimeAssetPath: Assets/TextMesh Pro/Fonts/LiberationSans.ttf
+  - fileID: 64
+    classID: 21
+    packedSize: 904
+    offset: 228552
+    sourceAssetGUID: 1057e7bf128f5cc40a6434226c0690b3
+    buildTimeAssetPath: Assets/UdonMotion/Model/Shapell/shapell.fbx
+  - fileID: 65
+    classID: 21
+    packedSize: 904
+    offset: 229456
+    sourceAssetGUID: 1057e7bf128f5cc40a6434226c0690b3
+    buildTimeAssetPath: Assets/UdonMotion/Model/Shapell/shapell.fbx
+  - fileID: 66
+    classID: 21
+    packedSize: 900
+    offset: 230360
+    sourceAssetGUID: 1057e7bf128f5cc40a6434226c0690b3
+    buildTimeAssetPath: Assets/UdonMotion/Model/Shapell/shapell.fbx
+  - fileID: 67
+    classID: 21
+    packedSize: 904
+    offset: 231264
+    sourceAssetGUID: 1057e7bf128f5cc40a6434226c0690b3
+    buildTimeAssetPath: Assets/UdonMotion/Model/Shapell/shapell.fbx
+  - fileID: 68
+    classID: 21
+    packedSize: 2016
+    offset: 232168
+    sourceAssetGUID: 2e498d1c8094910479dc3e1b768306a4
+    buildTimeAssetPath: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans
+      SDF - Fallback.asset
+  - fileID: 69
+    classID: 21
+    packedSize: 956
+    offset: 234184
+    sourceAssetGUID: 8f586378b4e144a9851e7b34d9b748ee
+    buildTimeAssetPath: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans
+      SDF.asset
+  - fileID: 70
+    classID: 28
+    packedSize: 21972
+    offset: 235144
+    sourceAssetGUID: 0000000000000000f000000000000000
+    buildTimeAssetPath: Resources/unity_builtin_extra
+  - fileID: 71
+    classID: 28
+    packedSize: 5584
+    offset: 257120
+    sourceAssetGUID: 0000000000000000f000000000000000
+    buildTimeAssetPath: Resources/unity_builtin_extra
+  - fileID: 72
+    classID: 28
+    packedSize: 5588
+    offset: 262704
+    sourceAssetGUID: 0000000000000000f000000000000000
+    buildTimeAssetPath: Resources/unity_builtin_extra
+  - fileID: 73
+    classID: 28
+    packedSize: 21964
+    offset: 268296
+    sourceAssetGUID: 0000000000000000f000000000000000
+    buildTimeAssetPath: Resources/unity_builtin_extra
+  - fileID: 74
+    classID: 28
+    packedSize: 21976
+    offset: 290264
+    sourceAssetGUID: 0000000000000000f000000000000000
+    buildTimeAssetPath: Resources/unity_builtin_extra
+  - fileID: 75
+    classID: 28
+    packedSize: 5584
+    offset: 312240
+    sourceAssetGUID: 0000000000000000f000000000000000
+    buildTimeAssetPath: Resources/unity_builtin_extra
+  - fileID: 76
+    classID: 28
+    packedSize: 87532
+    offset: 317824
+    sourceAssetGUID: 018607904bbb296ba98098330cfec4aa
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/Number-7.png
+  - fileID: 77
+    classID: 28
+    packedSize: 4224
+    offset: 405360
+    sourceAssetGUID: 02c0a84bd64c6f044954d8bde9b46ec8
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_28.png
+  - fileID: 78
+    classID: 28
+    packedSize: 1398296
+    offset: 409584
+    sourceAssetGUID: 05ce14547fef19808aea6d3149ef8c3e
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Thumbnails/spout instructions.png
+  - fileID: 79
+    classID: 28
+    packedSize: 87536
+    offset: 1807880
+    sourceAssetGUID: 077914ecfe261ba008a33fce526a43e8
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Thumbnails/Atlantis TOP VIEW.png
+  - fileID: 80
+    classID: 28
+    packedSize: 4224
+    offset: 1895416
+    sourceAssetGUID: 09f6c01f98a3ded4daf1afc52a3c260f
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_26.png
+  - fileID: 81
+    classID: 28
+    packedSize: 4224
+    offset: 1899640
+    sourceAssetGUID: 0a79c155edf9b2d429d4736abee5acdb
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_35.png
+  - fileID: 82
+    classID: 28
+    packedSize: 65664
+    offset: 1903864
+    sourceAssetGUID: 0f8fa14b3731cda4e947062e734d5e1e
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise256px/LDR_LLL1_1.png
+  - fileID: 83
+    classID: 28
+    packedSize: 4224
+    offset: 1969528
+    sourceAssetGUID: 0fa10b21877c61b4db40ba5708815f81
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_30.png
+  - fileID: 84
+    classID: 28
+    packedSize: 4224
+    offset: 1973752
+    sourceAssetGUID: 119591e0bb084e848835d237546b3882
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_61.png
+  - fileID: 85
+    classID: 28
+    packedSize: 1398280
+    offset: 1977976
+    sourceAssetGUID: 12123d619753ea869b8a49e03aa6d3c8
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/noun-director-chair-7977103-FFFFFF.png
+  - fileID: 86
+    classID: 28
+    packedSize: 4224
+    offset: 3376256
+    sourceAssetGUID: 1378a33cdd085d64c9da863d2484ff21
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_47.png
+  - fileID: 87
+    classID: 28
+    packedSize: 4224
+    offset: 3380480
+    sourceAssetGUID: 153f7d6dfbe713d4884df0f1e243ba92
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_16.png
+  - fileID: 88
+    classID: 28
+    packedSize: 4224
+    offset: 3384704
+    sourceAssetGUID: 15e54aa23a938444389469d53765d741
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_44.png
+  - fileID: 89
+    classID: 28
+    packedSize: 87532
+    offset: 3388928
+    sourceAssetGUID: 17226f020c27a9301b56e287b97b1d5b
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/Number-8.png
+  - fileID: 90
+    classID: 28
+    packedSize: 4224
+    offset: 3476464
+    sourceAssetGUID: 1a9ce5640cde5934aae0022f020464a6
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_40.png
+  - fileID: 91
+    classID: 28
+    packedSize: 65664
+    offset: 3480688
+    sourceAssetGUID: 1abfe0e165ca1e9428b455ffc9a2d9ef
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise256px/LDR_LLL1_2.png
+  - fileID: 92
+    classID: 28
+    packedSize: 4224
+    offset: 3546352
+    sourceAssetGUID: 1d6958e30e40a254dbe5a54c573eeb3c
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_37.png
+  - fileID: 93
+    classID: 28
+    packedSize: 87556
+    offset: 3550576
+    sourceAssetGUID: 1eb7809b2bf3ae066a119a5fd68b98ea
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/ph--number-circle-three-duotone.png
+  - fileID: 94
+    classID: 28
+    packedSize: 699192
+    offset: 3638136
+    sourceAssetGUID: 1fe6b468f5f1b1246a44fff46a2aa3ba
+    buildTimeAssetPath: Assets/UdonMotion/Model/Shapell/shapell_hair.png
+  - fileID: 95
+    classID: 28
+    packedSize: 1398260
+    offset: 4337328
+    sourceAssetGUID: 237dbd9b67cfb184ebf406e8fb3dbdde
+    buildTimeAssetPath: Assets/UdonMotion/Model/Shapell/shapell_faceex01.png
+  - fileID: 96
+    classID: 28
+    packedSize: 1398272
+    offset: 5735592
+    sourceAssetGUID: 2a8c88170a65de023812927b5edaa48f
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/noun-director-7977120-FFFFFF.png
+  - fileID: 97
+    classID: 28
+    packedSize: 87532
+    offset: 7133864
+    sourceAssetGUID: 2b040d4ab5cbb57879d2cf1f1b5e7255
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/Number-2.png
+  - fileID: 98
+    classID: 28
+    packedSize: 4224
+    offset: 7221400
+    sourceAssetGUID: 2ee161d8945169243b5698fec114e1b7
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_15.png
+  - fileID: 99
+    classID: 28
+    packedSize: 1398284
+    offset: 7225624
+    sourceAssetGUID: 30bea7e3f3b0a403785f163b225ff53f
+    buildTimeAssetPath: Assets/MMMaellon/Myth's-Fifth-Anniversary-Card-CameraStillRunning.png
+  - fileID: 100
+    classID: 28
+    packedSize: 4224
+    offset: 8623912
+    sourceAssetGUID: 319b8e66db3faa4438cf6982e9c89b2f
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_34.png
+  - fileID: 101
+    classID: 28
+    packedSize: 1398248
+    offset: 8628136
+    sourceAssetGUID: 326e93aa69f11b8e083099b3db83e722
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Thumbnails/City THUMB.png
+  - fileID: 102
+    classID: 28
+    packedSize: 4224
+    offset: 10026384
+    sourceAssetGUID: 32c6a5f7143b86c44bd5cdee2ff3f8ad
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_24.png
+  - fileID: 103
+    classID: 28
+    packedSize: 4224
+    offset: 10030608
+    sourceAssetGUID: 351e95d0e20a54849bd4ce5f9b498934
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_36.png
+  - fileID: 104
+    classID: 28
+    packedSize: 87532
+    offset: 10034832
+    sourceAssetGUID: 36082878807cce71ca50317adc682ee7
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/Number-4.png
+  - fileID: 105
+    classID: 28
+    packedSize: 4224
+    offset: 10122368
+    sourceAssetGUID: 373f9bf6b0841af4ebf26d25e4a3f4e2
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_3.png
+  - fileID: 106
+    classID: 28
+    packedSize: 4224
+    offset: 10126592
+    sourceAssetGUID: 3ac02e7e783571c468f9c086d2384ba7
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_7.png
+  - fileID: 107
+    classID: 28
+    packedSize: 4224
+    offset: 10130816
+    sourceAssetGUID: 3c2f1fb7e4b66e74191b7c328ada52d9
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_1.png
+  - fileID: 108
+    classID: 28
+    packedSize: 87532
+    offset: 10135040
+    sourceAssetGUID: 3dc66d10f80a031448ddc408fdcd34c7
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Thumbnails/Atlantis THUMB.png
+  - fileID: 109
+    classID: 28
+    packedSize: 4224
+    offset: 10222576
+    sourceAssetGUID: 3f7c3687170b90e4a8d2ee6b142670f4
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_49.png
+  - fileID: 110
+    classID: 28
+    packedSize: 4224
+    offset: 10226800
+    sourceAssetGUID: 404fa8def46b1c447817e1ebdaa7144e
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_60.png
+  - fileID: 111
+    classID: 28
+    packedSize: 6220964
+    offset: 10231024
+    sourceAssetGUID: 438a474b5bf5dd9228927427bf785c36
+    buildTimeAssetPath: Assets/MMMaellon/Myth's-Fifth-Anniversary-Card-NoCamerasSelected.png
+  - fileID: 112
+    classID: 28
+    packedSize: 6220948
+    offset: 16451992
+    sourceAssetGUID: 4794ccad976ec207d89a93c8db358f1c
+    buildTimeAssetPath: Assets/MMMaellon/Myth's-Fifth-Anniversary-Card.png
+  - fileID: 113
+    classID: 28
+    packedSize: 87528
+    offset: 22672944
+    sourceAssetGUID: 48a5c0c40ffeb2dcfadef78bb8171539
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Thumbnails/Desert THUMB.png
+  - fileID: 114
+    classID: 28
+    packedSize: 3688
+    offset: 22760472
+    sourceAssetGUID: 48ff05b253a0dccc1995b0d9a6295019
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Icons/noun-delete-45886-FFFFFF.png
+  - fileID: 115
+    classID: 28
+    packedSize: 4224
+    offset: 22764160
+    sourceAssetGUID: 4a11d65ce13d5f542a0ff136cc2f3fba
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_63.png
+  - fileID: 116
+    classID: 28
+    packedSize: 87556
+    offset: 22768384
+    sourceAssetGUID: 4d410201a18bbf40dbc113d12bc5e99a
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/ph--number-circle-six-duotone.png
+  - fileID: 117
+    classID: 28
+    packedSize: 4224
+    offset: 22855944
+    sourceAssetGUID: 50b54341495978843a6f85583ed4417d
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_0.png
+  - fileID: 118
+    classID: 28
+    packedSize: 4224
+    offset: 22860168
+    sourceAssetGUID: 547dbd5f858c74047ba3f213e4408307
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_39.png
+  - fileID: 119
+    classID: 28
+    packedSize: 3148
+    offset: 22864392
+    sourceAssetGUID: 568e028a87787acc89a8a49d3dae47ea
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Icons/noun-arrow-3350376-FFFFFF.png
+  - fileID: 120
+    classID: 28
+    packedSize: 699204
+    offset: 22867544
+    sourceAssetGUID: 57c1a34895a003624bc419b53dfceb59
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Thumbnails/Calli-Gigi-skinwalker.png
+  - fileID: 121
+    classID: 28
+    packedSize: 2796348
+    offset: 23566752
+    sourceAssetGUID: 5912c80e4bb762449990559dfb6e1bb9
+    buildTimeAssetPath: Assets/UdonMotion/Model/Shapell/shapell_blazer.png
+  - fileID: 122
+    classID: 28
+    packedSize: 1398272
+    offset: 26363104
+    sourceAssetGUID: 5975e46630df229668a733510c98b21e
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Icons/noun-tourist-7083437-FFFFFF.png
+  - fileID: 123
+    classID: 28
+    packedSize: 1624
+    offset: 27761376
+    sourceAssetGUID: 5c85f485f5cca29f68875788aa4bd6ec
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Icons/noun-rounded-rectangle-3844697-FFFFFF.png
+  - fileID: 124
+    classID: 28
+    packedSize: 4224
+    offset: 27763000
+    sourceAssetGUID: 5e542d0126a2c7848b66bffc428905fd
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_55.png
+  - fileID: 125
+    classID: 28
+    packedSize: 65664
+    offset: 27767224
+    sourceAssetGUID: 6017f374382d64245a0a4aab668e6f38
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise256px/LDR_LLL1_0.png
+  - fileID: 126
+    classID: 28
+    packedSize: 87556
+    offset: 27832888
+    sourceAssetGUID: 6109c663ba932050f8f0ba141b0de924
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/ph--number-circle-seven-duotone.png
+  - fileID: 127
+    classID: 28
+    packedSize: 87536
+    offset: 27920448
+    sourceAssetGUID: 61c7224ad0b6713c58f308fe1ae1c2ad
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Thumbnails/Hell Temple THUMB.png
+  - fileID: 128
+    classID: 28
+    packedSize: 9444
+    offset: 28007984
+    sourceAssetGUID: 6418d5f06ef4509368cbb033a45e5332
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Icons/noun-recording-6938446-FFFFFF.png
+  - fileID: 129
+    classID: 28
+    packedSize: 2796348
+    offset: 28017432
+    sourceAssetGUID: 660fcf6cca6dfc9438b368df78bf5209
+    buildTimeAssetPath: Assets/UdonMotion/Model/Shapell/shapell_clothes.png
+  - fileID: 130
+    classID: 28
+    packedSize: 1398252
+    offset: 30813784
+    sourceAssetGUID: 67823c9bb4cf07bbbbcf508e73a38414
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Thumbnails/City TOP VIEW.png
+  - fileID: 131
+    classID: 28
+    packedSize: 4224
+    offset: 32212040
+    sourceAssetGUID: 68613e6a221be1a4b9f31d7fa1c2d1bf
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_13.png
+  - fileID: 132
+    classID: 28
+    packedSize: 4224
+    offset: 32216264
+    sourceAssetGUID: 6b0a189df0bd4d5448eaefb4e673ace8
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_31.png
+  - fileID: 133
+    classID: 28
+    packedSize: 87532
+    offset: 32220488
+    sourceAssetGUID: 6c614f0a507a5629783028596dd02390
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/Number-6.png
+  - fileID: 134
+    classID: 28
+    packedSize: 87556
+    offset: 32308024
+    sourceAssetGUID: 6d91aba16606a1f03a5a8a65a31c1948
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/ph--number-circle-five-duotone.png
+  - fileID: 135
+    classID: 28
+    packedSize: 4224
+    offset: 32395584
+    sourceAssetGUID: 6dda07f1420a968449cf4c6620c44d9f
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_20.png
+  - fileID: 136
+    classID: 28
+    packedSize: 4224
+    offset: 32399808
+    sourceAssetGUID: 6fa5cf178eaaa5f42b820f636bb6e0bd
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_4.png
+  - fileID: 137
+    classID: 28
+    packedSize: 65664
+    offset: 32404032
+    sourceAssetGUID: 70d0a1182b29d6347ac70374c3593bba
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise256px/LDR_LLL1_7.png
+  - fileID: 138
+    classID: 28
+    packedSize: 4224
+    offset: 32469696
+    sourceAssetGUID: 70f23eaf7d8ae9147aa542d20e93733b
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_56.png
+  - fileID: 139
+    classID: 28
+    packedSize: 4224
+    offset: 32473920
+    sourceAssetGUID: 71583cfd8899717428d5b1a95fa39cda
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_9.png
+  - fileID: 140
+    classID: 28
+    packedSize: 4224
+    offset: 32478144
+    sourceAssetGUID: 71bc1b6b66e8b784b972199b7e90204e
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_43.png
+  - fileID: 141
+    classID: 28
+    packedSize: 4224
+    offset: 32482368
+    sourceAssetGUID: 729a3ae164bcb3b4380459386adcf331
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_19.png
+  - fileID: 142
+    classID: 28
+    packedSize: 268924
+    offset: 32486592
+    sourceAssetGUID: 73ec4ae984a0a0f44a2be737e41a6f2f
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/SMAA/AreaTex.tga
+  - fileID: 143
+    classID: 28
+    packedSize: 4224
+    offset: 32755520
+    sourceAssetGUID: 74aca53eb7273624baffc2bf5e5cc173
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_18.png
+  - fileID: 144
+    classID: 28
+    packedSize: 4224
+    offset: 32759744
+    sourceAssetGUID: 771903fe7b4674445829e52e91cff019
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_11.png
+  - fileID: 145
+    classID: 28
+    packedSize: 87532
+    offset: 32763968
+    sourceAssetGUID: 77ae4d372393739269f31b93c3f51d35
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/Number-3.png
+  - fileID: 146
+    classID: 28
+    packedSize: 12628
+    offset: 32851504
+    sourceAssetGUID: 77b7ace48c58b8a88aa58d72c75e8fcf
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Icons/noun-stage-7740682-FFFFFF.png
+  - fileID: 147
+    classID: 28
+    packedSize: 4224
+    offset: 32864136
+    sourceAssetGUID: 79b86f3419b87f3429164a956da8cfab
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_6.png
+  - fileID: 148
+    classID: 28
+    packedSize: 3144
+    offset: 32868360
+    sourceAssetGUID: 7b7d3db5a9db7f7debcf679669cc7637
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Icons/noun-circle-2704267-FFFFFF.png
+  - fileID: 149
+    classID: 28
+    packedSize: 157852
+    offset: 32871504
+    sourceAssetGUID: 7ce6de7dafaf98b4e9179fd9e11f7308
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Icons/noun-location-5749846-FFFFFF-Teleport.png
+  - fileID: 150
+    classID: 28
+    packedSize: 87556
+    offset: 33029360
+    sourceAssetGUID: 7dc0f2e442c4ae297a2687183ebfaeb8
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/ph--number-circle-four-duotone.png
+  - fileID: 151
+    classID: 28
+    packedSize: 4648
+    offset: 33116920
+    sourceAssetGUID: 816d21ead207896d4b8d02676b485c24
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Icons/noun-video-recorder-6027590-FFFFFF.png
+  - fileID: 152
+    classID: 28
+    packedSize: 87532
+    offset: 33121568
+    sourceAssetGUID: 84c672a9338d96d67b8e491d07924350
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/Number-1.png
+  - fileID: 153
+    classID: 28
+    packedSize: 4224
+    offset: 33209104
+    sourceAssetGUID: 85a45a6d8b2ffb84987d2b028ecfb220
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_58.png
+  - fileID: 154
+    classID: 28
+    packedSize: 4224
+    offset: 33213328
+    sourceAssetGUID: 87a5e40cc271ea648b583616f6ebe7fe
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_32.png
+  - fileID: 155
+    classID: 28
+    packedSize: 4224
+    offset: 33217552
+    sourceAssetGUID: 8ecbbcae4cc747a4abbc4adce795d25e
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_46.png
+  - fileID: 156
+    classID: 28
+    packedSize: 4224
+    offset: 33221776
+    sourceAssetGUID: 936dea238abb0864ab3985a995e16a29
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_54.png
+  - fileID: 157
+    classID: 28
+    packedSize: 4224
+    offset: 33226000
+    sourceAssetGUID: 9660a4ca1ca8425408ac25c641932977
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_38.png
+  - fileID: 158
+    classID: 28
+    packedSize: 4224
+    offset: 33230224
+    sourceAssetGUID: 980acadb960f8424c94307ec0e585b4e
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_12.png
+  - fileID: 159
+    classID: 28
+    packedSize: 65664
+    offset: 33234448
+    sourceAssetGUID: 999434725cbc2be4eb54043b36efd4a8
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise256px/LDR_LLL1_6.png
+  - fileID: 160
+    classID: 28
+    packedSize: 4224
+    offset: 33300112
+    sourceAssetGUID: a03c400b0e3959f428ee99dfc6cfc263
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_62.png
+  - fileID: 161
+    classID: 28
+    packedSize: 4224
+    offset: 33304336
+    sourceAssetGUID: a1ae041906217ae44a774d4ca139af50
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_5.png
+  - fileID: 162
+    classID: 28
+    packedSize: 4224
+    offset: 33308560
+    sourceAssetGUID: a469f920b21fc7c4fb5b950917ce2fb2
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_2.png
+  - fileID: 163
+    classID: 28
+    packedSize: 87536
+    offset: 33312784
+    sourceAssetGUID: a80ccc9d255c1701b932427549419d9b
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Thumbnails/Main Island THUMB.png
+  - fileID: 164
+    classID: 28
+    packedSize: 87536
+    offset: 33400320
+    sourceAssetGUID: a900a34e414b7638f964c999312c6272
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Thumbnails/Main Island TOP VIEW.png
+  - fileID: 165
+    classID: 28
+    packedSize: 4224
+    offset: 33487856
+    sourceAssetGUID: aa80dc44aa4fe4c43bb9d51d90cf2958
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_29.png
+  - fileID: 166
+    classID: 28
+    packedSize: 65664
+    offset: 33492080
+    sourceAssetGUID: acde5141d5f4f7a4188394bd52c4dc38
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise256px/LDR_LLL1_5.png
+  - fileID: 167
+    classID: 28
+    packedSize: 87532
+    offset: 33557744
+    sourceAssetGUID: ae090fdebded55c98969453a1d8bae9c
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/Number-5.png
+  - fileID: 168
+    classID: 28
+    packedSize: 87532
+    offset: 33645280
+    sourceAssetGUID: afbd675bbf229d68c9bea8346227523c
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/Number-9.png
+  - fileID: 169
+    classID: 28
+    packedSize: 4224
+    offset: 33732816
+    sourceAssetGUID: afe1e502240079342a0a980484b6da8b
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_10.png
+  - fileID: 170
+    classID: 28
+    packedSize: 4224
+    offset: 33737040
+    sourceAssetGUID: aff59c63d25d43f4c938f248837c30fb
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_48.png
+  - fileID: 171
+    classID: 28
+    packedSize: 4224
+    offset: 33741264
+    sourceAssetGUID: b266511438fae724f9d3ce6bd26583e8
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_42.png
+  - fileID: 172
+    classID: 28
+    packedSize: 699196
+    offset: 33745488
+    sourceAssetGUID: b2c2c1a52cdb75943958a408093dee04
+    buildTimeAssetPath: Packages/com.vrchat.worlds/Samples/UdonExampleScene/SampleAssetsSet/Textures/GridFloor_udon.png
+  - fileID: 173
+    classID: 28
+    packedSize: 65664
+    offset: 34444688
+    sourceAssetGUID: b52d5033b68309943a2386c270a90f44
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise256px/LDR_LLL1_4.png
+  - fileID: 174
+    classID: 28
+    packedSize: 4224
+    offset: 34510352
+    sourceAssetGUID: b71bb466b71fd13449dd736f63caeb67
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_33.png
+  - fileID: 175
+    classID: 28
+    packedSize: 349696
+    offset: 34514576
+    sourceAssetGUID: b79aa66502abf5124be96b2f348437fc
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/ant-design--unlock-outlined.png
+  - fileID: 176
+    classID: 28
+    packedSize: 4224
+    offset: 34864272
+    sourceAssetGUID: b7f000750830ddb4bbc80065b9314ce9
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_21.png
+  - fileID: 177
+    classID: 28
+    packedSize: 4224
+    offset: 34868496
+    sourceAssetGUID: b9960364038cbfa4aa49d7b2032d3110
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_45.png
+  - fileID: 178
+    classID: 28
+    packedSize: 9512
+    offset: 34872720
+    sourceAssetGUID: bd70180c25a18e3d5a56f6db7b8dcf13
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Icons/noun-task-6938463-FFFFFF.png
+  - fileID: 179
+    classID: 28
+    packedSize: 4224
+    offset: 34882232
+    sourceAssetGUID: bdd06fb88ef36ed4a85dd506352c2d80
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_27.png
+  - fileID: 180
+    classID: 28
+    packedSize: 4224
+    offset: 34886456
+    sourceAssetGUID: bf95b6fdc179b0e4f890c841406193fc
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_17.png
+  - fileID: 181
+    classID: 28
+    packedSize: 4224
+    offset: 34890680
+    sourceAssetGUID: bfe953600e8fb1849a804ee08ace7b4c
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_23.png
+  - fileID: 182
+    classID: 28
+    packedSize: 65664
+    offset: 34894904
+    sourceAssetGUID: c072b653e98a06e40857d76ca8c7eecd
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise256px/LDR_LLL1_3.png
+  - fileID: 183
+    classID: 28
+    packedSize: 4224
+    offset: 34960568
+    sourceAssetGUID: c55042318a938344ab23cd7f09dd0076
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_8.png
+  - fileID: 184
+    classID: 28
+    packedSize: 87540
+    offset: 34964792
+    sourceAssetGUID: c65fb7fdec12c568d9f1344317d22f4a
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Thumbnails/Green Fields TOP VIEW.png
+  - fileID: 185
+    classID: 28
+    packedSize: 4224
+    offset: 35052336
+    sourceAssetGUID: c94b57b5a32a22d43ade66e09f6a4bd2
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_53.png
+  - fileID: 186
+    classID: 28
+    packedSize: 132
+    offset: 35056560
+    sourceAssetGUID: caff808516bc767dea36eb9d8a865ce5
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/black-pixel.png
+  - fileID: 187
+    classID: 28
+    packedSize: 4224
+    offset: 35056696
+    sourceAssetGUID: cd9006dc442cc244e89b3f492384d46a
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_41.png
+  - fileID: 188
+    classID: 28
+    packedSize: 1398268
+    offset: 35060920
+    sourceAssetGUID: ce5b97a4795d8edb19028c78bad940ea
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Thumbnails/dada_design-Zs-hYeXryIs-unsplash.jpg
+  - fileID: 189
+    classID: 28
+    packedSize: 1398276
+    offset: 36459192
+    sourceAssetGUID: d292ac7879c10d1de90d3d9053e1dd7a
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/noun-cameraperson-7977113-FFFFFF.png
+  - fileID: 190
+    classID: 28
+    packedSize: 4224
+    offset: 37857472
+    sourceAssetGUID: d2e8e90fac2e6a341a38e1c3963c218d
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_52.png
+  - fileID: 191
+    classID: 28
+    packedSize: 87556
+    offset: 37861696
+    sourceAssetGUID: d3adc20a82f8cc1798767d2e94dc18cd
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/ph--number-circle-eight-duotone.png
+  - fileID: 192
+    classID: 28
+    packedSize: 4224
+    offset: 37949256
+    sourceAssetGUID: d5a51525b27e3ee4aadbeb39cbcf0750
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_51.png
+  - fileID: 193
+    classID: 28
+    packedSize: 4224
+    offset: 37953480
+    sourceAssetGUID: d8c290e38ff0425409d0ae6a98c95e41
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_50.png
+  - fileID: 194
+    classID: 28
+    packedSize: 4224
+    offset: 37957704
+    sourceAssetGUID: d96974690c77f50489eb60ec84bd8dac
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_59.png
+  - fileID: 195
+    classID: 28
+    packedSize: 1152
+    offset: 37961928
+    sourceAssetGUID: d99701099481a2f489610e977df6dcbc
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/SMAA/SearchTex.tga
+  - fileID: 196
+    classID: 28
+    packedSize: 4224
+    offset: 37963080
+    sourceAssetGUID: df01d03f056c6f445b4b8a0ae054207c
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_22.png
+  - fileID: 197
+    classID: 28
+    packedSize: 87556
+    offset: 37967304
+    sourceAssetGUID: df7159db707eedd718dd3ff3ffc0a13e
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/ph--number-circle-nine-duotone.png
+  - fileID: 198
+    classID: 28
+    packedSize: 4224
+    offset: 38054864
+    sourceAssetGUID: e138166e7a7c70f49943be7edda35d35
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_57.png
+  - fileID: 199
+    classID: 28
+    packedSize: 87556
+    offset: 38059088
+    sourceAssetGUID: e2904a457abb2856092bb18de2332bb3
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/ph--number-circle-two-duotone.png
+  - fileID: 200
+    classID: 28
+    packedSize: 128
+    offset: 38146648
+    sourceAssetGUID: e3265ab4bf004d28a9537516768c1c75
+    buildTimeAssetPath: Assets/TextMesh Pro/Fonts/LiberationSans.ttf
+  - fileID: 201
+    classID: 28
+    packedSize: 87536
+    offset: 38146776
+    sourceAssetGUID: e3b095d6b9a4e6514a32cfbfc63ff914
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Thumbnails/Hell Temple TOP VIEW.png
+  - fileID: 202
+    classID: 28
+    packedSize: 2796344
+    offset: 38234312
+    sourceAssetGUID: e7c2775b6cf8c3a4ea8788a235d73bd9
+    buildTimeAssetPath: Assets/UdonMotion/Model/Shapell/shapell_body.png
+  - fileID: 203
+    classID: 28
+    packedSize: 87556
+    offset: 41030656
+    sourceAssetGUID: e95c526f282e94c7f9323fdda61bdbee
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/ph--number-circle-one-duotone.png
+  - fileID: 204
+    classID: 28
+    packedSize: 1398288
+    offset: 41118216
+    sourceAssetGUID: eafad66b07a9f761aa8e9d10a1a01005
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Thumbnails/noun-user-target-vector-icon-1141538-FFFFFF.png
+  - fileID: 205
+    classID: 28
+    packedSize: 87536
+    offset: 42516504
+    sourceAssetGUID: efa09d3fcf151f3db9b517831fd9ec4e
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Thumbnails/Green Fields THUMB.png
+  - fileID: 206
+    classID: 28
+    packedSize: 87556
+    offset: 42604040
+    sourceAssetGUID: f00ab2f4ec5740f3c8fce8a30b0af009
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/ph--number-circle-zero-duotone.png
+  - fileID: 207
+    classID: 28
+    packedSize: 87532
+    offset: 42691600
+    sourceAssetGUID: f11c7adb43de16f22ab603866c295f07
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Thumbnails/Desert TOP VIEW.png
+  - fileID: 208
+    classID: 28
+    packedSize: 4224
+    offset: 42779136
+    sourceAssetGUID: f4b8ab78b57749d4e96d36f6d8a395d0
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_25.png
+  - fileID: 209
+    classID: 28
+    packedSize: 4224
+    offset: 42783360
+    sourceAssetGUID: f6439b54b28f3884eb67579dec0b6f21
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_14.png
+  - fileID: 210
+    classID: 28
+    packedSize: 349692
+    offset: 42787584
+    sourceAssetGUID: f6ab9135dc33cd695a23daab1d8be38c
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/ant-design--lock-filled.png
+  - fileID: 211
+    classID: 28
+    packedSize: 262296
+    offset: 43137280
+    sourceAssetGUID: 2e498d1c8094910479dc3e1b768306a4
+    buildTimeAssetPath: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans
+      SDF - Fallback.asset
+  - fileID: 212
+    classID: 28
+    packedSize: 1048716
+    offset: 43399576
+    sourceAssetGUID: 8f586378b4e144a9851e7b34d9b748ee
+    buildTimeAssetPath: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans
+      SDF.asset
+  - fileID: 213
+    classID: 28
+    packedSize: 4194456
+    offset: 44448296
+    sourceAssetGUID: 40d95203423ed67b58897f77cd9ffe20
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/IBMPlexSansCondensed-Medium.asset
+  - fileID: 214
+    classID: 43
+    packedSize: 1292
+    offset: 48642752
+    sourceAssetGUID: 829fd8071158993cc8d461a1342fd849
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/Camera.fbx
+  - fileID: 215
+    classID: 43
+    packedSize: 26956
+    offset: 48644048
+    sourceAssetGUID: b77198b06ecbbb1c38cc9bedcd115dd5
+    buildTimeAssetPath: Assets/UdonMotion/Model/Shapell/auto/shapellRecorder.mesh
+  - fileID: 216
+    classID: 43
+    packedSize: 2016424
+    offset: 48671008
+    sourceAssetGUID: 1057e7bf128f5cc40a6434226c0690b3
+    buildTimeAssetPath: Assets/UdonMotion/Model/Shapell/shapell.fbx
+  - fileID: 217
+    classID: 43
+    packedSize: 2976
+    offset: 50687432
+    sourceAssetGUID: b693006b013a41e48919f9df5f01aa7a
+    buildTimeAssetPath: Assets/UdonMotion/Model/gizmo/gizmo.fbx
+  - fileID: 218
+    classID: 43
+    packedSize: 2976
+    offset: 50690408
+    sourceAssetGUID: b693006b013a41e48919f9df5f01aa7a
+    buildTimeAssetPath: Assets/UdonMotion/Model/gizmo/gizmo.fbx
+  - fileID: 219
+    classID: 43
+    packedSize: 2976
+    offset: 50693384
+    sourceAssetGUID: b693006b013a41e48919f9df5f01aa7a
+    buildTimeAssetPath: Assets/UdonMotion/Model/gizmo/gizmo.fbx
+  - fileID: 220
+    classID: 43
+    packedSize: 8052
+    offset: 50696360
+    sourceAssetGUID: 8fa89fa171b74d782b7f54dad32b56d3
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/Camera.fbx
+  - fileID: 221
+    classID: 48
+    packedSize: 17324
+    offset: 50704416
+    sourceAssetGUID: 0000000000000000f000000000000000
+    buildTimeAssetPath: Resources/unity_builtin_extra
+  - fileID: 222
+    classID: 48
+    packedSize: 25420
+    offset: 50721744
+    sourceAssetGUID: 0000000000000000f000000000000000
+    buildTimeAssetPath: Resources/unity_builtin_extra
+  - fileID: 223
+    classID: 48
+    packedSize: 119484
+    offset: 50747168
+    sourceAssetGUID: 0000000000000000f000000000000000
+    buildTimeAssetPath: Resources/unity_builtin_extra
+  - fileID: 224
+    classID: 48
+    packedSize: 10256
+    offset: 50866656
+    sourceAssetGUID: 0000000000000000f000000000000000
+    buildTimeAssetPath: Resources/unity_builtin_extra
+  - fileID: 225
+    classID: 48
+    packedSize: 4748
+    offset: 50876912
+    sourceAssetGUID: 0000000000000000f000000000000000
+    buildTimeAssetPath: Resources/unity_builtin_extra
+  - fileID: 226
+    classID: 48
+    packedSize: 4440
+    offset: 50881664
+    sourceAssetGUID: 0000000000000000f000000000000000
+    buildTimeAssetPath: Resources/unity_builtin_extra
+  - fileID: 227
+    classID: 48
+    packedSize: 4220
+    offset: 50886104
+    sourceAssetGUID: 0000000000000000f000000000000000
+    buildTimeAssetPath: Resources/unity_builtin_extra
+  - fileID: 228
+    classID: 48
+    packedSize: 6132
+    offset: 50890328
+    sourceAssetGUID: 02d2da9bc88d25c4d878c1ed4e0b3854
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/CopyStdFromTexArray.shader
+  - fileID: 229
+    classID: 48
+    packedSize: 10980
+    offset: 50896464
+    sourceAssetGUID: 0d8afcb51cc9f0349a6d190da929b838
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/GrainBaker.shader
+  - fileID: 230
+    classID: 48
+    packedSize: 61360
+    offset: 50907448
+    sourceAssetGUID: 0ef78d24e85a44f4da9d5b5eaa00e50b
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/DepthOfField.shader
+  - fileID: 231
+    classID: 48
+    packedSize: 16528
+    offset: 50968808
+    sourceAssetGUID: 14eb328de4b8eb245bb7cea29e4ac00b
+    buildTimeAssetPath: Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader
+  - fileID: 232
+    classID: 48
+    packedSize: 5572
+    offset: 50985336
+    sourceAssetGUID: 29569dad076f2d6a38966c3ad3864585
+    buildTimeAssetPath: Assets/MMMaellon/OnlyVisibleToPlayers.shader
+  - fileID: 233
+    classID: 48
+    packedSize: 19860
+    offset: 50990912
+    sourceAssetGUID: 2c459b89a7c8b1a4fbefe0d81341651c
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/MotionBlur.shader
+  - fileID: 234
+    classID: 48
+    packedSize: 4056
+    offset: 51010776
+    sourceAssetGUID: 3020ac7ece79a7f4eb789a236f8bd6c5
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Debug/Waveform.shader
+  - fileID: 235
+    classID: 48
+    packedSize: 6584
+    offset: 51014832
+    sourceAssetGUID: 34a819c9e33402547a81619693adc8d5
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/Texture2DLerp.shader
+  - fileID: 236
+    classID: 48
+    packedSize: 1108948
+    offset: 51021416
+    sourceAssetGUID: 382151503e2a43a4ebb7366d1632731d
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/Uber.shader
+  - fileID: 237
+    classID: 48
+    packedSize: 7180
+    offset: 52130368
+    sourceAssetGUID: 4117fce9491711c4094d33a048e36e73
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/DeferredFog.shader
+  - fileID: 238
+    classID: 48
+    packedSize: 7688
+    offset: 52137552
+    sourceAssetGUID: 44c1b7c3827912f45b473dbe106c1ecf
+    buildTimeAssetPath: Packages/com.vrchat.base/Runtime/VRCSDK/Sample Assets/Shaders/Mobile/VRChat-Mobile-SupersampledUnlit.shader
+  - fileID: 239
+    classID: 48
+    packedSize: 6176
+    offset: 52145240
+    sourceAssetGUID: 4bf4cff0d0bac3d43894e2e8839feb40
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/CopyStd.shader
+  - fileID: 240
+    classID: 48
+    packedSize: 9676
+    offset: 52151416
+    sourceAssetGUID: 51bcf79c50dc92e47ba87821b61100c3
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/TemporalAntialiasing.shader
+  - fileID: 241
+    classID: 48
+    packedSize: 4708
+    offset: 52161096
+    sourceAssetGUID: 531c3c0e0c1b33642aa765166dd1fbd1
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/IconShader.shader
+  - fileID: 242
+    classID: 48
+    packedSize: 3732
+    offset: 52165808
+    sourceAssetGUID: 5ab0816423f0dfe45841cab3b05ec9ef
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/DiscardAlpha.shader
+  - fileID: 243
+    classID: 48
+    packedSize: 12528
+    offset: 52169544
+    sourceAssetGUID: 67f9497810829eb4791ec19e95781e51
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/MultiScaleVO.shader
+  - fileID: 244
+    classID: 48
+    packedSize: 16128
+    offset: 52182072
+    sourceAssetGUID: 7ad194cbe7d006f4bace915156972026
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/Lut2DBaker.shader
+  - fileID: 245
+    classID: 48
+    packedSize: 5480
+    offset: 52198200
+    sourceAssetGUID: 7ce2bc7709285ee4d90b888b4e0708f9
+    buildTimeAssetPath: Assets/UdonMotion/Shader/Unlit-Overlay.shader
+  - fileID: 246
+    classID: 48
+    packedSize: 23380
+    offset: 52203680
+    sourceAssetGUID: 81af42a93ade3dd46a9b583d4eec76d6
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/SubpixelMorphologicalAntialiasing.shader
+  - fileID: 247
+    classID: 48
+    packedSize: 8452
+    offset: 52227064
+    sourceAssetGUID: 9687b2da23383b847b1f5a464badac15
+    buildTimeAssetPath: Assets/ShaderMotion/Shader/MeshRecorder.shader
+  - fileID: 248
+    classID: 48
+    packedSize: 4072
+    offset: 52235520
+    sourceAssetGUID: a71093f2a4fe26a40805c22739e10e4a
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Debug/Vectorscope.shader
+  - fileID: 249
+    classID: 48
+    packedSize: 13316
+    offset: 52239592
+    sourceAssetGUID: b34a29e523cb9d545881e193a079f2df
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Debug/LightMeter.shader
+  - fileID: 250
+    classID: 48
+    packedSize: 23072
+    offset: 52252912
+    sourceAssetGUID: b958ad1c92bd3d64c9e61318b8681dab
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Debug/Overlays.shader
+  - fileID: 251
+    classID: 48
+    packedSize: 28364
+    offset: 52275984
+    sourceAssetGUID: c1e1d3119c6fd4646aea0b4b74cacc1a
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/Bloom.shader
+  - fileID: 252
+    classID: 48
+    packedSize: 6408
+    offset: 52304352
+    sourceAssetGUID: cdbdb71de5f9c454b980f6d0e87f0afb
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/Copy.shader
+  - fileID: 253
+    classID: 48
+    packedSize: 30444
+    offset: 52310760
+    sourceAssetGUID: d7640629310e79646af0f46eb55ae466
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/ScalableAO.shader
+  - fileID: 254
+    classID: 48
+    packedSize: 41220
+    offset: 52341208
+    sourceAssetGUID: dcc6a6ec20ce5ebcc8fe813fddebe292
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/Scripts/SimpleVertexColors.shader
+  - fileID: 255
+    classID: 48
+    packedSize: 6196
+    offset: 52382432
+    sourceAssetGUID: e8ce9961912f3214586fe8709b9012c1
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/CopyStdFromDoubleWide.shader
+  - fileID: 256
+    classID: 48
+    packedSize: 52476
+    offset: 52388632
+    sourceAssetGUID: f75014305794b3948a3c6d5ccd550e05
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/FinalPass.shader
+  - fileID: 257
+    classID: 48
+    packedSize: 5136
+    offset: 52441112
+    sourceAssetGUID: f7ea35cfb33fcad4ab8f2429ec103bef
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Debug/Histogram.shader
+  - fileID: 258
+    classID: 48
+    packedSize: 16780
+    offset: 52446248
+    sourceAssetGUID: f997a3dc9254c44459323cced085150c
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/ScreenSpaceReflections.shader
+  - fileID: 259
+    classID: 48
+    packedSize: 5040
+    offset: 52463032
+    sourceAssetGUID: f9aab51a7da1f2c99bd3144b2c22a35f
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/CameraOverlayShader.shader
+  - fileID: 260
+    classID: 48
+    packedSize: 17276
+    offset: 52468072
+    sourceAssetGUID: fe393ace9b354375a9cb14cdbbc28be4
+    buildTimeAssetPath: Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader
+  - fileID: 261
+    classID: 72
+    packedSize: 1900
+    offset: 52485352
+    sourceAssetGUID: 18183ebfeeab97749b43e38b928604a7
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Debug/Histogram.compute
+  - fileID: 262
+    classID: 72
+    packedSize: 1608
+    offset: 52487256
+    sourceAssetGUID: 31e9175024adfd44aba2530ff9b77494
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/Texture3DLerp.compute
+  - fileID: 263
+    classID: 72
+    packedSize: 95828
+    offset: 52488864
+    sourceAssetGUID: 34845e0ca016b7448842e965db5890a5
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/AutoExposure.compute
+  - fileID: 264
+    classID: 72
+    packedSize: 80092
+    offset: 52584696
+    sourceAssetGUID: 34a460e8a2e66c243a9c12024e5a798d
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/MultiScaleVORender.compute
+  - fileID: 265
+    classID: 72
+    packedSize: 21684
+    offset: 52664792
+    sourceAssetGUID: 42496b74c071f5749950ca1abe33e945
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/Lut3DBaker.compute
+  - fileID: 266
+    classID: 72
+    packedSize: 5136
+    offset: 52686480
+    sourceAssetGUID: 4c63bc487e6c29a4a99f85a6c47b292b
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/MultiScaleVODownsample1.compute
+  - fileID: 267
+    classID: 72
+    packedSize: 185808
+    offset: 52691616
+    sourceAssetGUID: 600d6212b59bb40409d19d750b5fd1e9
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/MultiScaleVOUpsample.compute
+  - fileID: 268
+    classID: 72
+    packedSize: 6480
+    offset: 52877424
+    sourceAssetGUID: 6dba4103d23a7904fbc49099355aff3e
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/GaussianDownsample.compute
+  - fileID: 269
+    classID: 72
+    packedSize: 1724
+    offset: 52883904
+    sourceAssetGUID: 8c2fcbdf9bc58664f89917f7b9d79501
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/ExposureHistogram.compute
+  - fileID: 270
+    classID: 72
+    packedSize: 1912
+    offset: 52885632
+    sourceAssetGUID: 92c63830cd50c0b4fbb8233613839958
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Debug/Waveform.compute
+  - fileID: 271
+    classID: 72
+    packedSize: 2032
+    offset: 52887544
+    sourceAssetGUID: e1efca7c36fd01840aae0dd10378de5c
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Debug/Vectorscope.compute
+  - fileID: 272
+    classID: 72
+    packedSize: 2040
+    offset: 52889576
+    sourceAssetGUID: e4d3e4779e48a374f91d48d4c0aedb7b
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/MultiScaleVODownsample2.compute
+  - fileID: 273
+    classID: 74
+    packedSize: 3188
+    offset: 52891616
+    sourceAssetGUID: 1e96caeccceb5fa879b2359191aa3575
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/CameraFollowOff.anim
+  - fileID: 274
+    classID: 74
+    packedSize: 2732
+    offset: 52894808
+    sourceAssetGUID: 76dead85a7cb69655afbd2fa4af4d62e
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/CameraFollowOn.anim
+  - fileID: 275
+    classID: 74
+    packedSize: 2560
+    offset: 52897544
+    sourceAssetGUID: 6ff6e56e6b6522f6e936ccfc1d3e29c8
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/CameraModeFollow.anim
+  - fileID: 276
+    classID: 74
+    packedSize: 2740
+    offset: 52900104
+    sourceAssetGUID: 74f41d0024032f627b7ffbdc1b70ec40
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/CameraModeHandheld.anim
+  - fileID: 277
+    classID: 74
+    packedSize: 2504
+    offset: 52902848
+    sourceAssetGUID: 98e6321b5f6e71019848b27b818768e9
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/CameraModePreprogrammed.anim
+  - fileID: 278
+    classID: 74
+    packedSize: 2492
+    offset: 52905352
+    sourceAssetGUID: 1d47b708359562acbb463836718cf695
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/CameraZoomMax.anim
+  - fileID: 279
+    classID: 74
+    packedSize: 2492
+    offset: 52907848
+    sourceAssetGUID: aab5cc84636d7af79832f02bc018a60b
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/CameraZoomMin.anim
+  - fileID: 280
+    classID: 74
+    packedSize: 4356
+    offset: 52910344
+    sourceAssetGUID: da40bfb7d3dd4bae79c1bd7d24e2a893
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/DemoMainIslandCameras.anim
+  - fileID: 281
+    classID: 74
+    packedSize: 4340
+    offset: 52914704
+    sourceAssetGUID: 247f42e9be2416dada0e09109d774d60
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/Cam 1.anim
+  - fileID: 282
+    classID: 74
+    packedSize: 2644
+    offset: 52919048
+    sourceAssetGUID: 2cfca31e77abee2f681602ea352f56e7
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/Cam 10.anim
+  - fileID: 283
+    classID: 74
+    packedSize: 4340
+    offset: 52921696
+    sourceAssetGUID: 2709a01316885d0658e1fc89f7b7e869
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/Cam 2.anim
+  - fileID: 284
+    classID: 74
+    packedSize: 4340
+    offset: 52926040
+    sourceAssetGUID: 03588602d0b86f473b461eef67864fd1
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/Cam 3.anim
+  - fileID: 285
+    classID: 74
+    packedSize: 4660
+    offset: 52930384
+    sourceAssetGUID: fe54dfd3cc9cd497fbbac05d10d1402d
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/Cam 4.anim
+  - fileID: 286
+    classID: 74
+    packedSize: 4660
+    offset: 52935048
+    sourceAssetGUID: a3772996c10ad6e6b989bc6d216510f2
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/Cam 5.anim
+  - fileID: 287
+    classID: 74
+    packedSize: 4500
+    offset: 52939712
+    sourceAssetGUID: 63b106c3ffad3559a9556df80503321e
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/Cam 6.anim
+  - fileID: 288
+    classID: 74
+    packedSize: 4340
+    offset: 52944216
+    sourceAssetGUID: 523c8f6153a281d729102ebcb5bde957
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/Cam 7.anim
+  - fileID: 289
+    classID: 74
+    packedSize: 4340
+    offset: 52948560
+    sourceAssetGUID: 704a204870553c9449560a209e8ea3d5
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/Cam 8.anim
+  - fileID: 290
+    classID: 74
+    packedSize: 4340
+    offset: 52952904
+    sourceAssetGUID: 9002701b587ee11868b7e3b299e11dbd
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/Cam 9.anim
+  - fileID: 291
+    classID: 74
+    packedSize: 2400
+    offset: 52957248
+    sourceAssetGUID: d7bd47327550467c7953e44aa0ed229a
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/CameraMoveLoop.anim
+  - fileID: 292
+    classID: 74
+    packedSize: 7120
+    offset: 52959648
+    sourceAssetGUID: 04b8109ffdf6a2f2f9a9ab6a1d567332
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/CamsOff.anim
+  - fileID: 293
+    classID: 74
+    packedSize: 5752
+    offset: 52966768
+    sourceAssetGUID: 26e5563e4fb4455569832b6d6678e894
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/CamsOn.anim
+  - fileID: 294
+    classID: 74
+    packedSize: 2416
+    offset: 52972520
+    sourceAssetGUID: cd55efd890dad7ce8af2271a3c90b762
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/ConcertOwner.anim
+  - fileID: 295
+    classID: 74
+    packedSize: 2240
+    offset: 52974936
+    sourceAssetGUID: cb721bf728a4d4c32ac72224bf20c04d
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/PerfOwner.anim
+  - fileID: 296
+    classID: 74
+    packedSize: 4364
+    offset: 52977176
+    sourceAssetGUID: fb82673377f137b0f835ba2de10a73d5
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/Recenter.anim
+  - fileID: 297
+    classID: 74
+    packedSize: 7476
+    offset: 52981544
+    sourceAssetGUID: 35a5165d2304638cba65caf66a6007ff
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/StageAtlantis.anim
+  - fileID: 298
+    classID: 74
+    packedSize: 7856
+    offset: 52989024
+    sourceAssetGUID: 62c536557857d06928f703a63efb4ce0
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/StageCity.anim
+  - fileID: 299
+    classID: 74
+    packedSize: 7312
+    offset: 52996880
+    sourceAssetGUID: 7a2541133354548159316a8771dd01c9
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/StageDesert.anim
+  - fileID: 300
+    classID: 74
+    packedSize: 8188
+    offset: 53004192
+    sourceAssetGUID: ceb0b61adeab6fcbbb0bfffee1ff70dc
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/StageFollowPlayers.anim
+  - fileID: 301
+    classID: 74
+    packedSize: 7856
+    offset: 53012384
+    sourceAssetGUID: 43c91a64d59cef3498066401dcfd68fe
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/StageGreenFields.anim
+  - fileID: 302
+    classID: 74
+    packedSize: 7820
+    offset: 53020240
+    sourceAssetGUID: a9bb9fdcab55b38cc92f9949c91e02a1
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/StageHellTemple.anim
+  - fileID: 303
+    classID: 74
+    packedSize: 3656
+    offset: 53028064
+    sourceAssetGUID: 4248c74dcf2a307f482ecb9934babb88
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/StageMain.anim
+  - fileID: 304
+    classID: 74
+    packedSize: 3164
+    offset: 53031720
+    sourceAssetGUID: b653d6200eacccb87b3cd9710d166be8
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/ZoomMax.anim
+  - fileID: 305
+    classID: 74
+    packedSize: 3164
+    offset: 53034888
+    sourceAssetGUID: 5071de761bac183179108dc4db15bf71
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/ZoomMin.anim
+  - fileID: 306
+    classID: 74
+    packedSize: 2696
+    offset: 53038056
+    sourceAssetGUID: 9a27fbd36bf352b288d2a4856a27e570
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Animations/Cameras has ownership.anim
+  - fileID: 307
+    classID: 74
+    packedSize: 2552
+    offset: 53040752
+    sourceAssetGUID: 4ac378951642a93018c7cc51a162e025
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Animations/Cameras in use.anim
+  - fileID: 308
+    classID: 74
+    packedSize: 9468
+    offset: 53043304
+    sourceAssetGUID: 9abe5265dd112ad2b9779fd28a0f8f56
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Animations/Defaults.anim
+  - fileID: 309
+    classID: 74
+    packedSize: 2688
+    offset: 53052776
+    sourceAssetGUID: ab0fd88ae68f70f628ac35e9d0747d2e
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Animations/OBS Enabled.anim
+  - fileID: 310
+    classID: 74
+    packedSize: 3624
+    offset: 53055464
+    sourceAssetGUID: e5600449de66c647a8788157d3f9c997
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Animations/OBS split.anim
+  - fileID: 311
+    classID: 74
+    packedSize: 3120
+    offset: 53059088
+    sourceAssetGUID: 7c78dccc0782b5ed9a73fdfca3d6c88f
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Animations/Performances playing.anim
+  - fileID: 312
+    classID: 74
+    packedSize: 4572
+    offset: 53062208
+    sourceAssetGUID: be640808f192ad72bbd9256df9df0341
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Animations/SpecialFollowMode Off.anim
+  - fileID: 313
+    classID: 74
+    packedSize: 4532
+    offset: 53066784
+    sourceAssetGUID: c6c0be7474c070819bc2f1a5b6bb16bb
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Animations/SpecialFollowMode.anim
+  - fileID: 314
+    classID: 74
+    packedSize: 2280
+    offset: 53071320
+    sourceAssetGUID: a0aab2fcd2393e4af8c5494712344e78
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/Animations/0.anim
+  - fileID: 315
+    classID: 74
+    packedSize: 2280
+    offset: 53073600
+    sourceAssetGUID: da739f35a3b6c25738de5065e13616a9
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/Animations/1.anim
+  - fileID: 316
+    classID: 74
+    packedSize: 2280
+    offset: 53075880
+    sourceAssetGUID: 671f7de4236a68266afd335d75a47830
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/Animations/2.anim
+  - fileID: 317
+    classID: 74
+    packedSize: 2280
+    offset: 53078160
+    sourceAssetGUID: b35e7e508a0ecddf19aa94be42fc9978
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/Animations/3.anim
+  - fileID: 318
+    classID: 74
+    packedSize: 2280
+    offset: 53080440
+    sourceAssetGUID: abeecbe97f37aef419a5b06796f6af30
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/Animations/4.anim
+  - fileID: 319
+    classID: 74
+    packedSize: 2280
+    offset: 53082720
+    sourceAssetGUID: 18a73003bf1e7b9e39b3cca222ba1409
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/Animations/5.anim
+  - fileID: 320
+    classID: 74
+    packedSize: 2280
+    offset: 53085000
+    sourceAssetGUID: e3017262afc97bf12a07b2edd002478b
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/Animations/6.anim
+  - fileID: 321
+    classID: 74
+    packedSize: 2280
+    offset: 53087280
+    sourceAssetGUID: 80e2a94621b7c366aa2ad028ce329e8e
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/Animations/7.anim
+  - fileID: 322
+    classID: 74
+    packedSize: 2280
+    offset: 53089560
+    sourceAssetGUID: 2c7b9a844873413628e804f4c12bedf4
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/Animations/8.anim
+  - fileID: 323
+    classID: 74
+    packedSize: 2280
+    offset: 53091840
+    sourceAssetGUID: 824bb5950f51c1f5cb7046b6e4f191d4
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/Animations/9.anim
+  - fileID: 324
+    classID: 74
+    packedSize: 2416
+    offset: 53094120
+    sourceAssetGUID: 0ec5bf9c5559a8fc5becdacbb94aa2aa
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/Animations/CameraEditorDollyOff.anim
+  - fileID: 325
+    classID: 74
+    packedSize: 2376
+    offset: 53096536
+    sourceAssetGUID: e47280bfbb65406e8bfe6a10e658c710
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/Animations/CameraEditorDollyOn.anim
+  - fileID: 326
+    classID: 74
+    packedSize: 3124
+    offset: 53098912
+    sourceAssetGUID: 76c29f26f0554e7e386578a94c018ba9
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/Animations/CameraLocked.anim
+  - fileID: 327
+    classID: 74
+    packedSize: 2428
+    offset: 53102040
+    sourceAssetGUID: 4ab446008b1cd669eb137c748143a3c0
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/Animations/CameraPlayerTrackingOff.anim
+  - fileID: 328
+    classID: 74
+    packedSize: 2428
+    offset: 53104472
+    sourceAssetGUID: 3880087cfa5b338248e115aeb4c5b118
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/Animations/CameraPlayerTrackingOn.anim
+  - fileID: 329
+    classID: 74
+    packedSize: 2844
+    offset: 53106904
+    sourceAssetGUID: c56716adcbcb4dedb83cbdc29395bc8a
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/Animations/CameraUnlocked.anim
+  - fileID: 330
+    classID: 74
+    packedSize: 2372
+    offset: 53109752
+    sourceAssetGUID: 465440761e1bd55eeb37d76785092f3f
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/Animations/CameraZoomMax.anim
+  - fileID: 331
+    classID: 74
+    packedSize: 2372
+    offset: 53112128
+    sourceAssetGUID: a4f966eab01dd5d24b86c08347b7406c
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/Animations/CameraZoomMin.anim
+  - fileID: 332
+    classID: 74
+    packedSize: 4584
+    offset: 53114504
+    sourceAssetGUID: 48e6977c03b2c060396807785594897f
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/Animations/FanCam -
+      CameraPanel - DirectorControls - Owner.anim
+  - fileID: 333
+    classID: 74
+    packedSize: 4500
+    offset: 53119088
+    sourceAssetGUID: 1cea2ff4d3b7c81259eba12359ad9d88
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/Animations/FanCam -
+      CameraPanel - DirectorControls.anim
+  - fileID: 334
+    classID: 74
+    packedSize: 2996
+    offset: 53123592
+    sourceAssetGUID: 122c433f0e51ea89293366f10f3457b3
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/Animations/FanCam -
+      CameraPanel - NoControls.anim
+  - fileID: 335
+    classID: 74
+    packedSize: 3200
+    offset: 53126592
+    sourceAssetGUID: 3e3570129e2ba76a5a0fc69e36529d6b
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/Animations/FanCam -
+      CameraPanel - OperatorControls.anim
+  - fileID: 336
+    classID: 74
+    packedSize: 3112
+    offset: 53129792
+    sourceAssetGUID: fde331081c259bb2cad22b2eba5d179e
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/Animations/FanCam -
+      DefaultMode.anim
+  - fileID: 337
+    classID: 74
+    packedSize: 3416
+    offset: 53132904
+    sourceAssetGUID: 5e086e0f1db4d18e68f182d7b48ecc01
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/Animations/FanCam -
+      DollyMode.anim
+  - fileID: 338
+    classID: 74
+    packedSize: 3568
+    offset: 53136320
+    sourceAssetGUID: b4b7dbf19a311e5a0954ed45efb923b2
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/Animations/FanCamEditOff.anim
+  - fileID: 339
+    classID: 74
+    packedSize: 3572
+    offset: 53139888
+    sourceAssetGUID: d174253ff418a14f7ba02c9baf87e1b4
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/Animations/FanCamEditOn
+      Default.anim
+  - fileID: 340
+    classID: 74
+    packedSize: 3572
+    offset: 53143464
+    sourceAssetGUID: 086250e84021ff862a5e4431e3cb16ce
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/Animations/FanCamEditOn
+      Dolly.anim
+  - fileID: 341
+    classID: 74
+    packedSize: 2408
+    offset: 53147040
+    sourceAssetGUID: ead9235bfd0302a0280038023c789cdc
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/Animations/FanCamRecOff.anim
+  - fileID: 342
+    classID: 74
+    packedSize: 2608
+    offset: 53149448
+    sourceAssetGUID: 7b824446fee82cc3faec83a87122235a
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/Animations/FanCamRecOn.anim
+  - fileID: 343
+    classID: 84
+    packedSize: 92
+    offset: 53152056
+    sourceAssetGUID: 1180ce9d134f0d3e9a8a6015024e208b
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/1080pCamera1.renderTexture
+  - fileID: 344
+    classID: 84
+    packedSize: 92
+    offset: 53152152
+    sourceAssetGUID: 0546925469d1cc8248fbdce62d865887
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/1080pCamera2.renderTexture
+  - fileID: 345
+    classID: 84
+    packedSize: 92
+    offset: 53152248
+    sourceAssetGUID: a573a8dae9b8b717bb79cb6aca1f96af
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/1080pCamera3.renderTexture
+  - fileID: 346
+    classID: 84
+    packedSize: 92
+    offset: 53152344
+    sourceAssetGUID: 963166d19c3fc5732968a0c01941c486
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/1080pCamera4.renderTexture
+  - fileID: 347
+    classID: 84
+    packedSize: 92
+    offset: 53152440
+    sourceAssetGUID: 0d90e6db3e50ae80cbc3c54fd0a2f665
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/1080pCamera5.renderTexture
+  - fileID: 348
+    classID: 84
+    packedSize: 92
+    offset: 53152536
+    sourceAssetGUID: a602bc54dbd4f7033adc5c9873107858
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/1080pCamera6.renderTexture
+  - fileID: 349
+    classID: 84
+    packedSize: 92
+    offset: 53152632
+    sourceAssetGUID: 9e397d9d986b589458395b3e772ff0ba
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/1080pCamera7.renderTexture
+  - fileID: 350
+    classID: 84
+    packedSize: 92
+    offset: 53152728
+    sourceAssetGUID: b8a3fdb162944bdf2a866725d39a24da
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/1080pCamera8.renderTexture
+  - fileID: 351
+    classID: 84
+    packedSize: 100
+    offset: 53152824
+    sourceAssetGUID: 75400ed7b6e376b38baa02a4df9b57e6
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/MocapRenderTexture.renderTexture
+  - fileID: 352
+    classID: 84
+    packedSize: 104
+    offset: 53152928
+    sourceAssetGUID: 90868051f183e4ad6bf731e01e6e118f
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/1080pPerformanceCamera.renderTexture
+  - fileID: 353
+    classID: 84
+    packedSize: 100
+    offset: 53153032
+    sourceAssetGUID: fcfa36cacda268a14898c3d476aba872
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/PerformancePreview 1.renderTexture
+  - fileID: 354
+    classID: 84
+    packedSize: 100
+    offset: 53153136
+    sourceAssetGUID: 1597300f9dcb64b91b8c690410212ac7
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/PerformancePreview 2.renderTexture
+  - fileID: 355
+    classID: 84
+    packedSize: 100
+    offset: 53153240
+    sourceAssetGUID: c76c9b6831ec955cba98151658de2647
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/PerformancePreview 3.renderTexture
+  - fileID: 356
+    classID: 84
+    packedSize: 108
+    offset: 53153344
+    sourceAssetGUID: 4ab7433b9980e27a887fdb9d9ec8fc26
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/PerformancePreview 4 (hiRes).renderTexture
+  - fileID: 357
+    classID: 84
+    packedSize: 100
+    offset: 53153456
+    sourceAssetGUID: 6c9f48cf55e1b0751bab9e1def981dc5
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/PerformancePreview 4.renderTexture
+  - fileID: 358
+    classID: 84
+    packedSize: 108
+    offset: 53153560
+    sourceAssetGUID: e244590e0ddddd2f1a317365bc1e39b3
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/PerformancePreview 5 (hiRes).renderTexture
+  - fileID: 359
+    classID: 84
+    packedSize: 100
+    offset: 53153672
+    sourceAssetGUID: 446c2fe25ce912b37ad360c77220b3c2
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/PerformancePreview 5.renderTexture
+  - fileID: 360
+    classID: 84
+    packedSize: 108
+    offset: 53153776
+    sourceAssetGUID: 457dc553b28fd27aaa64db69dd4801a1
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/PerformancePreview 6 (hiRes).renderTexture
+  - fileID: 361
+    classID: 84
+    packedSize: 100
+    offset: 53153888
+    sourceAssetGUID: ea20b6519fcc28cce8adb7d9124ffd48
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/PerformancePreview 6.renderTexture
+  - fileID: 362
+    classID: 84
+    packedSize: 100
+    offset: 53153992
+    sourceAssetGUID: 30a3d3e6aeee8a026b1520f8d64abc9c
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/PerformancePreview 7.renderTexture
+  - fileID: 363
+    classID: 84
+    packedSize: 100
+    offset: 53154096
+    sourceAssetGUID: 4f074df5353fb8171aaffd230e953e74
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/PerformancePreview 8.renderTexture
+  - fileID: 364
+    classID: 84
+    packedSize: 100
+    offset: 53154200
+    sourceAssetGUID: a1dd3625675a1a18cb763f3f10a84d8f
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/PerformancePreview 9.renderTexture
+  - fileID: 365
+    classID: 84
+    packedSize: 92
+    offset: 53154304
+    sourceAssetGUID: 441647b3adf579a6b9674456984dd647
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/1080pMainCRT.renderTexture
+  - fileID: 366
+    classID: 84
+    packedSize: 96
+    offset: 53154400
+    sourceAssetGUID: 11f929efa1c9d8c82a54129d5ae6b233
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/720pLowResCRT.renderTexture
+  - fileID: 367
+    classID: 84
+    packedSize: 92
+    offset: 53154496
+    sourceAssetGUID: 2bfe0c8acd4cfc25bbe11f55d3216598
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/720pPreview0.renderTexture
+  - fileID: 368
+    classID: 84
+    packedSize: 92
+    offset: 53154592
+    sourceAssetGUID: 202b0abf406fbec1aa4eb41afd970e42
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/720pPreview1.renderTexture
+  - fileID: 369
+    classID: 84
+    packedSize: 92
+    offset: 53154688
+    sourceAssetGUID: 89f79b5cd41ec7ec7a0837bcd1596c61
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/720pPreview2.renderTexture
+  - fileID: 370
+    classID: 84
+    packedSize: 92
+    offset: 53154784
+    sourceAssetGUID: ddf7cc4b5f763a04788239c103fe5471
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/720pPreview3.renderTexture
+  - fileID: 371
+    classID: 84
+    packedSize: 92
+    offset: 53154880
+    sourceAssetGUID: 9b85f74ec663a2c719ab1b0fc7107fd4
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/720pPreview4.renderTexture
+  - fileID: 372
+    classID: 84
+    packedSize: 92
+    offset: 53154976
+    sourceAssetGUID: 65421b026dc01fbf5836a4aac0ca3b2c
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/720pPreview5.renderTexture
+  - fileID: 373
+    classID: 84
+    packedSize: 92
+    offset: 53155072
+    sourceAssetGUID: 58785bdd3fa40d3baaa8467f01b03230
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/720pPreview6.renderTexture
+  - fileID: 374
+    classID: 84
+    packedSize: 92
+    offset: 53155168
+    sourceAssetGUID: 6169ccebd99fa99ffb8cccd2db02f4f7
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/720pPreview7.renderTexture
+  - fileID: 375
+    classID: 84
+    packedSize: 92
+    offset: 53155264
+    sourceAssetGUID: d4a12d9474b5c0f0d8bae1301536b80c
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/720pPreview8.renderTexture
+  - fileID: 376
+    classID: 84
+    packedSize: 92
+    offset: 53155360
+    sourceAssetGUID: 1d3ad35ee6fda76ef9b1f4ce82bc2a1f
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/720pPreview9.renderTexture
+  - fileID: 377
+    classID: 90
+    packedSize: 58432
+    offset: 53155456
+    sourceAssetGUID: 1057e7bf128f5cc40a6434226c0690b3
+    buildTimeAssetPath: Assets/UdonMotion/Model/Shapell/shapell.fbx
+  - fileID: 378
+    classID: 91
+    packedSize: 3772
+    offset: 53213888
+    sourceAssetGUID: 47859f0361cca8246b23e98832fc301f
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem/CameraSetAnimator.controller
+  - fileID: 379
+    classID: 91
+    packedSize: 1708
+    offset: 53217664
+    sourceAssetGUID: 6e9987971a3c8d76698ebab1a6f44d2b
+    buildTimeAssetPath: Assets/MMMaellon/CameraSystem2/PerformanceCamera.controller
+  - fileID: 380
+    classID: 91
+    packedSize: 14264
+    offset: 53219376
+    sourceAssetGUID: 44881a35eb8f355518b4161a3f66959c
+    buildTimeAssetPath: Assets/MMMaellon/Menu/MenuAnimator.controller
+  - fileID: 381
+    classID: 91
+    packedSize: 2604
+    offset: 53233640
+    sourceAssetGUID: f54b7d3dc66d70bdf8a46fa29f75b99f
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/Animations/FanCam -
+      Manager.controller
+  - fileID: 382
+    classID: 91
+    packedSize: 7576
+    offset: 53236248
+    sourceAssetGUID: 544bf602c1d3925ac9776d6decc100db
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/Animations/FanCam -
+      Switcher.controller
+  - fileID: 383
+    classID: 91
+    packedSize: 5040
+    offset: 53243824
+    sourceAssetGUID: 693b07873342565fdb59127bb5c47837
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/Animations/FanCam.controller
+  - fileID: 384
+    classID: 115
+    packedSize: 92
+    offset: 184480
+    sourceAssetGUID: 661092b4961be7145bfbe56e1e62337b
+    buildTimeAssetPath: Packages/com.vrchat.worlds/Runtime/VRCSDK/Plugins/VRCSDK3.dll
+  - fileID: 385
+    classID: 115
+    packedSize: 96
+    offset: 184576
+    sourceAssetGUID: 4ecd63eff847044b68db9453ce219299
+    buildTimeAssetPath: Packages/com.vrchat.base/Runtime/VRCSDK/Plugins/VRCCore-Editor.dll
+  - fileID: 386
+    classID: 115
+    packedSize: 108
+    offset: 184672
+    sourceAssetGUID: 661092b4961be7145bfbe56e1e62337b
+    buildTimeAssetPath: Packages/com.vrchat.worlds/Runtime/VRCSDK/Plugins/VRCSDK3.dll
+  - fileID: 387
+    classID: 115
+    packedSize: 92
+    offset: 184784
+    sourceAssetGUID: 0cd44c1031e13a943bb63640046fad76
+    buildTimeAssetPath: Packages/com.unity.ugui/Runtime/UI/Core/Layout/CanvasScaler.cs
+  - fileID: 388
+    classID: 115
+    packedSize: 108
+    offset: 184880
+    sourceAssetGUID: 0f7633c93f0364a418841eeb8b058634
+    buildTimeAssetPath: Packages/com.unity.cinemachine/Runtime/Components/CinemachineGroupComposer.cs
+  - fileID: 389
+    classID: 115
+    packedSize: 84
+    offset: 184992
+    sourceAssetGUID: 1344c3c82d62a2a41a3576d8abb8e3ea
+    buildTimeAssetPath: Packages/com.unity.ugui/Runtime/UI/Core/RawImage.cs
+  - fileID: 390
+    classID: 115
+    packedSize: 92
+    offset: 185080
+    sourceAssetGUID: 1aa08ab6e0800fa44ae55d278d1423e3
+    buildTimeAssetPath: Packages/com.unity.ugui/Runtime/UI/Core/ScrollRect.cs
+  - fileID: 391
+    classID: 115
+    packedSize: 92
+    offset: 185176
+    sourceAssetGUID: 2a4db7a114972834c8e4117be1d82ba3
+    buildTimeAssetPath: Packages/com.unity.ugui/Runtime/UI/Core/Scrollbar.cs
+  - fileID: 392
+    classID: 115
+    packedSize: 92
+    offset: 185272
+    sourceAssetGUID: 2fafe2cfe61f6974895a912c3755e8f1
+    buildTimeAssetPath: Packages/com.unity.ugui/Runtime/UI/Core/ToggleGroup.cs
+  - fileID: 393
+    classID: 115
+    packedSize: 116
+    offset: 185368
+    sourceAssetGUID: 30649d3a9faa99c48a7b1166b86bf2a0
+    buildTimeAssetPath: Packages/com.unity.ugui/Runtime/UI/Core/Layout/HorizontalLayoutGroup.cs
+  - fileID: 394
+    classID: 115
+    packedSize: 140
+    offset: 185488
+    sourceAssetGUID: 30f4b897495c7ad40b2d47143e02aaba
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Runtime/PostProcessResources.cs
+  - fileID: 395
+    classID: 115
+    packedSize: 76
+    offset: 185632
+    sourceAssetGUID: 31a19414c41e5ae4aae2af33fee712f6
+    buildTimeAssetPath: Packages/com.unity.ugui/Runtime/UI/Core/Mask.cs
+  - fileID: 396
+    classID: 115
+    packedSize: 108
+    offset: 185712
+    sourceAssetGUID: 3245ec927659c4140ac4f8d17403cc18
+    buildTimeAssetPath: Packages/com.unity.ugui/Runtime/UI/Core/Layout/ContentSizeFitter.cs
+  - fileID: 397
+    classID: 115
+    packedSize: 116
+    offset: 185824
+    sourceAssetGUID: 325a6a3050a061e4b8aa51386c30e8e1
+    buildTimeAssetPath: Packages/com.unity.cinemachine/Runtime/Behaviours/CinemachineStateDrivenCamera.cs
+  - fileID: 398
+    classID: 115
+    packedSize: 116
+    offset: 185944
+    sourceAssetGUID: 36d1163fa822e8b418a0a603ec078d5c
+    buildTimeAssetPath: Packages/com.unity.cinemachine/Runtime/Components/CinemachineHardLockToTarget.cs
+  - fileID: 399
+    classID: 115
+    packedSize: 84
+    offset: 186064
+    sourceAssetGUID: 45115577ef41a5b4ca741ed302693907
+    buildTimeAssetPath: Packages/com.vrchat.worlds/Runtime/Udon/UdonBehaviour.cs
+  - fileID: 400
+    classID: 115
+    packedSize: 108
+    offset: 186152
+    sourceAssetGUID: 45e653bab7fb20e499bda25e1b646fea
+    buildTimeAssetPath: Packages/com.unity.cinemachine/Runtime/Behaviours/CinemachineVirtualCamera.cs
+  - fileID: 401
+    classID: 115
+    packedSize: 84
+    offset: 186264
+    sourceAssetGUID: 4e29b1a8efbd4b44bb3f3716e73f07ff
+    buildTimeAssetPath: Packages/com.unity.ugui/Runtime/UI/Core/Button.cs
+  - fileID: 402
+    classID: 115
+    packedSize: 124
+    offset: 186352
+    sourceAssetGUID: 4f231c4fb786f3946a6b90b886c48677
+    buildTimeAssetPath: Packages/com.unity.ugui/Runtime/EventSystem/InputModules/StandaloneInputModule.cs
+  - fileID: 403
+    classID: 115
+    packedSize: 108
+    offset: 186480
+    sourceAssetGUID: 59f8146938fff824cb5fd77236b75775
+    buildTimeAssetPath: Packages/com.unity.ugui/Runtime/UI/Core/Layout/VerticalLayoutGroup.cs
+  - fileID: 404
+    classID: 115
+    packedSize: 76
+    offset: 186592
+    sourceAssetGUID: 5f7201a12d95ffc409449d95f23cf332
+    buildTimeAssetPath: Packages/com.unity.ugui/Runtime/UI/Core/Text.cs
+  - fileID: 405
+    classID: 115
+    packedSize: 84
+    offset: 186672
+    sourceAssetGUID: 67db9e8f0e2ae9c40bc1e2b64352a6b4
+    buildTimeAssetPath: Packages/com.unity.ugui/Runtime/UI/Core/Slider.cs
+  - fileID: 406
+    classID: 115
+    packedSize: 96
+    offset: 186760
+    sourceAssetGUID: 71c1514a6bd24e1e882cebbe1904ce04
+    buildTimeAssetPath: Packages/com.unity.textmeshpro/Scripts/Runtime/TMP_FontAsset.cs
+  - fileID: 407
+    classID: 115
+    packedSize: 92
+    offset: 186856
+    sourceAssetGUID: 72ece51f2901e7445ab60da3685d6b5f
+    buildTimeAssetPath: Packages/com.unity.cinemachine/Runtime/Behaviours/CinemachineBrain.cs
+  - fileID: 408
+    classID: 115
+    packedSize: 100
+    offset: 186952
+    sourceAssetGUID: 76c392e42b5098c458856cdf6ecaaaa1
+    buildTimeAssetPath: Packages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs
+  - fileID: 409
+    classID: 115
+    packedSize: 88
+    offset: 187056
+    sourceAssetGUID: 7b743370ac3e4ec2a1668f5455a8ef8a
+    buildTimeAssetPath: Packages/com.unity.textmeshpro/Scripts/Runtime/TMP_Dropdown.cs
+  - fileID: 410
+    classID: 115
+    packedSize: 100
+    offset: 187144
+    sourceAssetGUID: 8a8695521f0d02e499659fee002a26c2
+    buildTimeAssetPath: Packages/com.unity.ugui/Runtime/UI/Core/Layout/GridLayoutGroup.cs
+  - fileID: 411
+    classID: 115
+    packedSize: 84
+    offset: 187248
+    sourceAssetGUID: 9085046f02f69544eb97fd06b6048fe2
+    buildTimeAssetPath: Packages/com.unity.ugui/Runtime/UI/Core/Toggle.cs
+  - fileID: 412
+    classID: 115
+    packedSize: 116
+    offset: 187336
+    sourceAssetGUID: 9384ab8608cdc3d479fe89cd51eed48f
+    buildTimeAssetPath: Packages/com.unity.cinemachine/Runtime/Components/CinemachineOrbitalTransposer.cs
+  - fileID: 413
+    classID: 115
+    packedSize: 132
+    offset: 187456
+    sourceAssetGUID: 948f4100a11a5c24981795d21301da5c
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Runtime/PostProcessLayer.cs
+  - fileID: 414
+    classID: 115
+    packedSize: 100
+    offset: 187592
+    sourceAssetGUID: 99a9c787e5d1bbf48a389834c4a9641c
+    buildTimeAssetPath: Packages/com.unity.cinemachine/Runtime/Behaviours/CinemachineDollyCart.cs
+  - fileID: 415
+    classID: 115
+    packedSize: 108
+    offset: 187696
+    sourceAssetGUID: a200b19ca1a9685429ed7e043c28e904
+    buildTimeAssetPath: Packages/com.unity.cinemachine/Runtime/Behaviours/CinemachineSmoothPath.cs
+  - fileID: 416
+    classID: 115
+    packedSize: 100
+    offset: 187808
+    sourceAssetGUID: a2fba25a5cd15594e8f050a11e386c80
+    buildTimeAssetPath: Packages/com.unity.cinemachine/Runtime/Behaviours/CinemachineConfiner.cs
+  - fileID: 417
+    classID: 115
+    packedSize: 100
+    offset: 187912
+    sourceAssetGUID: ac0b09e7857660247b1477e93731de29
+    buildTimeAssetPath: Packages/com.unity.cinemachine/Runtime/Behaviours/CinemachinePipeline.cs
+  - fileID: 418
+    classID: 115
+    packedSize: 116
+    offset: 188016
+    sourceAssetGUID: bd6043bde05a7fc4cba197d06915c1e3
+    buildTimeAssetPath: Packages/com.unity.cinemachine/Runtime/Components/Cinemachine3rdPersonFollow.cs
+  - fileID: 419
+    classID: 115
+    packedSize: 124
+    offset: 188136
+    sourceAssetGUID: bf61d954ecb803046953c666facfb904
+    buildTimeAssetPath: Packages/com.vrchat.worlds/Runtime/Udon/ProgramSources/SerializedUdonProgramAsset.cs
+  - fileID: 420
+    classID: 115
+    packedSize: 100
+    offset: 188264
+    sourceAssetGUID: dc42784cf147c0c48a680349fa168899
+    buildTimeAssetPath: Packages/com.unity.ugui/Runtime/UI/Core/GraphicRaycaster.cs
+  - fileID: 421
+    classID: 115
+    packedSize: 100
+    offset: 188368
+    sourceAssetGUID: e501d18bb52cf8c40b1853ca4904654f
+    buildTimeAssetPath: Packages/com.unity.cinemachine/Runtime/Behaviours/CinemachineCollider.cs
+  - fileID: 422
+    classID: 115
+    packedSize: 108
+    offset: 188472
+    sourceAssetGUID: e5eb80d8e62d9d145bb50fb783c0f731
+    buildTimeAssetPath: Packages/com.unity.cinemachine/Runtime/Behaviours/CinemachineTargetGroup.cs
+  - fileID: 423
+    classID: 115
+    packedSize: 100
+    offset: 188584
+    sourceAssetGUID: f4044717213e31446939f7bd49c896ea
+    buildTimeAssetPath: Packages/com.unity.cinemachine/Runtime/Components/CinemachineComposer.cs
+  - fileID: 424
+    classID: 115
+    packedSize: 96
+    offset: 188688
+    sourceAssetGUID: f4688fdb7df04437aeb418b961361dc5
+    buildTimeAssetPath: Packages/com.unity.textmeshpro/Scripts/Runtime/TextMeshProUGUI.cs
+  - fileID: 425
+    classID: 115
+    packedSize: 108
+    offset: 188784
+    sourceAssetGUID: fa7155796051b734daa718462081dc5f
+    buildTimeAssetPath: Packages/com.unity.cinemachine/Runtime/Components/CinemachineTransposer.cs
+  - fileID: 426
+    classID: 115
+    packedSize: 84
+    offset: 188896
+    sourceAssetGUID: fe87c0e1cc204ed48ad3b37840f39efc
+    buildTimeAssetPath: Packages/com.unity.ugui/Runtime/UI/Core/Image.cs
+  - fileID: 427
+    classID: 115
+    packedSize: 92
+    offset: 188984
+    sourceAssetGUID: 661092b4961be7145bfbe56e1e62337b
+    buildTimeAssetPath: Packages/com.vrchat.worlds/Runtime/VRCSDK/Plugins/VRCSDK3.dll
+  - fileID: 428
+    classID: 115
+    packedSize: 156
+    offset: 189080
+    sourceAssetGUID: 58e2f01a24261a14cb82e6d3399e8b16
+    buildTimeAssetPath: Packages/com.vrchat.base/Runtime/VRCSDK/Plugins/VRC.SDK3.Dynamics.Constraint.dll
+  - fileID: 429
+    classID: 115
+    packedSize: 100
+    offset: 189240
+    sourceAssetGUID: 661092b4961be7145bfbe56e1e62337b
+    buildTimeAssetPath: Packages/com.vrchat.worlds/Runtime/VRCSDK/Plugins/VRCSDK3.dll
+  - fileID: 430
+    classID: 115
+    packedSize: 92
+    offset: 189344
+    sourceAssetGUID: 661092b4961be7145bfbe56e1e62337b
+    buildTimeAssetPath: Packages/com.vrchat.worlds/Runtime/VRCSDK/Plugins/VRCSDK3.dll
+  - fileID: 431
+    classID: 128
+    packedSize: 352462
+    offset: 53248864
+    sourceAssetGUID: e3265ab4bf004d28a9537516768c1c75
+    buildTimeAssetPath: Assets/TextMesh Pro/Fonts/LiberationSans.ttf
+  - fileID: 432
+    classID: 213
+    packedSize: 624
+    offset: 53601328
+    sourceAssetGUID: 0000000000000000f000000000000000
+    buildTimeAssetPath: Resources/unity_builtin_extra
+  - fileID: 433
+    classID: 213
+    packedSize: 568
+    offset: 53601952
+    sourceAssetGUID: 0000000000000000f000000000000000
+    buildTimeAssetPath: Resources/unity_builtin_extra
+  - fileID: 434
+    classID: 213
+    packedSize: 572
+    offset: 53602520
+    sourceAssetGUID: 0000000000000000f000000000000000
+    buildTimeAssetPath: Resources/unity_builtin_extra
+  - fileID: 435
+    classID: 213
+    packedSize: 632
+    offset: 53603096
+    sourceAssetGUID: 0000000000000000f000000000000000
+    buildTimeAssetPath: Resources/unity_builtin_extra
+  - fileID: 436
+    classID: 213
+    packedSize: 544
+    offset: 53603728
+    sourceAssetGUID: 0000000000000000f000000000000000
+    buildTimeAssetPath: Resources/unity_builtin_extra
+  - fileID: 437
+    classID: 213
+    packedSize: 516
+    offset: 53604272
+    sourceAssetGUID: 0000000000000000f000000000000000
+    buildTimeAssetPath: Resources/unity_builtin_extra
+  - fileID: 438
+    classID: 213
+    packedSize: 1296
+    offset: 53604792
+    sourceAssetGUID: 48ff05b253a0dccc1995b0d9a6295019
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Icons/noun-delete-45886-FFFFFF.png
+  - fileID: 439
+    classID: 213
+    packedSize: 948
+    offset: 53606088
+    sourceAssetGUID: 568e028a87787acc89a8a49d3dae47ea
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Icons/noun-arrow-3350376-FFFFFF.png
+  - fileID: 440
+    classID: 213
+    packedSize: 596
+    offset: 53607040
+    sourceAssetGUID: 5c85f485f5cca29f68875788aa4bd6ec
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Icons/noun-rounded-rectangle-3844697-FFFFFF.png
+  - fileID: 441
+    classID: 213
+    packedSize: 1160
+    offset: 53607640
+    sourceAssetGUID: 7b7d3db5a9db7f7debcf679669cc7637
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Icons/noun-circle-2704267-FFFFFF.png
+  - fileID: 442
+    classID: 213
+    packedSize: 692
+    offset: 53608800
+    sourceAssetGUID: 7ce6de7dafaf98b4e9179fd9e11f7308
+    buildTimeAssetPath: Assets/MMMaellon/Menu/Icons/noun-location-5749846-FFFFFF-Teleport.png
+  - fileID: 443
+    classID: 221
+    packedSize: 36
+    offset: 53609496
+    sourceAssetGUID: 0db48576be24e181296e7f233a6cb5f5
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/Animations/FanCam -
+      Menu.overrideController
+  - fileID: 444
+    classID: 114
+    packedSize: 28772
+    offset: 53609536
+    sourceAssetGUID: e0520cae7f8dd4e609913a3b4f6a6d7b
+    buildTimeAssetPath: Assets/MMMaellon/Menu/LiberationSans SDF - Variant.asset
+  - fileID: 445
+    classID: 114
+    packedSize: 13652
+    offset: 53638312
+    sourceAssetGUID: 6172f54a16e4e56cebb78f3fc9e874b1
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/07daf40a0d7c0a14b98fdb281adaae56.asset
+  - fileID: 446
+    classID: 114
+    packedSize: 1800
+    offset: 53651968
+    sourceAssetGUID: 77efa05f655cdc07aa149539c4940655
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/17830d157f00b09408e9c38c2091a851.asset
+  - fileID: 447
+    classID: 114
+    packedSize: 1436
+    offset: 53653768
+    sourceAssetGUID: 9eea992b31bb04f73bb23185a3faa7d4
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/3d2d4e8ab856b89fba40f4c9c5e245c8.asset
+  - fileID: 448
+    classID: 114
+    packedSize: 4180
+    offset: 53655208
+    sourceAssetGUID: a776c3072e506305f891ee0da8f72d2d
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/3e8941933b483fa96b6c29a0934efdf7.asset
+  - fileID: 449
+    classID: 114
+    packedSize: 3060
+    offset: 53659392
+    sourceAssetGUID: d5ec6a309633c49d1a5168e04227870b
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/488b6e68d6fa867fc965923c9268974b.asset
+  - fileID: 450
+    classID: 114
+    packedSize: 13240
+    offset: 53662456
+    sourceAssetGUID: 5f04eff814e4b4ad4bb7627a6a384730
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/48a0f95e3281f808b9265a7d2d8ef29c.asset
+  - fileID: 451
+    classID: 114
+    packedSize: 5348
+    offset: 53675696
+    sourceAssetGUID: 041e2b88b5ce8472caef1064adfc3acf
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/49ce4fcfa8f325dbe87c91179af1e4e2.asset
+  - fileID: 452
+    classID: 114
+    packedSize: 3740
+    offset: 53681048
+    sourceAssetGUID: 9faab891346fe9536a77d4d71fb16717
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/4c2c3f16022a1a813a5cdd62afd35863.asset
+  - fileID: 453
+    classID: 114
+    packedSize: 11080
+    offset: 53684792
+    sourceAssetGUID: 468a928c9c8be4f3f9b2c565668c3f55
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/4f795aa1a78bf9dc9bfc596010522fbb.asset
+  - fileID: 454
+    classID: 114
+    packedSize: 2240
+    offset: 53695872
+    sourceAssetGUID: 8ba317610f01a4c5db858079726e0c00
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/510e1b5d0abd80d35925db9ea34e3448.asset
+  - fileID: 455
+    classID: 114
+    packedSize: 46956
+    offset: 53698112
+    sourceAssetGUID: 8a79d37363af18052af073bcfbd780a4
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/5590289dbbc8c9e4383d1d53c095e59c.asset
+  - fileID: 456
+    classID: 114
+    packedSize: 2900
+    offset: 53745072
+    sourceAssetGUID: 7f4ae4e02675168f1afc3d0f3ecb762d
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/566cc00e27d5822449529a3785eae366.asset
+  - fileID: 457
+    classID: 114
+    packedSize: 9728
+    offset: 53747976
+    sourceAssetGUID: 6820addb7a0ccc31783196c7cf4031e6
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/58467b6a0ec3c4976b6e8d2b6df0f964.asset
+  - fileID: 458
+    classID: 114
+    packedSize: 3600
+    offset: 53757704
+    sourceAssetGUID: e4a002a702a6ea585856a8ffd6512049
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/6b246d48ea259674cb15ba990bf99ec0.asset
+  - fileID: 459
+    classID: 114
+    packedSize: 1212
+    offset: 53761304
+    sourceAssetGUID: 219e09cd9aa8434119784d9b7d15312f
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/84d27129f47c572cc9c2512e00b5eec6.asset
+  - fileID: 460
+    classID: 114
+    packedSize: 5644
+    offset: 53762520
+    sourceAssetGUID: 1174df0742977691791fd261d28e3b41
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/873630d3811357830a5cd1bc1d5c4be7.asset
+  - fileID: 461
+    classID: 114
+    packedSize: 1560
+    offset: 53768168
+    sourceAssetGUID: ec41a7dc23bedec38ba7baf3cd6b3ac5
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/8d720c2cddf21ee59882eea3d2f7661f.asset
+  - fileID: 462
+    classID: 114
+    packedSize: 1244
+    offset: 53769728
+    sourceAssetGUID: 6e9a24f952ab464df9ca33cfc6c2d0e9
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/916effcaf00ae368d8bb43e21f9b4548.asset
+  - fileID: 463
+    classID: 114
+    packedSize: 2036
+    offset: 53770976
+    sourceAssetGUID: b2bf32e000b4fc6519d2a2deee7b1fb0
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/9268842fc941f2c00a1e84ce0ed45ade.asset
+  - fileID: 464
+    classID: 114
+    packedSize: 11372
+    offset: 53773016
+    sourceAssetGUID: 73d02c80cb2147e3184ee7a5eb12ad27
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/9773c3d86372fc7acb1c9b340220ec5e.asset
+  - fileID: 465
+    classID: 114
+    packedSize: 12184
+    offset: 53784392
+    sourceAssetGUID: ccfbdd03ffb6f02acb9c53d7b5df48a8
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/9c0bcdbb80e32f5a8a368e436f65a99b.asset
+  - fileID: 466
+    classID: 114
+    packedSize: 23836
+    offset: 53796576
+    sourceAssetGUID: c1c646c30ac1b8d0c80950948ea978bc
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/a5e431b4745512c4db876d807ea4c3ee.asset
+  - fileID: 467
+    classID: 114
+    packedSize: 2948
+    offset: 53820416
+    sourceAssetGUID: e4bf9bb9baebdc98ab15097459365bfe
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/aa7792e1a2d9963998b0a64523a23fba.asset
+  - fileID: 468
+    classID: 114
+    packedSize: 13380
+    offset: 53823368
+    sourceAssetGUID: 51419ee7c4d70b8f698fe3b877899854
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/bc9cfe466e2297342b46ff2f42676890.asset
+  - fileID: 469
+    classID: 114
+    packedSize: 1828
+    offset: 53836752
+    sourceAssetGUID: c5aa56315fcc5f23cb473c3abcdcba0b
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/c3025690dca36369aa8d5bb375341a73.asset
+  - fileID: 470
+    classID: 114
+    packedSize: 1404
+    offset: 53838584
+    sourceAssetGUID: ef220a2872ff935ea85aba7978bd2fc5
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/c54e585db6742f8a0901b45cb1c03b09.asset
+  - fileID: 471
+    classID: 114
+    packedSize: 1720
+    offset: 53839992
+    sourceAssetGUID: fcbaf9de5931badac8b09952019de722
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/c8df303ceb45ae84f85a11591f741734.asset
+  - fileID: 472
+    classID: 114
+    packedSize: 17000
+    offset: 53841712
+    sourceAssetGUID: 2b3d097cf1e951475a632385d476cba7
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/ca38ae30c4cb71e459eb6ff9c6159bda.asset
+  - fileID: 473
+    classID: 114
+    packedSize: 23324
+    offset: 53858712
+    sourceAssetGUID: 2540d2e4d4aa11245ad2d0dbebb3bf75
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/dace6096307e320ac828d90e407ae1ee.asset
+  - fileID: 474
+    classID: 114
+    packedSize: 36200
+    offset: 53882040
+    sourceAssetGUID: a62caa263b1f68e34ba5844f0957580a
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/f2db2b81059e41b4fbce86f13207c26a.asset
+  - fileID: 475
+    classID: 114
+    packedSize: 3572
+    offset: 53918240
+    sourceAssetGUID: 9d22642fdd088e1ffbdce414caee375e
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/f46a04b3664ce2d4382238a1ede0f168.asset
+  - fileID: 476
+    classID: 114
+    packedSize: 3564
+    offset: 53921816
+    sourceAssetGUID: ad77bde0d6f0684d7ba08d1a20d37155
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/f55d258c4edbbe146a41756b51674e63.asset
+  - fileID: 477
+    classID: 114
+    packedSize: 1196
+    offset: 53925384
+    sourceAssetGUID: e9e95409cc00eac2e9137a769fe0cc67
+    buildTimeAssetPath: Assets/SerializedUdonPrograms/fe2115fc32e94a94eb41df3d7f2a7a6c.asset
+  - fileID: 478
+    classID: 114
+    packedSize: 1104
+    offset: 53926584
+    sourceAssetGUID: 2e498d1c8094910479dc3e1b768306a4
+    buildTimeAssetPath: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans
+      SDF - Fallback.asset
+  - fileID: 479
+    classID: 114
+    packedSize: 28764
+    offset: 53927688
+    sourceAssetGUID: 8f586378b4e144a9851e7b34d9b748ee
+    buildTimeAssetPath: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans
+      SDF.asset
+  - fileID: 480
+    classID: 114
+    packedSize: 22792
+    offset: 53956456
+    sourceAssetGUID: 40d95203423ed67b58897f77cd9ffe20
+    buildTimeAssetPath: Packages/com.mmmaellon.fancam/Runtime/CameraAssets/IBMPlexSansCondensed-Medium.asset
+  - fileID: 481
+    classID: 114
+    packedSize: 1380
+    offset: 53979248
+    sourceAssetGUID: d82512f9c8e5d4a4d938b575d47f88d4
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/PostProcessResources.asset
+--- !u!1125 &1
+BuildReport:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LastWindowsBuild
+  m_Summary:
+    buildStartTime:
+      serializedVersion: 2
+      ticks: 639232403922314440
+    buildGUID: 00000000000000000000000000000000
+    platformName: Win64
+    platformGroupName: Standalone
+    subtarget: 0
+    options: 0
+    assetBundleOptions: 32
+    outputPath: /tmp/VRChat/vpm-package-maker
+    crc: 1181411180
+    totalSize: 7335129
+    totalTimeTicks: 694871916
+    totalErrors: 21
+    totalWarnings: 6
+    buildType: 2
+    buildResult: 1
+  m_Files:
+  - path: /mnt/data/Projects/VRChat/FanCam/scene-standalonewindows64-examplescene-d9dae8f2-1c06-43ee-8eae-6a1a65c14c52.vrcw/BuildPlayer-ExampleScene
+    role: Scene
+    id: 0
+    totalSize: 3777668
+  - path: /mnt/data/Projects/VRChat/FanCam/scene-standalonewindows64-examplescene-d9dae8f2-1c06-43ee-8eae-6a1a65c14c52.vrcw/BuildPlayer-ExampleScene.sharedAssets
+    role: SharedAssets
+    id: 1
+    totalSize: 53980628
+  - path: /mnt/data/Projects/VRChat/FanCam/scene-standalonewindows64-examplescene-d9dae8f2-1c06-43ee-8eae-6a1a65c14c52.vrcw
+    role: AssetBundle
+    id: 2
+    totalSize: 7327695
+  - path: /mnt/data/Projects/VRChat/FanCam/scene-standalonewindows64-examplescene-d9dae8f2-1c06-43ee-8eae-6a1a65c14c52.vrcw.manifest
+    role: AssetBundleTextManifest
+    id: 3
+    totalSize: 6139
+  - path: /mnt/data/Projects/VRChat/FanCam/vpm-package-maker/CAB-31cec9014c684ce2ebb827e67b687e6f
+    role: ResourcesFile
+    id: 4
+    totalSize: 4284
+  - path: /mnt/data/Projects/VRChat/FanCam/vpm-package-maker
+    role: ManifestAssetBundle
+    id: 5
+    totalSize: 1087
+  - path: /mnt/data/Projects/VRChat/FanCam/vpm-package-maker.manifest
+    role: AssetBundleTextManifest
+    id: 6
+    totalSize: 208
+  m_BuildSteps:
+  - stepName: Build Asset Bundles
+    durationTicks: 694871916
+    depth: 0
+    messages: []
+  - stepName: Calculate asset bundles to be built
+    durationTicks: 115705
+    depth: 1
+    messages: []
+  - stepName: Prebuild Cleanup and Recompile
+    durationTicks: 29532110
+    depth: 1
+    messages: []
+  - stepName: Compile scripts
+    durationTicks: 27779637
+    depth: 2
+    messages: []
+  - stepName: Generate and validate platform script types
+    durationTicks: 1106651
+    depth: 2
+    messages: []
+  - stepName: Build Scene AssetBundle(s)
+    durationTicks: 614514156
+    depth: 1
+    messages:
+    - type: 2
+      content: Something tried to change Packages/com.vrchat.worlds/Samples/VRCQualitySettings/Scripts/WorldQualitySettings.asset,
+        which is part of a VRC Package, and will not be changed. Use "Save As..."
+        instead if you want to make your own version.
+  - stepName: 'Build bundle: scene-standalonewindows64-examplescene-d9dae8f2-1c06-43ee-8eae-6a1a65c14c52.vrcw'
+    durationTicks: 607568810
+    depth: 2
+    messages: []
+  - stepName: Verify Build setup
+    durationTicks: 221323
+    depth: 3
+    messages: []
+  - stepName: Prepare assets for target platform
+    durationTicks: 1692996
+    depth: 3
+    messages: []
+  - stepName: Prepare splash screen
+    durationTicks: 225928
+    depth: 3
+    messages:
+    - type: 3
+      content: Including Unity Splash Screen logo because 'Show Unity Logo' is enabled.
+  - stepName: Building scenes
+    durationTicks: 97319861
+    depth: 3
+    messages: []
+  - stepName: Building scene Assets/MMMaellon/ExampleScene/ExampleScene.unity
+    durationTicks: 97319369
+    depth: 4
+    messages:
+    - type: 0
+      content: "Encountered invalid entry while reading serialization data for Unity
+        object of type 'PlayerHeadFollower'. This likely means that Unity has filled
+        Odin's stored serialization data with garbage, which can randomly happen
+        after upgrading the Unity version of the project, or when otherwise doing
+        things that have a lot of fragile interactions with the asset database. Locating
+        the asset which causes this error log and causing it to reserialize (IE,
+        modifying it and then causing it to be saved to disk) is likely to 'fix'
+        the issue and make this message go away. Experience shows that this issue
+        is particularly likely to occur on prefab instances, and if this is the case,
+        the parent prefab is also under suspicion, and should be re-saved and re-imported.
+        Note that DATA MAY HAVE BEEN LOST, and you should verify with your version
+        control system (you're using one, right?!) that everything is alright, and
+        if not, use it to rollback the asset to recover your data.\n\n\nA delayed
+        error message containing the originating object's name, type and scene/asset
+        path (if applicable) will be scheduled for logging on Unity's main thread.
+        Search for \"DELAYED SERIALIZATION LOG\". This logging callback will also
+        mark the object dirty if it is an asset, hopefully making the issue 'fix'
+        itself. HOWEVER, THERE MAY STILL BE DATA LOSS.\n\n\nIF YOU HAVE CONSISTENT
+        REPRODUCTION STEPS THAT MAKE THIS ISSUE REOCCUR, please report it at this
+        issue at 'https://bitbucket.org/sirenix/odin-inspector/issues/526', and copy
+        paste this debug message into your comment, along with any potential actions
+        or recent changes in the project that might have happened to cause this message
+        to occur. If the data dump in this message is cut off, please find the editor's
+        log file (see https://docs.unity3d.com/Manual/LogFiles.html) and copy paste
+        the full version of this message from there.\n\n\nData dump:\n\n    Reader
+        type: SerializationNodeDataReader\n    Data dump: Nodes: \n\n    - Name:    
+        <<<< READ POSITION\n      Entry: 0\n      Data: \n"
+    - type: 0
+      content: "Encountered invalid entry while reading serialization data for Unity
+        object of type 'PlayerHeadFollower'. This likely means that Unity has filled
+        Odin's stored serialization data with garbage, which can randomly happen
+        after upgrading the Unity version of the project, or when otherwise doing
+        things that have a lot of fragile interactions with the asset database. Locating
+        the asset which causes this error log and causing it to reserialize (IE,
+        modifying it and then causing it to be saved to disk) is likely to 'fix'
+        the issue and make this message go away. Experience shows that this issue
+        is particularly likely to occur on prefab instances, and if this is the case,
+        the parent prefab is also under suspicion, and should be re-saved and re-imported.
+        Note that DATA MAY HAVE BEEN LOST, and you should verify with your version
+        control system (you're using one, right?!) that everything is alright, and
+        if not, use it to rollback the asset to recover your data.\n\n\nA delayed
+        error message containing the originating object's name, type and scene/asset
+        path (if applicable) will be scheduled for logging on Unity's main thread.
+        Search for \"DELAYED SERIALIZATION LOG\". This logging callback will also
+        mark the object dirty if it is an asset, hopefully making the issue 'fix'
+        itself. HOWEVER, THERE MAY STILL BE DATA LOSS.\n\n\nIF YOU HAVE CONSISTENT
+        REPRODUCTION STEPS THAT MAKE THIS ISSUE REOCCUR, please report it at this
+        issue at 'https://bitbucket.org/sirenix/odin-inspector/issues/526', and copy
+        paste this debug message into your comment, along with any potential actions
+        or recent changes in the project that might have happened to cause this message
+        to occur. If the data dump in this message is cut off, please find the editor's
+        log file (see https://docs.unity3d.com/Manual/LogFiles.html) and copy paste
+        the full version of this message from there.\n\n\nData dump:\n\n    Reader
+        type: SerializationNodeDataReader\n    Data dump: Nodes: \n\n    - Name:    
+        <<<< READ POSITION\n      Entry: 0\n      Data: \n"
+    - type: 0
+      content: "Encountered invalid entry while reading serialization data for Unity
+        object of type 'PlayerHeadFollower'. This likely means that Unity has filled
+        Odin's stored serialization data with garbage, which can randomly happen
+        after upgrading the Unity version of the project, or when otherwise doing
+        things that have a lot of fragile interactions with the asset database. Locating
+        the asset which causes this error log and causing it to reserialize (IE,
+        modifying it and then causing it to be saved to disk) is likely to 'fix'
+        the issue and make this message go away. Experience shows that this issue
+        is particularly likely to occur on prefab instances, and if this is the case,
+        the parent prefab is also under suspicion, and should be re-saved and re-imported.
+        Note that DATA MAY HAVE BEEN LOST, and you should verify with your version
+        control system (you're using one, right?!) that everything is alright, and
+        if not, use it to rollback the asset to recover your data.\n\n\nA delayed
+        error message containing the originating object's name, type and scene/asset
+        path (if applicable) will be scheduled for logging on Unity's main thread.
+        Search for \"DELAYED SERIALIZATION LOG\". This logging callback will also
+        mark the object dirty if it is an asset, hopefully making the issue 'fix'
+        itself. HOWEVER, THERE MAY STILL BE DATA LOSS.\n\n\nIF YOU HAVE CONSISTENT
+        REPRODUCTION STEPS THAT MAKE THIS ISSUE REOCCUR, please report it at this
+        issue at 'https://bitbucket.org/sirenix/odin-inspector/issues/526', and copy
+        paste this debug message into your comment, along with any potential actions
+        or recent changes in the project that might have happened to cause this message
+        to occur. If the data dump in this message is cut off, please find the editor's
+        log file (see https://docs.unity3d.com/Manual/LogFiles.html) and copy paste
+        the full version of this message from there.\n\n\nData dump:\n\n    Reader
+        type: SerializationNodeDataReader\n    Data dump: Nodes: \n\n    - Name:    
+        <<<< READ POSITION\n      Entry: 0\n      Data: \n"
+    - type: 0
+      content: "Encountered invalid entry while reading serialization data for Unity
+        object of type 'PlayerHeadFollower'. This likely means that Unity has filled
+        Odin's stored serialization data with garbage, which can randomly happen
+        after upgrading the Unity version of the project, or when otherwise doing
+        things that have a lot of fragile interactions with the asset database. Locating
+        the asset which causes this error log and causing it to reserialize (IE,
+        modifying it and then causing it to be saved to disk) is likely to 'fix'
+        the issue and make this message go away. Experience shows that this issue
+        is particularly likely to occur on prefab instances, and if this is the case,
+        the parent prefab is also under suspicion, and should be re-saved and re-imported.
+        Note that DATA MAY HAVE BEEN LOST, and you should verify with your version
+        control system (you're using one, right?!) that everything is alright, and
+        if not, use it to rollback the asset to recover your data.\n\n\nA delayed
+        error message containing the originating object's name, type and scene/asset
+        path (if applicable) will be scheduled for logging on Unity's main thread.
+        Search for \"DELAYED SERIALIZATION LOG\". This logging callback will also
+        mark the object dirty if it is an asset, hopefully making the issue 'fix'
+        itself. HOWEVER, THERE MAY STILL BE DATA LOSS.\n\n\nIF YOU HAVE CONSISTENT
+        REPRODUCTION STEPS THAT MAKE THIS ISSUE REOCCUR, please report it at this
+        issue at 'https://bitbucket.org/sirenix/odin-inspector/issues/526', and copy
+        paste this debug message into your comment, along with any potential actions
+        or recent changes in the project that might have happened to cause this message
+        to occur. If the data dump in this message is cut off, please find the editor's
+        log file (see https://docs.unity3d.com/Manual/LogFiles.html) and copy paste
+        the full version of this message from there.\n\n\nData dump:\n\n    Reader
+        type: SerializationNodeDataReader\n    Data dump: Nodes: \n\n    - Name:    
+        <<<< READ POSITION\n      Entry: 0\n      Data: \n"
+    - type: 0
+      content: "Encountered invalid entry while reading serialization data for Unity
+        object of type 'PlayerHeadFollower'. This likely means that Unity has filled
+        Odin's stored serialization data with garbage, which can randomly happen
+        after upgrading the Unity version of the project, or when otherwise doing
+        things that have a lot of fragile interactions with the asset database. Locating
+        the asset which causes this error log and causing it to reserialize (IE,
+        modifying it and then causing it to be saved to disk) is likely to 'fix'
+        the issue and make this message go away. Experience shows that this issue
+        is particularly likely to occur on prefab instances, and if this is the case,
+        the parent prefab is also under suspicion, and should be re-saved and re-imported.
+        Note that DATA MAY HAVE BEEN LOST, and you should verify with your version
+        control system (you're using one, right?!) that everything is alright, and
+        if not, use it to rollback the asset to recover your data.\n\n\nA delayed
+        error message containing the originating object's name, type and scene/asset
+        path (if applicable) will be scheduled for logging on Unity's main thread.
+        Search for \"DELAYED SERIALIZATION LOG\". This logging callback will also
+        mark the object dirty if it is an asset, hopefully making the issue 'fix'
+        itself. HOWEVER, THERE MAY STILL BE DATA LOSS.\n\n\nIF YOU HAVE CONSISTENT
+        REPRODUCTION STEPS THAT MAKE THIS ISSUE REOCCUR, please report it at this
+        issue at 'https://bitbucket.org/sirenix/odin-inspector/issues/526', and copy
+        paste this debug message into your comment, along with any potential actions
+        or recent changes in the project that might have happened to cause this message
+        to occur. If the data dump in this message is cut off, please find the editor's
+        log file (see https://docs.unity3d.com/Manual/LogFiles.html) and copy paste
+        the full version of this message from there.\n\n\nData dump:\n\n    Reader
+        type: SerializationNodeDataReader\n    Data dump: Nodes: \n\n    - Name:    
+        <<<< READ POSITION\n      Entry: 0\n      Data: \n"
+    - type: 0
+      content: "Encountered invalid entry while reading serialization data for Unity
+        object of type 'PlayerHeadFollower'. This likely means that Unity has filled
+        Odin's stored serialization data with garbage, which can randomly happen
+        after upgrading the Unity version of the project, or when otherwise doing
+        things that have a lot of fragile interactions with the asset database. Locating
+        the asset which causes this error log and causing it to reserialize (IE,
+        modifying it and then causing it to be saved to disk) is likely to 'fix'
+        the issue and make this message go away. Experience shows that this issue
+        is particularly likely to occur on prefab instances, and if this is the case,
+        the parent prefab is also under suspicion, and should be re-saved and re-imported.
+        Note that DATA MAY HAVE BEEN LOST, and you should verify with your version
+        control system (you're using one, right?!) that everything is alright, and
+        if not, use it to rollback the asset to recover your data.\n\n\nA delayed
+        error message containing the originating object's name, type and scene/asset
+        path (if applicable) will be scheduled for logging on Unity's main thread.
+        Search for \"DELAYED SERIALIZATION LOG\". This logging callback will also
+        mark the object dirty if it is an asset, hopefully making the issue 'fix'
+        itself. HOWEVER, THERE MAY STILL BE DATA LOSS.\n\n\nIF YOU HAVE CONSISTENT
+        REPRODUCTION STEPS THAT MAKE THIS ISSUE REOCCUR, please report it at this
+        issue at 'https://bitbucket.org/sirenix/odin-inspector/issues/526', and copy
+        paste this debug message into your comment, along with any potential actions
+        or recent changes in the project that might have happened to cause this message
+        to occur. If the data dump in this message is cut off, please find the editor's
+        log file (see https://docs.unity3d.com/Manual/LogFiles.html) and copy paste
+        the full version of this message from there.\n\n\nData dump:\n\n    Reader
+        type: SerializationNodeDataReader\n    Data dump: Nodes: \n\n    - Name:    
+        <<<< READ POSITION\n      Entry: 0\n      Data: \n"
+    - type: 0
+      content: "Encountered invalid entry while reading serialization data for Unity
+        object of type 'PlayerHeadFollower'. This likely means that Unity has filled
+        Odin's stored serialization data with garbage, which can randomly happen
+        after upgrading the Unity version of the project, or when otherwise doing
+        things that have a lot of fragile interactions with the asset database. Locating
+        the asset which causes this error log and causing it to reserialize (IE,
+        modifying it and then causing it to be saved to disk) is likely to 'fix'
+        the issue and make this message go away. Experience shows that this issue
+        is particularly likely to occur on prefab instances, and if this is the case,
+        the parent prefab is also under suspicion, and should be re-saved and re-imported.
+        Note that DATA MAY HAVE BEEN LOST, and you should verify with your version
+        control system (you're using one, right?!) that everything is alright, and
+        if not, use it to rollback the asset to recover your data.\n\n\nA delayed
+        error message containing the originating object's name, type and scene/asset
+        path (if applicable) will be scheduled for logging on Unity's main thread.
+        Search for \"DELAYED SERIALIZATION LOG\". This logging callback will also
+        mark the object dirty if it is an asset, hopefully making the issue 'fix'
+        itself. HOWEVER, THERE MAY STILL BE DATA LOSS.\n\n\nIF YOU HAVE CONSISTENT
+        REPRODUCTION STEPS THAT MAKE THIS ISSUE REOCCUR, please report it at this
+        issue at 'https://bitbucket.org/sirenix/odin-inspector/issues/526', and copy
+        paste this debug message into your comment, along with any potential actions
+        or recent changes in the project that might have happened to cause this message
+        to occur. If the data dump in this message is cut off, please find the editor's
+        log file (see https://docs.unity3d.com/Manual/LogFiles.html) and copy paste
+        the full version of this message from there.\n\n\nData dump:\n\n    Reader
+        type: SerializationNodeDataReader\n    Data dump: Nodes: \n\n    - Name:    
+        <<<< READ POSITION\n      Entry: 0\n      Data: \n"
+    - type: 0
+      content: "Encountered invalid entry while reading serialization data for Unity
+        object of type 'PlayerHeadFollower'. This likely means that Unity has filled
+        Odin's stored serialization data with garbage, which can randomly happen
+        after upgrading the Unity version of the project, or when otherwise doing
+        things that have a lot of fragile interactions with the asset database. Locating
+        the asset which causes this error log and causing it to reserialize (IE,
+        modifying it and then causing it to be saved to disk) is likely to 'fix'
+        the issue and make this message go away. Experience shows that this issue
+        is particularly likely to occur on prefab instances, and if this is the case,
+        the parent prefab is also under suspicion, and should be re-saved and re-imported.
+        Note that DATA MAY HAVE BEEN LOST, and you should verify with your version
+        control system (you're using one, right?!) that everything is alright, and
+        if not, use it to rollback the asset to recover your data.\n\n\nA delayed
+        error message containing the originating object's name, type and scene/asset
+        path (if applicable) will be scheduled for logging on Unity's main thread.
+        Search for \"DELAYED SERIALIZATION LOG\". This logging callback will also
+        mark the object dirty if it is an asset, hopefully making the issue 'fix'
+        itself. HOWEVER, THERE MAY STILL BE DATA LOSS.\n\n\nIF YOU HAVE CONSISTENT
+        REPRODUCTION STEPS THAT MAKE THIS ISSUE REOCCUR, please report it at this
+        issue at 'https://bitbucket.org/sirenix/odin-inspector/issues/526', and copy
+        paste this debug message into your comment, along with any potential actions
+        or recent changes in the project that might have happened to cause this message
+        to occur. If the data dump in this message is cut off, please find the editor's
+        log file (see https://docs.unity3d.com/Manual/LogFiles.html) and copy paste
+        the full version of this message from there.\n\n\nData dump:\n\n    Reader
+        type: SerializationNodeDataReader\n    Data dump: Nodes: \n\n    - Name:    
+        <<<< READ POSITION\n      Entry: 0\n      Data: \n"
+    - type: 0
+      content: "Encountered invalid entry while reading serialization data for Unity
+        object of type 'PlayerHeadFollower'. This likely means that Unity has filled
+        Odin's stored serialization data with garbage, which can randomly happen
+        after upgrading the Unity version of the project, or when otherwise doing
+        things that have a lot of fragile interactions with the asset database. Locating
+        the asset which causes this error log and causing it to reserialize (IE,
+        modifying it and then causing it to be saved to disk) is likely to 'fix'
+        the issue and make this message go away. Experience shows that this issue
+        is particularly likely to occur on prefab instances, and if this is the case,
+        the parent prefab is also under suspicion, and should be re-saved and re-imported.
+        Note that DATA MAY HAVE BEEN LOST, and you should verify with your version
+        control system (you're using one, right?!) that everything is alright, and
+        if not, use it to rollback the asset to recover your data.\n\n\nA delayed
+        error message containing the originating object's name, type and scene/asset
+        path (if applicable) will be scheduled for logging on Unity's main thread.
+        Search for \"DELAYED SERIALIZATION LOG\". This logging callback will also
+        mark the object dirty if it is an asset, hopefully making the issue 'fix'
+        itself. HOWEVER, THERE MAY STILL BE DATA LOSS.\n\n\nIF YOU HAVE CONSISTENT
+        REPRODUCTION STEPS THAT MAKE THIS ISSUE REOCCUR, please report it at this
+        issue at 'https://bitbucket.org/sirenix/odin-inspector/issues/526', and copy
+        paste this debug message into your comment, along with any potential actions
+        or recent changes in the project that might have happened to cause this message
+        to occur. If the data dump in this message is cut off, please find the editor's
+        log file (see https://docs.unity3d.com/Manual/LogFiles.html) and copy paste
+        the full version of this message from there.\n\n\nData dump:\n\n    Reader
+        type: SerializationNodeDataReader\n    Data dump: Nodes: \n\n    - Name:    
+        <<<< READ POSITION\n      Entry: 0\n      Data: \n"
+    - type: 0
+      content: "Encountered invalid entry while reading serialization data for Unity
+        object of type 'PlayerHeadFollower'. This likely means that Unity has filled
+        Odin's stored serialization data with garbage, which can randomly happen
+        after upgrading the Unity version of the project, or when otherwise doing
+        things that have a lot of fragile interactions with the asset database. Locating
+        the asset which causes this error log and causing it to reserialize (IE,
+        modifying it and then causing it to be saved to disk) is likely to 'fix'
+        the issue and make this message go away. Experience shows that this issue
+        is particularly likely to occur on prefab instances, and if this is the case,
+        the parent prefab is also under suspicion, and should be re-saved and re-imported.
+        Note that DATA MAY HAVE BEEN LOST, and you should verify with your version
+        control system (you're using one, right?!) that everything is alright, and
+        if not, use it to rollback the asset to recover your data.\n\n\nA delayed
+        error message containing the originating object's name, type and scene/asset
+        path (if applicable) will be scheduled for logging on Unity's main thread.
+        Search for \"DELAYED SERIALIZATION LOG\". This logging callback will also
+        mark the object dirty if it is an asset, hopefully making the issue 'fix'
+        itself. HOWEVER, THERE MAY STILL BE DATA LOSS.\n\n\nIF YOU HAVE CONSISTENT
+        REPRODUCTION STEPS THAT MAKE THIS ISSUE REOCCUR, please report it at this
+        issue at 'https://bitbucket.org/sirenix/odin-inspector/issues/526', and copy
+        paste this debug message into your comment, along with any potential actions
+        or recent changes in the project that might have happened to cause this message
+        to occur. If the data dump in this message is cut off, please find the editor's
+        log file (see https://docs.unity3d.com/Manual/LogFiles.html) and copy paste
+        the full version of this message from there.\n\n\nData dump:\n\n    Reader
+        type: SerializationNodeDataReader\n    Data dump: Nodes: \n\n    - Name:    
+        <<<< READ POSITION\n      Entry: 0\n      Data: \n"
+    - type: 0
+      content: "Encountered invalid entry while reading serialization data for Unity
+        object of type 'PlayerHeadFollower'. This likely means that Unity has filled
+        Odin's stored serialization data with garbage, which can randomly happen
+        after upgrading the Unity version of the project, or when otherwise doing
+        things that have a lot of fragile interactions with the asset database. Locating
+        the asset which causes this error log and causing it to reserialize (IE,
+        modifying it and then causing it to be saved to disk) is likely to 'fix'
+        the issue and make this message go away. Experience shows that this issue
+        is particularly likely to occur on prefab instances, and if this is the case,
+        the parent prefab is also under suspicion, and should be re-saved and re-imported.
+        Note that DATA MAY HAVE BEEN LOST, and you should verify with your version
+        control system (you're using one, right?!) that everything is alright, and
+        if not, use it to rollback the asset to recover your data.\n\n\nA delayed
+        error message containing the originating object's name, type and scene/asset
+        path (if applicable) will be scheduled for logging on Unity's main thread.
+        Search for \"DELAYED SERIALIZATION LOG\". This logging callback will also
+        mark the object dirty if it is an asset, hopefully making the issue 'fix'
+        itself. HOWEVER, THERE MAY STILL BE DATA LOSS.\n\n\nIF YOU HAVE CONSISTENT
+        REPRODUCTION STEPS THAT MAKE THIS ISSUE REOCCUR, please report it at this
+        issue at 'https://bitbucket.org/sirenix/odin-inspector/issues/526', and copy
+        paste this debug message into your comment, along with any potential actions
+        or recent changes in the project that might have happened to cause this message
+        to occur. If the data dump in this message is cut off, please find the editor's
+        log file (see https://docs.unity3d.com/Manual/LogFiles.html) and copy paste
+        the full version of this message from there.\n\n\nData dump:\n\n    Reader
+        type: SerializationNodeDataReader\n    Data dump: Nodes: \n\n    - Name:    
+        <<<< READ POSITION\n      Entry: 0\n      Data: \n"
+    - type: 0
+      content: "Encountered invalid entry while reading serialization data for Unity
+        object of type 'PlayerHeadFollower'. This likely means that Unity has filled
+        Odin's stored serialization data with garbage, which can randomly happen
+        after upgrading the Unity version of the project, or when otherwise doing
+        things that have a lot of fragile interactions with the asset database. Locating
+        the asset which causes this error log and causing it to reserialize (IE,
+        modifying it and then causing it to be saved to disk) is likely to 'fix'
+        the issue and make this message go away. Experience shows that this issue
+        is particularly likely to occur on prefab instances, and if this is the case,
+        the parent prefab is also under suspicion, and should be re-saved and re-imported.
+        Note that DATA MAY HAVE BEEN LOST, and you should verify with your version
+        control system (you're using one, right?!) that everything is alright, and
+        if not, use it to rollback the asset to recover your data.\n\n\nA delayed
+        error message containing the originating object's name, type and scene/asset
+        path (if applicable) will be scheduled for logging on Unity's main thread.
+        Search for \"DELAYED SERIALIZATION LOG\". This logging callback will also
+        mark the object dirty if it is an asset, hopefully making the issue 'fix'
+        itself. HOWEVER, THERE MAY STILL BE DATA LOSS.\n\n\nIF YOU HAVE CONSISTENT
+        REPRODUCTION STEPS THAT MAKE THIS ISSUE REOCCUR, please report it at this
+        issue at 'https://bitbucket.org/sirenix/odin-inspector/issues/526', and copy
+        paste this debug message into your comment, along with any potential actions
+        or recent changes in the project that might have happened to cause this message
+        to occur. If the data dump in this message is cut off, please find the editor's
+        log file (see https://docs.unity3d.com/Manual/LogFiles.html) and copy paste
+        the full version of this message from there.\n\n\nData dump:\n\n    Reader
+        type: SerializationNodeDataReader\n    Data dump: Nodes: \n\n    - Name:    
+        <<<< READ POSITION\n      Entry: 0\n      Data: \n"
+    - type: 0
+      content: "Encountered invalid entry while reading serialization data for Unity
+        object of type 'PlayerHeadFollower'. This likely means that Unity has filled
+        Odin's stored serialization data with garbage, which can randomly happen
+        after upgrading the Unity version of the project, or when otherwise doing
+        things that have a lot of fragile interactions with the asset database. Locating
+        the asset which causes this error log and causing it to reserialize (IE,
+        modifying it and then causing it to be saved to disk) is likely to 'fix'
+        the issue and make this message go away. Experience shows that this issue
+        is particularly likely to occur on prefab instances, and if this is the case,
+        the parent prefab is also under suspicion, and should be re-saved and re-imported.
+        Note that DATA MAY HAVE BEEN LOST, and you should verify with your version
+        control system (you're using one, right?!) that everything is alright, and
+        if not, use it to rollback the asset to recover your data.\n\n\nA delayed
+        error message containing the originating object's name, type and scene/asset
+        path (if applicable) will be scheduled for logging on Unity's main thread.
+        Search for \"DELAYED SERIALIZATION LOG\". This logging callback will also
+        mark the object dirty if it is an asset, hopefully making the issue 'fix'
+        itself. HOWEVER, THERE MAY STILL BE DATA LOSS.\n\n\nIF YOU HAVE CONSISTENT
+        REPRODUCTION STEPS THAT MAKE THIS ISSUE REOCCUR, please report it at this
+        issue at 'https://bitbucket.org/sirenix/odin-inspector/issues/526', and copy
+        paste this debug message into your comment, along with any potential actions
+        or recent changes in the project that might have happened to cause this message
+        to occur. If the data dump in this message is cut off, please find the editor's
+        log file (see https://docs.unity3d.com/Manual/LogFiles.html) and copy paste
+        the full version of this message from there.\n\n\nData dump:\n\n    Reader
+        type: SerializationNodeDataReader\n    Data dump: Nodes: \n\n    - Name:    
+        <<<< READ POSITION\n      Entry: 0\n      Data: \n"
+    - type: 0
+      content: "Encountered invalid entry while reading serialization data for Unity
+        object of type 'PlayerHeadFollower'. This likely means that Unity has filled
+        Odin's stored serialization data with garbage, which can randomly happen
+        after upgrading the Unity version of the project, or when otherwise doing
+        things that have a lot of fragile interactions with the asset database. Locating
+        the asset which causes this error log and causing it to reserialize (IE,
+        modifying it and then causing it to be saved to disk) is likely to 'fix'
+        the issue and make this message go away. Experience shows that this issue
+        is particularly likely to occur on prefab instances, and if this is the case,
+        the parent prefab is also under suspicion, and should be re-saved and re-imported.
+        Note that DATA MAY HAVE BEEN LOST, and you should verify with your version
+        control system (you're using one, right?!) that everything is alright, and
+        if not, use it to rollback the asset to recover your data.\n\n\nA delayed
+        error message containing the originating object's name, type and scene/asset
+        path (if applicable) will be scheduled for logging on Unity's main thread.
+        Search for \"DELAYED SERIALIZATION LOG\". This logging callback will also
+        mark the object dirty if it is an asset, hopefully making the issue 'fix'
+        itself. HOWEVER, THERE MAY STILL BE DATA LOSS.\n\n\nIF YOU HAVE CONSISTENT
+        REPRODUCTION STEPS THAT MAKE THIS ISSUE REOCCUR, please report it at this
+        issue at 'https://bitbucket.org/sirenix/odin-inspector/issues/526', and copy
+        paste this debug message into your comment, along with any potential actions
+        or recent changes in the project that might have happened to cause this message
+        to occur. If the data dump in this message is cut off, please find the editor's
+        log file (see https://docs.unity3d.com/Manual/LogFiles.html) and copy paste
+        the full version of this message from there.\n\n\nData dump:\n\n    Reader
+        type: SerializationNodeDataReader\n    Data dump: Nodes: \n\n    - Name:    
+        <<<< READ POSITION\n      Entry: 0\n      Data: \n"
+    - type: 0
+      content: "Encountered invalid entry while reading serialization data for Unity
+        object of type 'PlayerHeadFollower'. This likely means that Unity has filled
+        Odin's stored serialization data with garbage, which can randomly happen
+        after upgrading the Unity version of the project, or when otherwise doing
+        things that have a lot of fragile interactions with the asset database. Locating
+        the asset which causes this error log and causing it to reserialize (IE,
+        modifying it and then causing it to be saved to disk) is likely to 'fix'
+        the issue and make this message go away. Experience shows that this issue
+        is particularly likely to occur on prefab instances, and if this is the case,
+        the parent prefab is also under suspicion, and should be re-saved and re-imported.
+        Note that DATA MAY HAVE BEEN LOST, and you should verify with your version
+        control system (you're using one, right?!) that everything is alright, and
+        if not, use it to rollback the asset to recover your data.\n\n\nA delayed
+        error message containing the originating object's name, type and scene/asset
+        path (if applicable) will be scheduled for logging on Unity's main thread.
+        Search for \"DELAYED SERIALIZATION LOG\". This logging callback will also
+        mark the object dirty if it is an asset, hopefully making the issue 'fix'
+        itself. HOWEVER, THERE MAY STILL BE DATA LOSS.\n\n\nIF YOU HAVE CONSISTENT
+        REPRODUCTION STEPS THAT MAKE THIS ISSUE REOCCUR, please report it at this
+        issue at 'https://bitbucket.org/sirenix/odin-inspector/issues/526', and copy
+        paste this debug message into your comment, along with any potential actions
+        or recent changes in the project that might have happened to cause this message
+        to occur. If the data dump in this message is cut off, please find the editor's
+        log file (see https://docs.unity3d.com/Manual/LogFiles.html) and copy paste
+        the full version of this message from there.\n\n\nData dump:\n\n    Reader
+        type: SerializationNodeDataReader\n    Data dump: Nodes: \n\n    - Name:    
+        <<<< READ POSITION\n      Entry: 0\n      Data: \n"
+    - type: 0
+      content: "Encountered invalid entry while reading serialization data for Unity
+        object of type 'PlayerHeadFollower'. This likely means that Unity has filled
+        Odin's stored serialization data with garbage, which can randomly happen
+        after upgrading the Unity version of the project, or when otherwise doing
+        things that have a lot of fragile interactions with the asset database. Locating
+        the asset which causes this error log and causing it to reserialize (IE,
+        modifying it and then causing it to be saved to disk) is likely to 'fix'
+        the issue and make this message go away. Experience shows that this issue
+        is particularly likely to occur on prefab instances, and if this is the case,
+        the parent prefab is also under suspicion, and should be re-saved and re-imported.
+        Note that DATA MAY HAVE BEEN LOST, and you should verify with your version
+        control system (you're using one, right?!) that everything is alright, and
+        if not, use it to rollback the asset to recover your data.\n\n\nA delayed
+        error message containing the originating object's name, type and scene/asset
+        path (if applicable) will be scheduled for logging on Unity's main thread.
+        Search for \"DELAYED SERIALIZATION LOG\". This logging callback will also
+        mark the object dirty if it is an asset, hopefully making the issue 'fix'
+        itself. HOWEVER, THERE MAY STILL BE DATA LOSS.\n\n\nIF YOU HAVE CONSISTENT
+        REPRODUCTION STEPS THAT MAKE THIS ISSUE REOCCUR, please report it at this
+        issue at 'https://bitbucket.org/sirenix/odin-inspector/issues/526', and copy
+        paste this debug message into your comment, along with any potential actions
+        or recent changes in the project that might have happened to cause this message
+        to occur. If the data dump in this message is cut off, please find the editor's
+        log file (see https://docs.unity3d.com/Manual/LogFiles.html) and copy paste
+        the full version of this message from there.\n\n\nData dump:\n\n    Reader
+        type: SerializationNodeDataReader\n    Data dump: Nodes: \n\n    - Name:    
+        <<<< READ POSITION\n      Entry: 0\n      Data: \n"
+    - type: 0
+      content: "Encountered invalid entry while reading serialization data for Unity
+        object of type 'PlayerHeadFollower'. This likely means that Unity has filled
+        Odin's stored serialization data with garbage, which can randomly happen
+        after upgrading the Unity version of the project, or when otherwise doing
+        things that have a lot of fragile interactions with the asset database. Locating
+        the asset which causes this error log and causing it to reserialize (IE,
+        modifying it and then causing it to be saved to disk) is likely to 'fix'
+        the issue and make this message go away. Experience shows that this issue
+        is particularly likely to occur on prefab instances, and if this is the case,
+        the parent prefab is also under suspicion, and should be re-saved and re-imported.
+        Note that DATA MAY HAVE BEEN LOST, and you should verify with your version
+        control system (you're using one, right?!) that everything is alright, and
+        if not, use it to rollback the asset to recover your data.\n\n\nA delayed
+        error message containing the originating object's name, type and scene/asset
+        path (if applicable) will be scheduled for logging on Unity's main thread.
+        Search for \"DELAYED SERIALIZATION LOG\". This logging callback will also
+        mark the object dirty if it is an asset, hopefully making the issue 'fix'
+        itself. HOWEVER, THERE MAY STILL BE DATA LOSS.\n\n\nIF YOU HAVE CONSISTENT
+        REPRODUCTION STEPS THAT MAKE THIS ISSUE REOCCUR, please report it at this
+        issue at 'https://bitbucket.org/sirenix/odin-inspector/issues/526', and copy
+        paste this debug message into your comment, along with any potential actions
+        or recent changes in the project that might have happened to cause this message
+        to occur. If the data dump in this message is cut off, please find the editor's
+        log file (see https://docs.unity3d.com/Manual/LogFiles.html) and copy paste
+        the full version of this message from there.\n\n\nData dump:\n\n    Reader
+        type: SerializationNodeDataReader\n    Data dump: Nodes: \n\n    - Name:    
+        <<<< READ POSITION\n      Entry: 0\n      Data: \n"
+    - type: 0
+      content: "Encountered invalid entry while reading serialization data for Unity
+        object of type 'PlayerHeadFollower'. This likely means that Unity has filled
+        Odin's stored serialization data with garbage, which can randomly happen
+        after upgrading the Unity version of the project, or when otherwise doing
+        things that have a lot of fragile interactions with the asset database. Locating
+        the asset which causes this error log and causing it to reserialize (IE,
+        modifying it and then causing it to be saved to disk) is likely to 'fix'
+        the issue and make this message go away. Experience shows that this issue
+        is particularly likely to occur on prefab instances, and if this is the case,
+        the parent prefab is also under suspicion, and should be re-saved and re-imported.
+        Note that DATA MAY HAVE BEEN LOST, and you should verify with your version
+        control system (you're using one, right?!) that everything is alright, and
+        if not, use it to rollback the asset to recover your data.\n\n\nA delayed
+        error message containing the originating object's name, type and scene/asset
+        path (if applicable) will be scheduled for logging on Unity's main thread.
+        Search for \"DELAYED SERIALIZATION LOG\". This logging callback will also
+        mark the object dirty if it is an asset, hopefully making the issue 'fix'
+        itself. HOWEVER, THERE MAY STILL BE DATA LOSS.\n\n\nIF YOU HAVE CONSISTENT
+        REPRODUCTION STEPS THAT MAKE THIS ISSUE REOCCUR, please report it at this
+        issue at 'https://bitbucket.org/sirenix/odin-inspector/issues/526', and copy
+        paste this debug message into your comment, along with any potential actions
+        or recent changes in the project that might have happened to cause this message
+        to occur. If the data dump in this message is cut off, please find the editor's
+        log file (see https://docs.unity3d.com/Manual/LogFiles.html) and copy paste
+        the full version of this message from there.\n\n\nData dump:\n\n    Reader
+        type: SerializationNodeDataReader\n    Data dump: Nodes: \n\n    - Name:    
+        <<<< READ POSITION\n      Entry: 0\n      Data: \n"
+    - type: 0
+      content: "Encountered invalid entry while reading serialization data for Unity
+        object of type 'PlayerHeadFollower'. This likely means that Unity has filled
+        Odin's stored serialization data with garbage, which can randomly happen
+        after upgrading the Unity version of the project, or when otherwise doing
+        things that have a lot of fragile interactions with the asset database. Locating
+        the asset which causes this error log and causing it to reserialize (IE,
+        modifying it and then causing it to be saved to disk) is likely to 'fix'
+        the issue and make this message go away. Experience shows that this issue
+        is particularly likely to occur on prefab instances, and if this is the case,
+        the parent prefab is also under suspicion, and should be re-saved and re-imported.
+        Note that DATA MAY HAVE BEEN LOST, and you should verify with your version
+        control system (you're using one, right?!) that everything is alright, and
+        if not, use it to rollback the asset to recover your data.\n\n\nA delayed
+        error message containing the originating object's name, type and scene/asset
+        path (if applicable) will be scheduled for logging on Unity's main thread.
+        Search for \"DELAYED SERIALIZATION LOG\". This logging callback will also
+        mark the object dirty if it is an asset, hopefully making the issue 'fix'
+        itself. HOWEVER, THERE MAY STILL BE DATA LOSS.\n\n\nIF YOU HAVE CONSISTENT
+        REPRODUCTION STEPS THAT MAKE THIS ISSUE REOCCUR, please report it at this
+        issue at 'https://bitbucket.org/sirenix/odin-inspector/issues/526', and copy
+        paste this debug message into your comment, along with any potential actions
+        or recent changes in the project that might have happened to cause this message
+        to occur. If the data dump in this message is cut off, please find the editor's
+        log file (see https://docs.unity3d.com/Manual/LogFiles.html) and copy paste
+        the full version of this message from there.\n\n\nData dump:\n\n    Reader
+        type: SerializationNodeDataReader\n    Data dump: Nodes: \n\n    - Name:    
+        <<<< READ POSITION\n      Entry: 0\n      Data: \n"
+    - type: 0
+      content: "Encountered invalid entry while reading serialization data for Unity
+        object of type 'PlayerHeadFollower'. This likely means that Unity has filled
+        Odin's stored serialization data with garbage, which can randomly happen
+        after upgrading the Unity version of the project, or when otherwise doing
+        things that have a lot of fragile interactions with the asset database. Locating
+        the asset which causes this error log and causing it to reserialize (IE,
+        modifying it and then causing it to be saved to disk) is likely to 'fix'
+        the issue and make this message go away. Experience shows that this issue
+        is particularly likely to occur on prefab instances, and if this is the case,
+        the parent prefab is also under suspicion, and should be re-saved and re-imported.
+        Note that DATA MAY HAVE BEEN LOST, and you should verify with your version
+        control system (you're using one, right?!) that everything is alright, and
+        if not, use it to rollback the asset to recover your data.\n\n\nA delayed
+        error message containing the originating object's name, type and scene/asset
+        path (if applicable) will be scheduled for logging on Unity's main thread.
+        Search for \"DELAYED SERIALIZATION LOG\". This logging callback will also
+        mark the object dirty if it is an asset, hopefully making the issue 'fix'
+        itself. HOWEVER, THERE MAY STILL BE DATA LOSS.\n\n\nIF YOU HAVE CONSISTENT
+        REPRODUCTION STEPS THAT MAKE THIS ISSUE REOCCUR, please report it at this
+        issue at 'https://bitbucket.org/sirenix/odin-inspector/issues/526', and copy
+        paste this debug message into your comment, along with any potential actions
+        or recent changes in the project that might have happened to cause this message
+        to occur. If the data dump in this message is cut off, please find the editor's
+        log file (see https://docs.unity3d.com/Manual/LogFiles.html) and copy paste
+        the full version of this message from there.\n\n\nData dump:\n\n    Reader
+        type: SerializationNodeDataReader\n    Data dump: Nodes: \n\n    - Name:    
+        <<<< READ POSITION\n      Entry: 0\n      Data: \n"
+    - type: 0
+      content: "Encountered invalid entry while reading serialization data for Unity
+        object of type 'PlayerHeadFollower'. This likely means that Unity has filled
+        Odin's stored serialization data with garbage, which can randomly happen
+        after upgrading the Unity version of the project, or when otherwise doing
+        things that have a lot of fragile interactions with the asset database. Locating
+        the asset which causes this error log and causing it to reserialize (IE,
+        modifying it and then causing it to be saved to disk) is likely to 'fix'
+        the issue and make this message go away. Experience shows that this issue
+        is particularly likely to occur on prefab instances, and if this is the case,
+        the parent prefab is also under suspicion, and should be re-saved and re-imported.
+        Note that DATA MAY HAVE BEEN LOST, and you should verify with your version
+        control system (you're using one, right?!) that everything is alright, and
+        if not, use it to rollback the asset to recover your data.\n\n\nA delayed
+        error message containing the originating object's name, type and scene/asset
+        path (if applicable) will be scheduled for logging on Unity's main thread.
+        Search for \"DELAYED SERIALIZATION LOG\". This logging callback will also
+        mark the object dirty if it is an asset, hopefully making the issue 'fix'
+        itself. HOWEVER, THERE MAY STILL BE DATA LOSS.\n\n\nIF YOU HAVE CONSISTENT
+        REPRODUCTION STEPS THAT MAKE THIS ISSUE REOCCUR, please report it at this
+        issue at 'https://bitbucket.org/sirenix/odin-inspector/issues/526', and copy
+        paste this debug message into your comment, along with any potential actions
+        or recent changes in the project that might have happened to cause this message
+        to occur. If the data dump in this message is cut off, please find the editor's
+        log file (see https://docs.unity3d.com/Manual/LogFiles.html) and copy paste
+        the full version of this message from there.\n\n\nData dump:\n\n    Reader
+        type: SerializationNodeDataReader\n    Data dump: Nodes: \n\n    - Name:    
+        <<<< READ POSITION\n      Entry: 0\n      Data: \n"
+    - type: 3
+      content: Converting SerializedUdonProgramAsset '0579e2f7d1c57a241a07d45f6088960b'
+        to compressed format
+    - type: 3
+      content: Converting SerializedUdonProgramAsset '1099cbb6e22bfe74a93b71dfe7c428aa'
+        to compressed format
+    - type: 3
+      content: Converting SerializedUdonProgramAsset '0f3632a4c15254e4185e597a9b553015'
+        to compressed format
+    - type: 3
+      content: Converting SerializedUdonProgramAsset '8803f6df285e2fd48bbd0aeeb81ed533'
+        to compressed format
+    - type: 3
+      content: Converting SerializedUdonProgramAsset '2a34c3726f5aaca4c9b05004c07eb5c6'
+        to compressed format
+    - type: 3
+      content: Converting SerializedUdonProgramAsset '5893300e3f688004b9251878e312d460'
+        to compressed format
+    - type: 3
+      content: Converting SerializedUdonProgramAsset 'b2329c06350f6d24ea49bc2842c81e99'
+        to compressed format
+    - type: 3
+      content: Converting SerializedUdonProgramAsset 'e1b45160fe9957145826cfa2a86419a1'
+        to compressed format
+    - type: 3
+      content: Converting SerializedUdonProgramAsset '73571ae951ee35b479181d7ee4a4be25'
+        to compressed format
+    - type: 3
+      content: Converting SerializedUdonProgramAsset '2de31a7dfc5718c47aa82772c351b8a3'
+        to compressed format
+    - type: 3
+      content: Converting SerializedUdonProgramAsset 'f6978e5f7a08f4047b4b9cf219efba6b'
+        to compressed format
+    - type: 3
+      content: Converting SerializedUdonProgramAsset 'd5d0346a3148a584da4572e44316e658'
+        to compressed format
+    - type: 3
+      content: Converting SerializedUdonProgramAsset '19c6455fcf036f447a988be402108b3c'
+        to compressed format
+    - type: 3
+      content: Converting SerializedUdonProgramAsset '46df060d25eb3bc42be5fcfae616147c'
+        to compressed format
+    - type: 3
+      content: Converting SerializedUdonProgramAsset 'c69b708d523a01b449b6ca21384d958c'
+        to compressed format
+    - type: 3
+      content: Converting SerializedUdonProgramAsset '4bfd9d9a0b7684c449d31b38065b43f4'
+        to compressed format
+    - type: 3
+      content: Converting SerializedUdonProgramAsset '3f7757f3a3e464644acd66ab61321b36'
+        to compressed format
+    - type: 3
+      content: Converting SerializedUdonProgramAsset '98cd88d0adb2e994a9e93d2efefa9eb4'
+        to compressed format
+    - type: 3
+      content: Converting SerializedUdonProgramAsset 'aacda992b3a1dca4ea17ecbadc5cadf1'
+        to compressed format
+    - type: 3
+      content: Converting SerializedUdonProgramAsset 'aaaeaa7ebc8e35a4e9ad1275785b2636'
+        to compressed format
+    - type: 3
+      content: Converting SerializedUdonProgramAsset '0e78d0c5c758aaf4f9d0ace911a2c5d8'
+        to compressed format
+    - type: 3
+      content: Converting SerializedUdonProgramAsset 'db6380e7c98d9e94bb856b1e1b1cf56c'
+        to compressed format
+    - type: 3
+      content: Computed code signatures for 111 scripts of type SerializedUdonProgramAsset
+        in 17ms
+  - stepName: Writing asset files
+    durationTicks: 454200170
+    depth: 3
+    messages: []
+  - stepName: Packaging assets - archive:/BuildPlayer-ExampleScene/BuildPlayer-ExampleScene.sharedAssets
+    durationTicks: 454144649
+    depth: 4
+    messages:
+    - type: 2
+      content: 'Shader warning in ''Hidden/PostProcessing/Uber'': Unrecognized renderer
+        for #pragma exclude_renderers: webgpu at line 278'
+    - type: 2
+      content: 'Shader warning in ''Hidden/PostProcessing/Uber'': Unrecognized renderer
+        for #pragma only_renderers: webgpu at line 293'
+    - type: 2
+      content: 'Shader warning in ''Hidden/PostProcessing/FinalPass'': Unrecognized
+        renderer for #pragma exclude_renderers: webgpu at line 102'
+    - type: 2
+      content: 'Shader warning in ''Hidden/PostProcessing/FinalPass'': Unrecognized
+        renderer for #pragma exclude_renderers: webgpu at line 118'
+    - type: 2
+      content: 'Shader warning in ''Hidden/PostProcessing/FinalPass'': Unrecognized
+        renderer for #pragma only_renderers: webgpu at line 150'
+  - stepName: Creating compressed player package
+    durationTicks: 47423813
+    depth: 3
+    messages: []
+  - stepName: Postprocess built player
+    durationTicks: 145684
+    depth: 3
+    messages: []
+  m_Appendices:
+  - {fileID: -9217535990020037868}
+  - {fileID: -306687973144845699}
+  - {fileID: 5771641381040207934}
+  - {fileID: 7210191502233374775}
+  - {fileID: 1100926188227905678}
+  - {fileID: 5086124472491762810}
+--- !u!1521398425 &1100926188227905678
+VideoBuildInfo:
+  m_VideoClipCount: 0
+  m_IsVideoModuleDisabled: 0
+--- !u!1126 &5086124472491762810
+PackedAssets:
+  m_ShortPath: CAB-31cec9014c684ce2ebb827e67b687e6f
+  m_Overhead: 4032
+  m_Contents:
+  - fileID: 1
+    classID: 142
+    packedSize: 104
+    offset: 4032
+    sourceAssetGUID: 00000000000000000000000000000000
+    buildTimeAssetPath: AssetBundle Object
+  - fileID: 2
+    classID: 290
+    packedSize: 148
+    offset: 4136
+    sourceAssetGUID: 00000000000000000000000000000000
+    buildTimeAssetPath: 'Built-in AssetBundleManifest: AssetBundleManifest'
+--- !u!382020655 &5771641381040207934
+PluginBuildInfo:
+  m_RuntimePlugins:
+  - VRC.Udon.VM
+  - VRC.SDK3.Dynamics.PhysBone
+  - VRC.Udon.Security
+  - libvrc_fast_crypto
+  - VRCEconomy
+  - DOTween
+  - YamlDotNet
+  - VRCSDK3
+  - nunit.framework
+  - VRC.Primitives
+  - VRCCore-Editor
+  - Serilog.Sinks.File
+  - vrc_fast_crypto
+  - VRC.SDK3.Dynamics.Contact
+  - System.Collections.Immutable
+  - OculusXRPlugin
+  - VRC.Udon.Wrapper
+  - VRC.ImageProcessing
+  - Unity.Burst.Unsafe
+  - SemanticVersioning
+  - vrc_image_loader
+  - librsync.net
+  - OVRPlugin
+  - System.Runtime.CompilerServices.Unsafe
+  - Newtonsoft.Json
+  - Unity.Collections.LowLevel.ILSupport
+  - VRC.Udon.Common
+  - VRC.Udon.VRCWrapperModules
+  - VRC.Dynamics
+  - VRCSDKBase
+  - VRC.Utility
+  - portmidi
+  - VRC.Udon.ClientBindings
+  - SDKBase-Legacy
+  - Blake2Sharp
+  - VRC.SDK3.Dynamics.Constraint
+  - System.Text.Encoding.CodePages
+  - Serilog
+  - Collections.Pooled
+  - VRC.Primitives.UniTask
+  - AudioPluginOculusSpatializer
+  m_EditorPlugins:
+  - libvrc_image_loader
+  - VRC.Udon.VRCGraphModules
+  - VRC.Udon.EditorBindings
+  - 0Harmony
+  - VRC.SDK3.Dynamics.Contact.Editor
+  - libvrc_shader_compiler_plugin
+  - Mono.Cecil.Pdb
+  - JetBrains.Rider.PathLocator
+  - vrc_shader_compiler_plugin
+  - VRCSDKBase-Editor
+  - Microsoft.CodeAnalysis.CSharp
+  - VRC.Udon.VRCTypeResolverModules
+  - VRCEconomy-Editor
+  - ICSharpCode.SharpZipLib
+  - VRC.SDK3.Dynamics.Constraint.Editor
+  - AppleEventIntegration
+  - Mono.Cecil
+  - VRC.Udon.Graph
+  - Unity.Burst.Cecil.Pdb
+  - Mono.Cecil.Rocks
+  - Microsoft.CodeAnalysis
+  - VRC.Udon.Compiler
+  - System.Reflection.Metadata
+  - VRCSDK3-Editor
+  - Mono.Cecil.Mdb
+  - Serilog.Sinks.Unity3D
+  - Algolia.Search
+  - DOTweenEditor
+  - Unity.Burst.Cecil.Mdb
+  - VRC.SDK3.Dynamics.PhysBone.Editor
+  - Unity.Burst.Cecil
+  - Unity.Burst.Cecil.Rocks
+  - vpm-core-lib
+  - VRC.Udon.UAssembly
+--- !u!641289076 &7210191502233374775
+AudioBuildInfo:
+  m_IsAudioDisabled: 0
+  m_AudioClipCount: 0
+  m_AudioMixerCount: 0
