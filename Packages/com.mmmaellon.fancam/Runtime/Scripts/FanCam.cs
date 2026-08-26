@@ -189,11 +189,27 @@ namespace MMMaellon.FanCam
 
         public void SpeedUp()
         {
+            if (!Dolly)
+            {
+                return;
+            }
+            if (!IsOwnerLocal())
+            {
+                Networking.SetOwner(Networking.LocalPlayer, gameObject);
+            }
             Speed += 0.1f;
         }
 
         public void SpeedDown()
         {
+            if (!Dolly)
+            {
+                return;
+            }
+            if (!IsOwnerLocal())
+            {
+                Networking.SetOwner(Networking.LocalPlayer, gameObject);
+            }
             Speed -= 0.1f;
         }
 
