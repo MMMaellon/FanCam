@@ -208,7 +208,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: owner
+    m_ConditionEvent: director
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 0}
@@ -450,7 +450,7 @@ AnimatorTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: edit owner
+    m_ConditionEvent: owner
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4174400029965901677}
@@ -502,7 +502,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: owner
+    m_ConditionEvent: director
     m_EventTreshold: 2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 0}
@@ -856,7 +856,7 @@ AnimatorTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: edit owner
+    m_ConditionEvent: owner
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: edit
@@ -934,37 +934,37 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: camera controls
     m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 1
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: owner
+    m_Controller: {fileID: 0}
+  - m_Name: director
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: edit
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: edit owner
+    m_Controller: {fileID: 0}
+  - m_Name: owner
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: edit dolly
+    m_Controller: {fileID: 0}
+  - m_Name: dolly
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: CameraSwitcher
@@ -1026,7 +1026,7 @@ AnimatorTransition:
     m_ConditionEvent: camera controls
     m_EventTreshold: 2
   - m_ConditionMode: 1
-    m_ConditionEvent: owner
+    m_ConditionEvent: director
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8446514099137468443}
@@ -1214,7 +1214,7 @@ AnimatorTransition:
     m_ConditionEvent: camera controls
     m_EventTreshold: 2
   - m_ConditionMode: 2
-    m_ConditionEvent: owner
+    m_ConditionEvent: director
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6390132881154234429}
@@ -1289,7 +1289,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: edit owner
+    m_ConditionEvent: owner
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 0}
@@ -1400,7 +1400,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: edit dolly
+    m_ConditionEvent: dolly
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8992990186345085400}
@@ -1474,7 +1474,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: edit dolly
+    m_ConditionEvent: dolly
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3182465929373664475}
@@ -1529,7 +1529,7 @@ AnimatorStateMachine:
     m_Position: {x: 440, y: 190, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1716842447246353301}
-    m_Position: {x: 440, y: 90, z: 0}
+    m_Position: {x: 440, y: 40, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions:
@@ -1580,7 +1580,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -8992990186345085400}
-    m_Position: {x: 400, y: -10, z: 0}
+    m_Position: {x: 390, y: 200, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3182465929373664475}
     m_Position: {x: 390, y: 120, z: 0}
@@ -1650,7 +1650,7 @@ AnimatorStateTransition:
     m_ConditionEvent: edit
     m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: edit owner
+    m_ConditionEvent: owner
     m_EventTreshold: 0
   - m_ConditionMode: 6
     m_ConditionEvent: camera controls

@@ -15,41 +15,34 @@ namespace MMMaellon.FanCam
     [RequireComponent(typeof(Animator))]
     public class FanCamMenu : UdonSharpBehaviour
     {
-        private readonly int OwnerHash = Animator.StringToHash("owner");
-        private readonly int EditHash = Animator.StringToHash("edit");
-        private readonly int EditOwnerHash = Animator.StringToHash("edit owner");
-        private readonly int EditDollyHash = Animator.StringToHash("edit dolly");
         public FanCamManager manager;
         public TMP_Dropdown editorDropdown;
         public TMP_Dropdown playerTrackingDropdown;
         public Animator animator;
+        readonly int cameraControlsParameter = Animator.StringToHash("camera controls");
+        public readonly int PlayerTrackingHash = Animator.StringToHash("player tracking");
         public TextMeshProUGUI ownerNameTMP;
         public RawImage editPreview;
+        public Slider zoomSlider;
+        public Slider speedSlider;
 #if !COMPILER_UDONSHARP && UNITY_EDITOR
         public void Reset()
         {
             animator = GetComponent<Animator>();
         }
 #endif
-        public void Start()
-        {
-            manager.menu = this;
-            //just to force it to update
-            editorDropdown.value = 1;
-            if (Utilities.IsValid(manager.Owner))
-            {
-                ownerNameTMP.text = manager.Owner.displayName;
-            }
-        }
-
         public void OnEnable()
         {
             if (Utilities.IsValid(manager.Owner))
             {
                 ownerNameTMP.text = manager.Owner.displayName;
             }
-            UpdateEditor();
-            animator.SetBool(OwnerHash, manager.IsOwnerLocal());
+            else
+            {
+                ownerNameTMP.text = "";
+            }
+            OnChangeEditorDropdown();
+            animator.SetBool(manager.DirectorHash, manager.IsDirector());
         }
 
         public void Cam0()
@@ -93,7 +86,6 @@ namespace MMMaellon.FanCam
             manager.Cam9();
         }
 
-        public string cameraControlsParameter = "camera controls";
         public void CameraSwitcherBtn()
         {
             if (animator.GetInteger(cameraControlsParameter) == 2)
@@ -120,7 +112,7 @@ namespace MMMaellon.FanCam
 
         public void BecomeDirectorBtn()
         {
-            manager.TakeOwnership();
+            Networking.SetOwner(Networking.LocalPlayer, gameObject);
         }
 
         public bool AreCameraPreviewsVisible()
@@ -133,80 +125,82 @@ namespace MMMaellon.FanCam
             return animator.GetInteger(cameraControlsParameter) == 1 && gameObject.activeInHierarchy && enabled;
         }
 
-        [System.NonSerialized]
-        public FanCam editorFanCam;
+        FanCam _editorFanCam;
+        public FanCam EditorFanCam
+        {
+            get => _editorFanCam;
+            set
+            {
+                if (Utilities.IsValid(_editorFanCam))
+                {
+                    _editorFanCam.Edit = false;
+                }
+                _editorFanCam = value;
+                if (!Utilities.IsValid(_editorFanCam))
+                {
+                    editPreview.texture = null;
+                    UnSetPlayerTrackingDropdown();
+                    return;
+                }
+                editPreview.texture = _editorFanCam.localPreview;
+                _editorFanCam.FillEditor();
+                if (_editorFanCam.IsOwnerLocal())
+                {
+                    _editorFanCam.Edit = true;
+                }
+            }
+        }
+
         public void OnChangeEditorDropdown()
         {
             if (editorDropdown.value >= 0 && editorDropdown.value < manager.fanCams.Length)
             {
-                editorFanCam = manager.fanCams[editorDropdown.value];
+                EditorFanCam = manager.fanCams[editorDropdown.value];
             }
             else
             {
-                editorFanCam = null;
+                EditorFanCam = null;
             }
-            UpdateEditor();
         }
 
         public TextMeshProUGUI editorOwnerTMP;
-        public void UpdateEditor()
-        {
-            if (!Utilities.IsValid(editorFanCam))
-            {
-                animator.SetBool(EditHash, false);
-                editPreview.texture = null;
-                return;
-            }
-            if (editorFanCam.Edit)
-            {
-                manager.EditFanCam = editorFanCam;
-            }
-            editPreview.texture = editorFanCam.localPreview;
-            animator.SetBool(EditHash, editorFanCam.Edit);
-            animator.SetBool(EditOwnerHash, editorFanCam.IsOwnerLocal());
-            animator.SetBool(EditDollyHash, editorFanCam.Dolly);
-            if (Utilities.IsValid(editorFanCam.Owner))
-            {
-                editorOwnerTMP.text = editorFanCam.Owner.displayName;
-            }
-            SetPlayerTrackingDropdown();
-        }
 
-        public void SetPlayerTrackingDropdown()
+        public void SetPlayerTrackingDropdown(int playerId)
         {
-            if (Utilities.IsValid(editorFanCam) && Utilities.IsValid(editorFanCam.playerTarget.Target))
+            for (int i = 0; i < playerIdCache.Length; i++)
             {
-                for (int i = 0; i < playerIdCache.Length; i++)
+                if (Utilities.IsValid(playerIdCache[i]) && playerIdCache[i] == playerId)
                 {
-                    if (Utilities.IsValid(playerIdCache[i]) && playerIdCache[i] == editorFanCam.TargetPlayerId)
-                    {
-                        playerTrackingDropdown.SetValueWithoutNotify(i);
-                        return;
-                    }
+                    playerTrackingDropdown.SetValueWithoutNotify(i);
+                    return;
                 }
             }
+            UnSetPlayerTrackingDropdown();
+        }
+        public void UnSetPlayerTrackingDropdown()
+        {
             playerTrackingDropdown.SetValueWithoutNotify(playerIdCache.Length + 1);
         }
 
         public Vector3 editorTeleportOffset = new Vector3(0, 1f, 1f);
         public void TeleportBtn()
         {
-            if (Utilities.IsValid(editorFanCam) && editorFanCam.IsOwnerLocal() && editorFanCam.Edit)
+            if (Utilities.IsValid(_editorFanCam) && _editorFanCam.IsOwnerLocal() && _editorFanCam.Edit)
             {
                 var position = Networking.LocalPlayer.GetPosition();
                 var rotation = Networking.LocalPlayer.GetRotation();
-                if (editorFanCam.Dolly)
+                if (_editorFanCam.Dolly)
                 {
-                    var points = editorFanCam.dollyTrack.points;
+                    var points = _editorFanCam.dollyTrack.points;
                     for (int i = 0; i < points.Length; i++)
                     {
                         points[i].sync.TeleportToWorldSpace(position + rotation * editorTeleportOffset + rotation * Vector3.right * (i - points.Length / 2f), rotation, Vector3.zero, Vector3.zero);
                     }
-                    editorFanCam.dollyTrack.targetBall.Respawn();
+                    _editorFanCam.dollyTrack.targetBall.Respawn();
                 }
                 else
                 {
-                    editorFanCam.pickupControllerPickup.TeleportToWorldSpace(position + rotation * editorTeleportOffset, rotation, Vector3.zero, Vector3.zero);
+                    _editorFanCam.pickupControllerPickup.TeleportToWorldSpace(position + rotation * editorTeleportOffset, rotation, Vector3.zero, Vector3.zero);
                 }
             }
         }
@@ -233,30 +227,72 @@ namespace MMMaellon.FanCam
         }
         public void SwitchBtn()
         {
-            if (!manager.IsOwnerLocal())
+            Debug.LogWarning("SwitchBtn");
+            if (!manager.IsDirector())
             {
+                Debug.LogWarning("Not director");
                 return;
             }
-            if (!Utilities.IsValid(editorFanCam))
+            if (!Utilities.IsValid(EditorFanCam))
             {
+                Debug.LogWarning("Invalid editor fan cam");
                 return;
             }
-            manager.ActiveCam = editorFanCam.Id;
+            Debug.LogWarning("Setting cam to " + EditorFanCam.Id);
+            manager.ActiveCam = EditorFanCam.Id;
+        }
+
+        public void OnChangeZoomSlider()
+        {
+            if (!Utilities.IsValid(EditorFanCam))
+            {
+                zoomSlider.SetValueWithoutNotify(0);
+                return;
+            }
+            if (!EditorFanCam.IsOwnerLocal() || !_editorFanCam.Edit)
+            {
+                zoomSlider.SetValueWithoutNotify(_editorFanCam.Zoom);
+                return;
+            }
+            _editorFanCam.Zoom = zoomSlider.value;
+            zoomSlider.SetValueWithoutNotify(_editorFanCam.Zoom);
+        }
+        public void OnChangeSpeedSlider()
+        {
+            if (!Utilities.IsValid(EditorFanCam))
+            {
+                speedSlider.SetValueWithoutNotify(0);
+                return;
+            }
+            if (!EditorFanCam.IsOwnerLocal() || !_editorFanCam.Edit)
+            {
+                speedSlider.SetValueWithoutNotify(_editorFanCam.Speed);
+                return;
+            }
+            _editorFanCam.Speed = speedSlider.value;
+            speedSlider.SetValueWithoutNotify(_editorFanCam.Speed);
         }
 
         public void OnChangePlayerTrackingDropdown()
         {
-            if (!Utilities.IsValid(editorFanCam) || !editorFanCam.IsOwnerLocal() || !editorFanCam.Edit)
+            if (!Utilities.IsValid(EditorFanCam))
             {
+                UnSetPlayerTrackingDropdown();
+                return;
+            }
+            if (!EditorFanCam.IsOwnerLocal() || !_editorFanCam.Edit)
+            {
+                SetPlayerTrackingDropdown(EditorFanCam.TargetPlayerId);
                 return;
             }
             if (playerTrackingDropdown.value >= 0 && playerTrackingDropdown.value < playerIdCache.Length)
             {
-                editorFanCam.TargetPlayerId = playerIdCache[playerTrackingDropdown.value];
+                _editorFanCam.TargetPlayerId = playerIdCache[playerTrackingDropdown.value];
             }
             else
             {
-                editorFanCam.TargetPlayerId = -1001;
+                _editorFanCam.TargetPlayerId = -1001;
+                UnSetPlayerTrackingDropdown();
             }
         }
 
@@ -283,7 +319,10 @@ namespace MMMaellon.FanCam
             }
             playerTargetOptions[playerTargetOptions.Length - 1] = "No Player Tracking";
             playerTrackingDropdown.AddOptions(playerTargetOptions);
-            SetPlayerTrackingDropdown();
+            if (Utilities.IsValid(EditorFanCam))
+            {
+                SetPlayerTrackingDropdown(EditorFanCam.TargetPlayerId);
+            }
         }
 
         public override void OnPlayerJoined(VRCPlayerApi player)
@@ -298,28 +337,30 @@ namespace MMMaellon.FanCam
 
         public void DollyBtn()
         {
-            if (!Utilities.IsValid(editorFanCam) || !editorFanCam.IsOwnerLocal() || !editorFanCam.Edit)
+            if (!Utilities.IsValid(_editorFanCam))
             {
                 return;
             }
-            editorFanCam.ToggleDolly();
+            _editorFanCam.ToggleDolly();
         }
 
         public void EditBtn()
         {
-            if (!Utilities.IsValid(editorFanCam))
+            Debug.LogWarning("Edit Button");
+            if (!Utilities.IsValid(_editorFanCam))
             {
+                Debug.LogWarning("no cam to edit");
                 return;
             }
-            if (!editorFanCam.IsOwnerLocal())
+            if (!_editorFanCam.IsOwnerLocal())
             {
-                if (editorFanCam.pickupControllerPickup.IsHeld())
+                if (_editorFanCam.pickupControllerPickup.IsHeld())
                 {
                     return;
                 }
-                Networking.SetOwner(Networking.LocalPlayer, editorFanCam.gameObject);
+                Networking.SetOwner(Networking.LocalPlayer, _editorFanCam.gameObject);
             }
-            editorFanCam.Edit = !editorFanCam.Edit;
+            _editorFanCam.Edit = !_editorFanCam.Edit;
         }
     }
 }

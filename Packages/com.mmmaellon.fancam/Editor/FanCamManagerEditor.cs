@@ -35,7 +35,7 @@ namespace MMMaellon.FanCam
             FanCamSetup.AutoSetup = GUILayout.Toggle(FanCamSetup.AutoSetup, "Automatic Setup", GUILayout.Width(128));
             if (GUILayout.Button("Perform Manual Setup"))
             {
-                FanCamSetup.Setup();
+                ((FanCamManager)target).Setup();
             }
             EditorGUILayout.EndHorizontal();
 

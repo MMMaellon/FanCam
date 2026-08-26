@@ -15,8 +15,8 @@ namespace MMMaellon.FanCam
         public Camera realCamera;
         public Camera previewCamera;
         public Animator animator;
-        private readonly int OwnerHash = Animator.StringToHash("owner");
-        private readonly int camParameterHash = Animator.StringToHash("cam");
+        public readonly int DirectorHash = Animator.StringToHash("director");
+        public readonly int camParameterHash = Animator.StringToHash("cam");
         CinemachineVirtualCameraBase switcher;
         public FanCam[] fanCams;
         public FanCamMenu menu;
@@ -25,10 +25,10 @@ namespace MMMaellon.FanCam
         public void OnEnable()
         {
             owner = Networking.GetOwner(gameObject);
-            animator.SetBool(OwnerHash, IsOwnerLocal());
+            animator.SetBool(DirectorHash, IsDirector());
             if (Utilities.IsValid(menu))
             {
-                menu.animator.SetBool(OwnerHash, IsOwnerLocal());
+                menu.animator.SetBool(DirectorHash, IsDirector());
                 menu.ownerNameTMP.text = owner.displayName;
             }
             ActiveCam = ActiveCam;
@@ -40,14 +40,14 @@ namespace MMMaellon.FanCam
         public override void OnOwnershipTransferred(VRCPlayerApi player)
         {
             owner = player;
-            animator.SetBool(OwnerHash, IsOwnerLocal());
+            animator.SetBool(DirectorHash, IsDirector());
             if (Utilities.IsValid(menu))
             {
-                menu.animator.SetBool(OwnerHash, IsOwnerLocal());
+                menu.animator.SetBool(DirectorHash, IsDirector());
                 menu.ownerNameTMP.text = owner.displayName;
             }
         }
-        public bool IsOwnerLocal()
+        public bool IsDirector()
         {
             return Utilities.IsValid(owner) && owner.isLocal;
         }
@@ -75,7 +75,7 @@ namespace MMMaellon.FanCam
                 {
                     fanCams[_cam].Rec = true;
                 }
-                if (IsOwnerLocal())
+                if (IsDirector())
                 {
                     RequestSerialization();
                 }
@@ -119,7 +119,7 @@ namespace MMMaellon.FanCam
 
         public void Cam1()
         {
-            if (!IsOwnerLocal())
+            if (!IsDirector())
             {
                 return;
             }
@@ -127,7 +127,7 @@ namespace MMMaellon.FanCam
         }
         public void Cam2()
         {
-            if (!IsOwnerLocal())
+            if (!IsDirector())
             {
                 return;
             }
@@ -135,7 +135,7 @@ namespace MMMaellon.FanCam
         }
         public void Cam3()
         {
-            if (!IsOwnerLocal())
+            if (!IsDirector())
             {
                 return;
             }
@@ -143,7 +143,7 @@ namespace MMMaellon.FanCam
         }
         public void Cam4()
         {
-            if (!IsOwnerLocal())
+            if (!IsDirector())
             {
                 return;
             }
@@ -151,7 +151,7 @@ namespace MMMaellon.FanCam
         }
         public void Cam5()
         {
-            if (!IsOwnerLocal())
+            if (!IsDirector())
             {
                 return;
             }
@@ -159,7 +159,7 @@ namespace MMMaellon.FanCam
         }
         public void Cam6()
         {
-            if (!IsOwnerLocal())
+            if (!IsDirector())
             {
                 return;
             }
@@ -167,7 +167,7 @@ namespace MMMaellon.FanCam
         }
         public void Cam7()
         {
-            if (!IsOwnerLocal())
+            if (!IsDirector())
             {
                 return;
             }
@@ -175,7 +175,7 @@ namespace MMMaellon.FanCam
         }
         public void Cam8()
         {
-            if (!IsOwnerLocal())
+            if (!IsDirector())
             {
                 return;
             }
@@ -183,7 +183,7 @@ namespace MMMaellon.FanCam
         }
         public void Cam9()
         {
-            if (!IsOwnerLocal())
+            if (!IsDirector())
             {
                 return;
             }
@@ -191,24 +191,11 @@ namespace MMMaellon.FanCam
         }
         public void Cam0()
         {
-            if (!IsOwnerLocal())
+            if (!IsDirector())
             {
                 return;
             }
             ActiveCam = 0;
-        }
-
-        public void UpdateEdit(FanCam fanCam)
-        {
-            if (fanCam != EditFanCam)
-            {
-                return;
-            }
-        }
-
-        public void TakeOwnership()
-        {
-            Networking.SetOwner(Networking.LocalPlayer, gameObject);
         }
 
         public void Setup()
@@ -220,56 +207,37 @@ namespace MMMaellon.FanCam
             }
         }
 
-        // int lastPreview = -1001;
-        // [System.NonSerialized]
-        // DataList previewList = new DataList();
         int previewCounter = 0;
         public void PreviewLoop()
         {
-            // if (lastPreview == Time.renderedFrameCount)
-            // {
-            //     return;
-            // }
-            // if (!previewCamera.enabled || previewList.Count == 0)
-            // {
-            //     return;
-            // }
             if (Utilities.IsValid(menu) && menu.AreCameraPreviewsVisible())
             {
                 previewCamera.enabled = true;
                 previewCounter = (previewCounter + 1) % fanCams.Length;
                 fanCams[previewCounter].RenderPreview();
             }
-            else
-            if (Utilities.IsValid(HeldFanCam))
+            else if (Utilities.IsValid(HeldFanCam))
             {
+                Debug.LogWarning("Rendering held cam");
                 previewCamera.enabled = true;
                 HeldFanCam.RenderPreview();
-                if (Utilities.IsValid(menu) && menu.editorFanCam != HeldFanCam)
+                if (Utilities.IsValid(menu) && menu.EditorFanCam != HeldFanCam)
                 {
+                    Debug.LogWarning("disabling edit preview");
                     menu.editPreview.enabled = false;
                 }
             }
-            else if (Utilities.IsValid(menu) && Utilities.IsValid(menu.editorFanCam) && menu.AreEditorControlsVisible())
+            else if (Utilities.IsValid(menu) && Utilities.IsValid(menu.EditorFanCam) && menu.AreEditorControlsVisible())
             {
                 previewCamera.enabled = true;
                 menu.editPreview.enabled = true;
-                menu.editorFanCam.RenderPreview();
+                menu.EditorFanCam.RenderPreview();
             }
             else
             {
                 previewCamera.enabled = false;
                 return;
             }
-            // SendCustomEventDelayedFrames(nameof(PreviewLoop), 0);
-            // previewCounter = (previewCounter + 1) % previewList.Count;
-            // if (previewList.TryGetValue(previewCounter, TokenType.Reference, out var previewTargetRef))
-            // {
-            //     var previewTarget = (FanCam)previewTargetRef.Reference;
-            //     previewTarget.RenderPreview();
-            // }
-            // previewCounter = (previewCounter + 1) % fanCams.Length;
-            // fanCams[previewCounter].RenderPreview();
         }
 
         // public void AddToPreviewList(FanCam fanCam)
@@ -338,27 +306,11 @@ namespace MMMaellon.FanCam
                     _heldFanCam.StopZoom();
                 }
                 _heldFanCam = value;
-                if (Utilities.IsValid(EditFanCam))
-                {
-                    EditFanCam.UpdatePreview();
-                }
-            }
-        }
-        FanCam _editFanCam;
-        public FanCam EditFanCam
-        {
-            get => _editFanCam;
-            set
-            {
-                if (Utilities.IsValid(_editFanCam))
-                {
-                    _editFanCam.StopZoom();
-                }
-                _editFanCam = value;
-                if (Utilities.IsValid(value))
-                {
-                    value.UpdatePreview();
-                }
+                //update preview handled by fancam's Held
+                // if (Utilities.IsValid(menu) && Utilities.IsValid(menu.EditorFanCam))
+                // {
+                //     menu.EditorFanCam.UpdatePreviewMesh();
+                // }
             }
         }
 
@@ -375,159 +327,157 @@ namespace MMMaellon.FanCam
                 {
                     HeldFanCam.ZoomOut();
                 }
-                else if (Input.GetKeyUp(KeyCode.Q))
-                {
-                    HeldFanCam.StopZoom();
-                }
-                else if (Input.GetKeyUp(KeyCode.E))
+                else if (Input.GetKeyUp(KeyCode.Q) || Input.GetKeyUp(KeyCode.E))
                 {
                     HeldFanCam.StopZoom();
                 }
             }
-            if (Utilities.IsValid(EditFanCam) && EditFanCam.Edit)
+            else
+            if (Utilities.IsValid(menu) && Utilities.IsValid(menu.EditorFanCam) && menu.EditorFanCam.Edit && menu.EditorFanCam.IsOwnerLocal())
             {
-                if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.PageUp))
+                if (Input.GetKeyDown(KeyCode.Q))
                 {
-                    EditFanCam.ZoomIn();
+                    menu.EditorFanCam.ZoomIn();
                     return;
                 }
-                else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.PageDown))
+                else if (Input.GetKeyDown(KeyCode.E))
                 {
-                    EditFanCam.ZoomOut();
+                    menu.EditorFanCam.ZoomOut();
                     return;
                 }
-                else if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.PageUp))
+                else if (Input.GetKeyUp(KeyCode.Q) || Input.GetKeyUp(KeyCode.E))
                 {
-                    EditFanCam.StopZoom();
-                    return;
-                }
-                else if (Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.PageDown))
-                {
-                    EditFanCam.StopZoom();
+                    menu.EditorFanCam.StopZoom();
                     return;
                 }
             }
-            if (!IsOwnerLocal())
+            if (IsDirector())
             {
-                return;
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha0) || Input.GetKeyDown(KeyCode.Keypad0))
-            {
-                ActiveCam = 0;
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
-            {
-                ActiveCam = 1;
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2))
-            {
-                ActiveCam = 2;
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3))
-            {
-                ActiveCam = 3;
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Keypad4))
-            {
-                ActiveCam = 4;
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha5) || Input.GetKeyDown(KeyCode.Keypad5))
-            {
-                ActiveCam = 5;
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha6) || Input.GetKeyDown(KeyCode.Keypad6))
-            {
-                ActiveCam = 6;
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha7) || Input.GetKeyDown(KeyCode.Keypad7))
-            {
-                ActiveCam = 7;
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha8) || Input.GetKeyDown(KeyCode.Keypad8))
-            {
-                ActiveCam = 8;
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha9) || Input.GetKeyDown(KeyCode.Keypad9))
-            {
-                ActiveCam = 9;
-            }
-            else if (_cam >= 0 && _cam < fanCams.Length)
-            {
-                if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.PageUp))
+                if (Input.GetKeyDown(KeyCode.Alpha0) || Input.GetKeyDown(KeyCode.Keypad0))
                 {
-                    fanCams[_cam].ZoomIn();
+                    ActiveCam = 0;
                 }
-                else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.PageDown))
+                else if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
                 {
-                    fanCams[_cam].ZoomOut();
+                    ActiveCam = 1;
                 }
-                else if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.PageUp))
+                else if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2))
                 {
-                    fanCams[_cam].StopZoom();
+                    ActiveCam = 2;
                 }
-                else if (Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.PageDown))
+                else if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3))
                 {
-                    fanCams[_cam].StopZoom();
+                    ActiveCam = 3;
                 }
-            }
-
-            if (Input.GetKeyDown(KeyCode.Equals) || Input.GetKeyDown(KeyCode.KeypadPlus))
-            {
-                SpeedUp();
-            }
-            else if (Input.GetKeyDown(KeyCode.Minus) || Input.GetKeyDown(KeyCode.KeypadMinus))
-            {
-                SpeedDown();
-            }
-        }
-
-        [UdonSynced]
-        [FieldChangeCallback(nameof(Speed))]
-        public float _speed = 120;
-        public float Speed
-        {
-            get => _speed;
-            set
-            {
-                _speed = value;
-                foreach (var fanCam in fanCams)
+                else if (Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Keypad4))
                 {
-                    fanCam.dollyTrack.Speed = value;
+                    ActiveCam = 4;
                 }
-                if (IsOwnerLocal())
+                else if (Input.GetKeyDown(KeyCode.Alpha5) || Input.GetKeyDown(KeyCode.Keypad5))
                 {
-                    RequestSerialization();
+                    ActiveCam = 5;
+                }
+                else if (Input.GetKeyDown(KeyCode.Alpha6) || Input.GetKeyDown(KeyCode.Keypad6))
+                {
+                    ActiveCam = 6;
+                }
+                else if (Input.GetKeyDown(KeyCode.Alpha7) || Input.GetKeyDown(KeyCode.Keypad7))
+                {
+                    ActiveCam = 7;
+                }
+                else if (Input.GetKeyDown(KeyCode.Alpha8) || Input.GetKeyDown(KeyCode.Keypad8))
+                {
+                    ActiveCam = 8;
+                }
+                else if (Input.GetKeyDown(KeyCode.Alpha9) || Input.GetKeyDown(KeyCode.Keypad9))
+                {
+                    ActiveCam = 9;
+                }
+                else if (_cam >= 0 && _cam < fanCams.Length)
+                {
+                    if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.PageUp))
+                    {
+                        fanCams[_cam].ZoomIn();
+                    }
+                    else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.PageDown))
+                    {
+                        fanCams[_cam].ZoomOut();
+                    }
+                    else if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.PageUp))
+                    {
+                        fanCams[_cam].StopZoom();
+                    }
+                    else if (Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.PageDown))
+                    {
+                        fanCams[_cam].StopZoom();
+                    }
+                    else if (Input.GetKeyDown(KeyCode.Equals) || Input.GetKeyDown(KeyCode.KeypadPlus))
+                    {
+                        fanCams[_cam].SpeedUp();
+                    }
+                    else if (Input.GetKeyDown(KeyCode.Minus) || Input.GetKeyDown(KeyCode.KeypadMinus))
+                    {
+                        fanCams[_cam].SpeedDown();
+                    }
                 }
             }
         }
-        public void SpeedUp()
-        {
-            Speed = Mathf.Min(10f, Speed + 0.25f);
-        }
 
-        public void SpeedDown()
-        {
-            Speed = Mathf.Max(0.25f, Speed - 0.25f);
-        }
-
+        // [UdonSynced]
+        // [FieldChangeCallback(nameof(Speed))]
+        // public float _speed = 4f;
+        // public float Speed
+        // {
+        //     get => _speed;
+        //     set
+        //     {
+        //         _speed = value;
+        //         foreach (var fanCam in fanCams)
+        //         {
+        //             fanCam.dollyTrack.Speed = value;
+        //         }
+        //         if (IsDirector())
+        //         {
+        //             RequestSerialization();
+        //         }
+        //     }
+        // }
 
         public override void InputLookVertical(float value, VRC.Udon.Common.UdonInputEventArgs args)
         {
-            if (!Networking.LocalPlayer.IsUserInVR() || !Utilities.IsValid(HeldFanCam))
+            if (!Networking.LocalPlayer.IsUserInVR())
             {
                 return;
             }
-            if (value > 0.5f)
+            if (Utilities.IsValid(HeldFanCam))
             {
-                HeldFanCam.ZoomIn();
+                if (value > 0.5f)
+                {
+                    HeldFanCam.ZoomIn();
+                }
+                else if (value < -0.5f)
+                {
+                    HeldFanCam.ZoomOut();
+                }
+                else
+                {
+                    HeldFanCam.StopZoom();
+                }
             }
-            else if (value < -0.5f)
+            else if (Utilities.IsValid(menu) && Utilities.IsValid(menu.EditorFanCam))
             {
-                HeldFanCam.ZoomOut();
-            }
-            else
-            {
-                HeldFanCam.StopZoom();
+                if (value > 0.5f)
+                {
+                    menu.EditorFanCam.ZoomIn();
+                }
+                else if (value < -0.5f)
+                {
+                    menu.EditorFanCam.ZoomOut();
+                }
+                else
+                {
+                    menu.EditorFanCam.StopZoom();
+                }
             }
         }
     }

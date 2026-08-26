@@ -30,10 +30,10 @@ namespace MMMaellon.FanCam
 
         public static void Setup()
         {
-            if (Application.isPlaying || PrefabStageUtility.GetCurrentPrefabStage() != null)
-            {
-                return;
-            }
+            // if (Application.isPlaying || PrefabStageUtility.GetCurrentPrefabStage() != null)
+            // {
+            //     return;
+            // }
 
             foreach (var fancamManager in GetAll<FanCamManager>())
             {
@@ -43,10 +43,10 @@ namespace MMMaellon.FanCam
 
         public static T[] GetAll<T>() where T : Object
         {
-            if (Application.isPlaying || PrefabStageUtility.GetCurrentPrefabStage() != null)
-            {
-                return new T[0];
-            }
+            // if (Application.isPlaying || PrefabStageUtility.GetCurrentPrefabStage() != null)
+            // {
+            //     return new T[0];
+            // }
             return Object.FindObjectsOfType<T>(true);
         }
 

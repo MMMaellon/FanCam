@@ -324,7 +324,6 @@ MonoBehaviour:
   - {fileID: 8022024775090603856}
   - {fileID: 2948978748574163142}
   targetBall: {fileID: 7428106243435580384}
-  _speed: 1
 --- !u!114 &7089017358413746064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -681,8 +680,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2261934296133323902}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000013360017, y: 0.000000029802326, z: -3.3656415e-16,
-    w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2843,7 +2841,25 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
+    SerializationNodes:
+    - Name: OwnerHash
+      Entry: 3
+      Data: -815733124
+    - Name: EditHash
+      Entry: 3
+      Data: -2127176166
+    - Name: DollyHash
+      Entry: 3
+      Data: 1753816754
+    - Name: RecHash
+      Entry: 3
+      Data: 1678101036
+    - Name: ZoomHash
+      Entry: 3
+      Data: -1221887628
+    - Name: PlayerTrackingHash
+      Entry: 3
+      Data: -2119094280
   _udonSharpBackingUdonBehaviour: {fileID: 4615746708829479192}
   localPreview: {fileID: 0}
   localPreviewParent: {fileID: 5733058896807800196}
@@ -2867,6 +2883,7 @@ MonoBehaviour:
   _id: 2
   _edit: 0
   _dolly: 0
+  _speed: 4
 --- !u!114 &4615746708829479192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2968,8 +2985,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7653259609463969653}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000015604458, y: 0.00000002379494, z: -3.7130716e-16,
-    w: 1}
+  m_LocalRotation: {x: 0.00000001560446, y: 0.00000002379494, z: -3.7130716e-16, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

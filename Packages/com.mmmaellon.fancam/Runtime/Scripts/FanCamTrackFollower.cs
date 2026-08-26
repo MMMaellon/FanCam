@@ -18,7 +18,8 @@ namespace MMMaellon.FanCam
 
 
         // public float duration = 4f;
-        public float _speed = 120;
+        [System.NonSerialized]
+        float _speed = 4f;
         public float Speed
         {
             get => _speed;
@@ -54,13 +55,13 @@ namespace MMMaellon.FanCam
             {
                 point.track = this;
             }
-            Speed = Speed;
+            // Speed = Speed;
         }
 
-        public void OnEnable()
-        {
-            PopulateWaypoints();
-        }
+        // public void OnEnable()
+        // {
+        //     // PopulateWaypoints();
+        // }
 
         public void PopulateWaypoints()
         {
@@ -91,6 +92,16 @@ namespace MMMaellon.FanCam
             // {
             //     transform.rotation = points[0].transform.parent.rotation;
             // }
+        }
+
+        public void StartTrack()
+        {
+            PopulateWaypoints();
+        }
+
+        public void StopTrack()
+        {
+            pathHandle.Kill();
         }
 
         void OnDestroy()
