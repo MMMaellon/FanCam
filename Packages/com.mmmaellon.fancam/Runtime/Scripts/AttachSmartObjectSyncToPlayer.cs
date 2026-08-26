@@ -13,7 +13,6 @@ namespace MMMaellon.FanCam
         public float holdDuration = 0.5f;
         public override void OnPickupUseDown()
         {
-            Debug.LogWarning("ASDF");
             startTime = Time.timeSinceLevelLoad;
             SendCustomEventDelayedSeconds(nameof(CheckHold), holdDuration);
         }
@@ -31,7 +30,6 @@ namespace MMMaellon.FanCam
 
         public void CheckHold()
         {
-            Debug.LogWarning("Check Hold");
             if (Time.timeSinceLevelLoad - startTime < holdDuration - Time.deltaTime)
             {
                 return;
@@ -81,26 +79,23 @@ namespace MMMaellon.FanCam
 
             var players = VRCPlayerApi.GetPlayers();
             int bestPlayerId = -1001;
-            float bestPlayerScore = 0f;
+            float bestPlayerScore = float.MaxValue;
             var pos = transform.position;
             var vector = transform.rotation * forwardVector;
-            var newHead = Vector3.zero;
             var newVector = Vector3.zero;
             foreach (var player in players)
             {
-                Debug.LogWarning("checking player " + player.playerId);
                 newVector = player.GetTrackingData(VRCPlayerApi.TrackingDataType.Head).position - pos;
-                float dot = Vector3.Dot(newVector.normalized, vector.normalized) + 1;
-                Debug.LogWarning("dot " + dot);
-                if (newVector.magnitude == 0)
+                float dot = Vector3.Dot(newVector.normalized, vector.normalized) + 1.01f;
+                if (dot <= 0)
                 {
-                    Debug.LogWarning("zero magnitude vector");
                     continue;
                 }
-                float newScore = dot / newVector.magnitude;
-                if (newScore > bestPlayerScore)
+                float newScore = newVector.magnitude / dot;
+                if (newScore < bestPlayerScore)
                 {
                     bestPlayerId = player.playerId;
+                    bestPlayerScore = newScore;
                 }
             }
             TargetPlayerId = bestPlayerId;

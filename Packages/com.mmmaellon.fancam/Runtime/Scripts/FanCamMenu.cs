@@ -42,7 +42,15 @@ namespace MMMaellon.FanCam
                 ownerNameTMP.text = "";
             }
             OnChangeEditorDropdown();
+            PopulatePlayerTrackingDropdown();//get all the people we missed while the menu was closed
             animator.SetBool(manager.DirectorHash, manager.IsDirector());
+            animator.SetInteger(cameraControlState, cameraControlState);
+        }
+
+        int cameraControlState = 0;
+        public void OnDisable()
+        {
+            cameraControlState = animator.GetInteger(cameraControlState);
         }
 
         public void Cam0()
@@ -112,7 +120,7 @@ namespace MMMaellon.FanCam
 
         public void BecomeDirectorBtn()
         {
-            Networking.SetOwner(Networking.LocalPlayer, gameObject);
+            Networking.SetOwner(Networking.LocalPlayer, manager.gameObject);
         }
 
         public bool AreCameraPreviewsVisible()
