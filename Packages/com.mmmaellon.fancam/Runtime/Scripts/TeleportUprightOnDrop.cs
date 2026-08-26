@@ -13,13 +13,14 @@ namespace MMMaellon.FanCam
 
         }
 
+        SmartObjectSync lastSync;
         public override void OnChangeState(SmartObjectSync sync, int oldState, int newState)
         {
             if (!sync.IsLocalOwner())
             {
                 return;
             }
-            if (oldState != SmartObjectSync.STATE_LEFT_HAND_HELD || oldState != SmartObjectSync.STATE_RIGHT_HAND_HELD || sync.pickup.IsHeld)
+            if (oldState != SmartObjectSync.STATE_LEFT_HAND_HELD || oldState != SmartObjectSync.STATE_RIGHT_HAND_HELD || oldState != SmartObjectSync.STATE_NO_HAND_HELD || newState == SmartObjectSync.STATE_LEFT_HAND_HELD || newState == SmartObjectSync.STATE_RIGHT_HAND_HELD || newState == SmartObjectSync.STATE_NO_HAND_HELD)
             {
                 return;
             }
@@ -27,7 +28,17 @@ namespace MMMaellon.FanCam
             {
                 return;
             }
-            sync.transform.SetPositionAndRotation(sync.transform.position, Quaternion.LookRotation(sync.transform.forward, Vector3.up));
+            lastSync = sync;
+            SendCustomEventDelayedFrames(nameof(StandUpright), 0);
+        }
+
+        public void StandUpright()
+        {
+            if (lastSync.IsLocalOwner() && lastSync.state == SmartObjectSync.STATE_INTERPOLATING)
+            {
+                lastSync.TeleportToWorldSpace(lastSync.transform.position, Quaternion.LookRotation(lastSync.transform.forward, Vector3.up), Vector3.zero, Vector3.zero);
+            }
+            // lastSync.transform.SetPositionAndRotation(lastSync.transform.position, Quaternion.LookRotation(lastSync.transform.forward, Vector3.up));
         }
     }
 }

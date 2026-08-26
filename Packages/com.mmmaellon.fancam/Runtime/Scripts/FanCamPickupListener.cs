@@ -14,20 +14,20 @@ namespace MMMaellon.FanCam
         public override void OnPickup()
         {
             fanCam.OnPickupListener(this);
-            if (!Networking.LocalPlayer.IsUserInVR())
-            {
-                pickupGun = pickup.ExactGun;
-                pickup.ExactGun = null;
-            }
+            // if (!Networking.LocalPlayer.IsUserInVR())
+            // {
+            //     pickupGun = pickup.ExactGun;
+            //     pickup.ExactGun = null;
+            // }
         }
 
         public override void OnDrop()
         {
             fanCam.OnDropListener(this);
-            if (!Networking.LocalPlayer.IsUserInVR())
-            {
-                pickup.ExactGun = pickupGun;
-            }
+            // if (!Networking.LocalPlayer.IsUserInVR())
+            // {
+            //     pickup.ExactGun = pickupGun;
+            // }
         }
 
         public void Reset()
